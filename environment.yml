@@ -1,0 +1,31 @@
+name: flusstools
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9
+  - pip
+  # scientific python
+  - numpy
+  - pandas
+  # plotting
+  - matplotlib
+  - plotly
+  # geospatial python
+  - alphashape
+  - fiona
+  - gdal
+  - geopandas
+  - geojson
+  - laspy
+  - pyshp
+  - rasterstats
+  - scikit-image
+  - shapely
+  - tkinter
+  # SQL DB mgmt
+  - platform
+  - sqlite
+ 
+
