@@ -7,14 +7,22 @@ try:
     import subprocess
     import itertools
     import shutil
+    import subprocess
+    from pathlib import Path
     import platform
+    from tabulate import tabulate
 except ImportError as e:
     raise ImportError("Could not import standard libraries:\n{0}".format(e))
 
 # import scientific python packages
 try:
     import numpy as np
-    # import matplotlib  # for future use
+    import matplotlib.pyplot as plt  # for fuzzycor
+    import matplotlib.patches as patches
+    from matplotlib import colors
+    import matplotlib.transforms
+    from scipy import interpolate
+    import scipy.stats as stats
 except ImportError as e:
     raise ImportError("Could not import numpy/matplotlib (is it installed?). {0}".format(e))
 try:
@@ -57,3 +65,41 @@ try:
     import geojson
 except ImportError as e:
     raise ImportError("Could not import fiona (is it installed?). {0}".format(e))
+try:
+    import earthpy.plot as ep
+except ImportError as e:
+    raise ImportError("Could not import earthpy (is it installed?). {0}".format(e))
+try:
+    import rasterio as rio
+except ImportError as e:
+    raise ImportError("Could not import rasterio (is it installed?). {0}".format(e))
+try:
+    import rasterstats
+except ImportError as e:
+    raise ImportError("Could not import rasterstats (is it installed?). {0}".format(e))
+try:
+    import laspy
+except ImportError as e:
+    raise ImportError("Could not import laspy (is it installed?). {0}".format(e))
+try:
+    import mapclassify.classifiers as mc
+except ImportError as e:
+    raise ImportError("Could not import mapclassify (is it installed?). {0}".format(e))
+try:
+    import pyproj
+except ImportError as e:
+    raise ImportError("Could not import pyproj (is it installed?). {0}".format(e))
+
+# import database packages
+try:
+    import sqlite3
+except ImportError as e:
+    raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
+
+# GUI mgmt
+try:
+    import tkinter as tk
+    from tkinter import messagebox
+    from tkinter import filedialog
+except ImportError as e:
+    raise ImportError("Could not import tkinter (is it installed?). {0}".format(e))

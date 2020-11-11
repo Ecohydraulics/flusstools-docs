@@ -14,18 +14,20 @@ dependencies:
   - plotly
   # geospatial python
   - alphashape
+  - earthpy
   - fiona
   - gdal
   - geopandas
   - geojson
   - laspy
   - pyshp
+  - rasterio
   - rasterstats
   - scikit-image
   - shapely
   - tkinter
   # SQL DB mgmt
   - platform
-  - sqlite
+  - sqlite3
  
 

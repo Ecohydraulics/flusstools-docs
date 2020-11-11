@@ -19,3 +19,5 @@ gdal_dtype_dict = {
     10: "gdal.GDT_CFloat32",
     11: "gdal.GDT_CFloat64",
 }
+
+msg_from_lastools = 'Please note that LAStools is not "free" (see http://lastools.org/LICENSE.txt)\r\ncontact \'martin.isenburg@rapidlasso.com\' to clarify licensing terms if needed.\r\n'

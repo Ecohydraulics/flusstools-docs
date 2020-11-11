@@ -1,20 +1,23 @@
 alphashape
+earthpy
 fiona
 gdal
 geojson
 geopandas
 laspy
+mapclassify
 matplotlib
 numpy
 pandas
 platform
 pyshp
+rasterio
 rasterstats
 tkinter
 scikit-image
 scipy
 shapely
-sqlite
+sqlite3
 tabulate
 
 
