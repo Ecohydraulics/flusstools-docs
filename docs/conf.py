@@ -99,7 +99,7 @@ html_theme = 'sphinx_book_theme'
 html_theme_options = {
     'launch_buttons': {
         'binderhub_url': 'https://mybinder.org',
-        'thebe': True,
+        'thebe': False,
         'notebook_interface': 'jupyterlab',
         'collapse_navigation': False
     },
@@ -131,6 +131,7 @@ if not ('READTHEDOCS' in os.environ):
 html_last_updated_fmt = ""
 html_logo = os.path.abspath('..') + '/docs/img/icon.svg'
 html_show_sourcelink = True
+html_title = "FlussTools"
 htmlhelp_basename = 'FlussTools'
 
 

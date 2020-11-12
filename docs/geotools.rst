@@ -73,7 +73,11 @@ Script and function docs
 
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If text
+
 .. automodule:: geotools.geotools
+
    :members:
 
 ``raster_mgmt`` raster management

@@ -40,11 +40,11 @@ The best way to learn the usage is by examples. In the directory  ``examples``, 
 
 The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 
-   -  ``prepro_salzach.py``: example of the usage of the class ``FuzzyPreProcessor`` of the module ``prepro.py``, where vector data is interpolated and rasterized.
-   -  ``classification_salzach.py``: example of the usage of the class ``PreProCategorization`` of the module ``prepro.py``.
-   -  ``fuzzycomparison_salzach.py``: example of the usage of the class ``FuzzyComparison`` of the module ``fuzzycomp.py``, which creates a correlation (similarity) measure between simulated and observed datasets.
-   -  ``plot_salzach.py``, ``plot_class_rasters.py`` and ``performance_salzach``: example of the usage of the module ``plotter.py``.
-   -  ``random_map``: example of generating a raster following a uniform random distribution, which uses the module ``prepro.py``.
+-  ``prepro_salzach.py``: example of the usage of the class ``FuzzyPreProcessor`` of the module ``prepro.py``, where vector data is interpolated and rasterized.
+-  ``classification_salzach.py``: example of the usage of the class ``PreProCategorization`` of the module ``prepro.py``.
+-  ``fuzzycomparison_salzach.py``: example of the usage of the class ``FuzzyComparison`` of the module ``fuzzycomp.py``, which creates a correlation (similarity) measure between simulated and observed datasets.
+-  ``plot_salzach.py``, ``plot_class_rasters.py`` and ``performance_salzach``: example of the usage of the module ``plotter.py``.
+-  ``random_map``: example of generating a raster following a uniform random distribution, which uses the module ``prepro.py``.
 
 .. automodule:: pre_pro_salzach
    :members:
@@ -56,10 +56,10 @@ Structure
 
 This package contains the following modules, which were designed in *Python 3.6*:
 
-- ``prepro.py``: Includes functions for reading, normalizing and rasterizing vector data. These are preprocessing steps for fuzzy map comparison (module fuzzycomp).
-- ``fuzzycomp.py``: Provides routines for fuzzy map comparison in continuous valued rasters. The reader is referred to `Hagen(2006) <https://www.researchgate.net/publication/242690490_Comparing_Continuous_Valued_Raster_Data_A_Cross_Disciplinary_Literature_Scan>`__ for more details (more to come).
-- ``plotter.py``: Visualization routines for output and input rasters.
--  The package documentation is located in the folder ``docs``.
+- *prepro.py* includes functions for reading, normalizing and rasterizing vector data. These are preprocessing steps for fuzzy map comparison (module fuzzycomp).
+- *fuzzycomp.py* provides routines for fuzzy map comparison in continuous valued rasters. Refer to `Hagen (2006) <https://www.researchgate.net/publication/242690490_Comparing_Continuous_Valued_Raster_Data_A_Cross_Disciplinary_Literature_Scan>`__ for more details.
+- *plotter.py*: Visualization routines for output and input rasters.
+-  The package documentation is located in the folder *docs*.
 
 
 Pre- and post-processing: prepro.py
