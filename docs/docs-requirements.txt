@@ -1,5 +1,4 @@
 Sphinx>=3.2.1
-sphinx==2.4.4
 sphinx-book-theme
 matplotlib
 ipython
