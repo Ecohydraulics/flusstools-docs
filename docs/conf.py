@@ -30,25 +30,25 @@ sys.path.append(os.path.abspath('..') + '/lidartools')
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
     "alphashape",
-    "earthpy",
+    "earthpy", "earthpy.plot", "ep",
     "fiona",
-    "gdal",
+    "gdal", "ogr", "osr",
     "geojson",
     "geopandas",
     "laspy",
-    "mapclassify",
-    "matplotlib",
-    "numpy",
-    "pandas",
-    "pyshp",
-    "rasterio",
+    "mapclassify", "mapclassify.classifiers", "mc",
+    "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
+    "numpy", "np",
+    "pandas", "pd",
+    "pyshp", "pyproj",
+    "rasterio", "rio",
     "rasterstats",
-    "tkinter",
-    "scikit-image",
-    "scipy",
-    "shapely",
+    "scipy", "scipy.stats", "stats", "interpolate",
+    "shapefile",
+    "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
     "sqlite3",
     "tabulate",
+    "tkinter", "tk", "messagebox", "filedialog",
 ]
 
 import sphinx_rtd_theme
@@ -137,8 +137,11 @@ latex_documents = [
 ]
 
 man_pages = [
-    (master_doc, slug, project, [author], 1)
+    (master_doc, [author], 1)
 ]
+# man_pages = [
+#     (master_doc, slug, project, [author], 1)
+# ]
 # allow errors
 execution_allow_errors = True
 # execute cells only if any of the cells is missing output

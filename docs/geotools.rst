@@ -30,8 +30,8 @@ Import ``geotools`` from *flusstools*:
     from flusstools import geotools as gt
 
 
-Example
-~~~~~~~
+Example (code block)
+~~~~~~~~~~~~~~~~~~~~
 
 .. code:: python
 
@@ -45,6 +45,14 @@ Example
     # >>> <class 'tuple'>
     print(geo_transform)
     # >>> (6748604.7742, 3.0, 0.0, 2207317.1771, 0.0, -3.0)
+
+Example (showcase)
+~~~~~~~~~~~~~~~~~~
+
+A showcase is provided with the *ROOT/examples/geotools-showcase/georeference_tifs.py* script that illustrates geo-referencing *tif* images that do not have a projection assigned.
+
+.. automodule:: examples/geotools-showcase/georeference_tifs
+   :members:
 
 Code structure
 ==================
@@ -95,12 +103,6 @@ KML/KML file management
    :members:
 
 .. automodule:: geotools.kmx_parser
-   :members:
-
-Examples
-========
-
-.. automodule:: georeference_tifs
    :members:
 
 

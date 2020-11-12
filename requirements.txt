@@ -1,6 +1,5 @@
 alphashape
 earthpy
-fiona
 gdal
 geojson
 geopandas
@@ -13,7 +12,6 @@ pyshp
 rasterio
 rasterstats
 tkinter
-scikit-image
 scipy
 shapely
 sqlite3

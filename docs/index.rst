@@ -13,7 +13,7 @@ Currently, *flusstools* comes with the following modules:
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
 .. note::
-    The documentation is also as available as style-adapted PDF (`download <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_).
+    The documentation is also as available as `style-adapted PDF <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_).
 
 Installation
 ============
@@ -25,7 +25,7 @@ Get ready with Windows
 
 On *Windows*, a convenient option for working with *flusstools* is to use a conda environment. In addition, *GitBash* is necessary to clone (download) *flusstools* (and to keep posted on updates). In detail:
 
-* Install *Anaconda*, for example, as described on `hydro-informatics.github.io <https://hydro-informatics.github.io/hy_ide.html#anaconda>`_.
+* Install *Anaconda*, for example, as described on `hydro-informatics.github.io/hy_ide <https://hydro-informatics.github.io/hy_ide.html#anaconda>`_.
 * Alternatively, `download and install Python <https://www.python.org/downloads/>`_, open `Windows Command Prompt`_, and make sure to upgrade *pip* with your basic *Python* installer by typing: ``python -m pip install -U pip``.
 * `Download <https://git-scm.com/downloads>`_ and install *GitBash*.
 * We recommend to work with an *IDE*, such as `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ or `Spyder <https://www.spyder-ide.org/>`_, which is natively implemented in the *Anaconda* installation.
@@ -42,7 +42,7 @@ Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.o
 * `Install Guest Additions <https://hydro-informatics.github.io/vm.html#setup-debian>`_ for *Linux* VMs in *VirtualBox*.
 * `Enable folder sharing <https://hydro-informatics.github.io/vm.html#share>`_ between the host and guest (*Debian*, *Ubuntu*, or *Lubuntu* image).
 
-Other system setups described on `hydro-informatics.github.io <https://hydro-informatics.github.io/vm.html>`_ (e.g., *Wine*) are not required in the following.
+Other system setups described on `hydro-informatics.github.io/vm <https://hydro-informatics.github.io/vm.html>`_ (e.g., *Wine*) are not required in the following.
 
 Prepare your system
 ^^^^^^^^^^^^^^^^^^^
@@ -141,7 +141,7 @@ Setup  *Python* environment
 Anaconda
 ^^^^^^^^
 
-Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.com/anaconda/install/verify-install/>`_ (*Windows*) and type:
+Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.com/anaconda/install/verify-install/>`_ (*Windows*) and install the *flusstools* environment by typing:
 
 .. code:: console
 
@@ -150,9 +150,9 @@ Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.
 
 .. admonition:: Be patient...
 
-    Installing the *flusstools* environment takes a while (> 1h).
+    Installing the *flusstools* environment takes a while (> 30 min.).
 
-Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
+Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io/hpy_install <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
 
 
 PIP

@@ -53,10 +53,10 @@ try:
     from shapely.geometry import Polygon, LineString, Point
 except ImportError as e:
     raise ImportError("Could not import shapely (is it installed?). {0}".format(e))
-try:
-    import fiona
-except ImportError as e:
-    raise ImportError("Could not import fiona (is it installed?). {0}".format(e))
+# try:
+#     import fiona
+# except ImportError as e:
+#     raise ImportError("Could not import fiona (is it installed?). {0}".format(e))
 try:
     # install pyshp to enable shapefile import
     import shapefile
