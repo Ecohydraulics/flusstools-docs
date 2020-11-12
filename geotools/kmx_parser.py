@@ -8,7 +8,9 @@ With code blocks from:
 - https://gist.github.com/mciantyre/32ff2c2d5cd9515c1ee7
 
 """
-from .geoconfig import *
+import os, sys
+sys.path.insert(0, os.path.abspath("."))
+from helpers import *
 
 import ast
 import xml.sax

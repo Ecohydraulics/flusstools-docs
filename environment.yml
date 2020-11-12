@@ -2,10 +2,13 @@ name: flusstools
 channels:
   - conda-forge
   - defaults
+  - blaze
+  - anaconda
 
 dependencies:
   - python=3.9
   - pip
+  - tabulate
   # scientific python
   - numpy
   - pandas
@@ -25,9 +28,6 @@ dependencies:
   - rasterstats
   - scikit-image
   - shapely
-  - tkinter
+  - tk
   # SQL DB mgmt
-  - platform
   - sqlite3
- 
-

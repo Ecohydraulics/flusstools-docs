@@ -9,7 +9,6 @@ mapclassify
 matplotlib
 numpy
 pandas
-platform
 pyshp
 rasterio
 rasterstats

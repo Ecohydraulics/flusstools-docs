@@ -3,15 +3,14 @@
 FlussTools
 ==========
 
-The analysis, research and science-based design of fluvial ecosystems involve complex challenges for interdisciplinary experienced teams. We have created flusstools to meet the complex challenges and to at least partially automate time-consuming, repetitive processes. "We" stands for individuals with a great passion for rivers (in German, plural for "Fluss") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With flusstools we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or ammend a module) at any time - read more in the :ref:`contribute` section.
+The analysis, research and science-based design of fluvial ecosystems involve complex challenges for interdisciplinary experienced teams. We have created flusstools to meet the complex challenges and to at least partially automate time-consuming, repetitive processes. "We" stands for individuals with a great passion for rivers (in German, plural for "Fluss") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With flusstools we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or amend a module) at any time - read more in the :ref:`contribute` section.
 
-Currently flusstools comes with the following modules:
+Currently, *flusstools* comes with the following modules:
 
 * *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries.
 * *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assesss the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
 * *what2plant* - finds the best plant species for a fluvial ecosystems (currently implemented only for the Rhine bassin and the Bavarian Pre-Alps - principal developer: `Lukas Schoeberl`_).
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
-
 
 .. note::
     The documentation is also as available as style-adapted PDF (`download <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_).
@@ -62,7 +61,7 @@ Some (basic) *Linux* distributions still have *Python2* implemented as base inte
 
 .. code:: console
 
-   ls /usr/bin/python*
+    ls /usr/bin/python*
 
 
     /usr/bin/python  /usr/bin/python2  /usr/bin/python2.7  /usr/bin/python3  /usr/bin/python3.8  /usr/bin/python3.8m  /usr/bin/python3m
@@ -136,8 +135,8 @@ Use ``git`` to download the ``flusstools`` repository (*Windows* users make sure
 
 Now, ``flusstools`` lives in ``"D:/Target/Directory/flusstools"``.
 
-Setup the *Python* environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Setup  *Python* environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Anaconda
 ^^^^^^^^
@@ -146,8 +145,8 @@ Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.
 
 .. code:: console
 
-	cd to\flusstools\directory
-	conda env create -f environment.yml
+    cd to\flusstools\directory
+    conda env create -f environment.yml
 
 Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
 
@@ -159,12 +158,12 @@ Consider to create and activate a new virtual environment before installing *flu
 
 .. code:: console
 
-	cd to\flusstools\directory
-	pip install -r requirements.txt
+    cd to\flusstools\directory
+    pip install -r requirements.txt
 
 
-Setup an *IDE*
-~~~~~~~~~~~~~~
+Setup *IDE* environment
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Depending on the *IDE* you are using, create a new project and define the above created environment (either *conda* or *pip*) as project interpreter.
 
@@ -179,13 +178,12 @@ Usage
 Import
 ~~~~~~~
 
-1. Run *Python* and add the download directory of ``geo-utils`` to the
-   system path:
+1. Run *Python* and add the download directory of ``flusstools`` to the system path:
 
 .. code:: python
 
     import os, sys
-    sys.path.append("D:/Target/Directory/geo-utils/")  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
+    sys.path.append("D:/Target/Directory/flusstools/")  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
 
 2. Import ``flusstools``:
 
@@ -214,20 +212,34 @@ Example
 Requirements
 ============
 
-*  Python 3.x (read more on `hydro-informatics.github.io`_)
-*  Dependencies:
+Have a look at the *requirements.txt* (*pip* / *venv*) or the *environment.yml* (*conda*) to check out dependencies.
 
-    * alphashape
-    * fiona
-    * gdal (read more on `hydro-informatics.github.io/geo-pckg <https://hydro-informatics.github.io/geo-pckg.html#gdal>`_)
-    * geojson
-    * geopandas
-    * numpy
-    * pandas
-    * pyshp
-    * shapely
+Module documentation
+====================
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Geo-spatial analyst tools
 
+    geotools
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Map correlation
+
+    fuzzycorr
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Lidar tools (analyze *las* and *laz* files)
+
+    lidartools
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Plant database
+
+    what2plant
 
 Contributing
 ============

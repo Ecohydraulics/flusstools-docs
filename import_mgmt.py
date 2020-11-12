@@ -3,6 +3,7 @@ try:
     import logging
     import glob
     import os
+    import sys
     import urllib
     import subprocess
     import itertools
@@ -60,7 +61,7 @@ try:
     # install pyshp to enable shapefile import
     import shapefile
 except ImportError as e:
-    raise ImportError("Could not import pyshp (shapefile - is it installed?). {0}".format(e))
+    raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
 try:
     import geojson
 except ImportError as e:

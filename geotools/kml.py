@@ -13,7 +13,7 @@ Examples:
     success = kmx2other("my-places.kml", output="shp")
 """
 
-from io import BytesIO, StringIO
+# from io import BytesIO, StringIO
 from zipfile import ZipFile
 import re
 from .kmx_parser import *

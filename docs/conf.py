@@ -28,17 +28,37 @@ sys.path.append(os.path.abspath('..') + '/what2plant')
 sys.path.append(os.path.abspath('..') + '/lidartools')
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
-autodoc_mock_imports = ['alphashape', 'numpy', 'gdal', 'laspy', 'geopandas', 'rasterstats', 'scikit-image',
-                        'osr', 'pandas', 'pyshp', 'shapely', 'fiona', 'shapefile', 'pyproj', 'geojson']
+autodoc_mock_imports = [
+    "alphashape",
+    "earthpy",
+    "fiona",
+    "gdal",
+    "geojson",
+    "geopandas",
+    "laspy",
+    "mapclassify",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pyshp",
+    "rasterio",
+    "rasterstats",
+    "tkinter",
+    "scikit-image",
+    "scipy",
+    "shapely",
+    "sqlite3",
+    "tabulate",
+]
 
 import sphinx_rtd_theme
 from sphinx.locale import _
 
-project = u'flusstools'
+project = u'FlussTools'
 slug = re.sub(r'\W+', '-', project.lower())
-version = '0.0.1'
-release = '0.0.1'
-author = u'Sebastian Schwindt, Beatriz Negreiros, Kilian Mouris, Lukas Schoeberl'
+version = '0.1'
+release = 'latest'
+author = u'Sebastian Schwindt, Beatriz Negreiros, Kilian Mouris, Kenneth Larrieu, Lukas Schoeberl'
 copyright = author
 language = 'en'
 
@@ -50,7 +70,12 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
-    'sphinx_thebe'
+    'sphinx_thebe',
+    'sphinxcontrib.googleanalytics',
+    'IPython.sphinxext.ipython_console_highlighting',
+    'IPython.sphinxext.ipython_directive',
+    'myst_nb',
+    'jupyter_sphinx',
 ]
 
 templates_path = ['_templates']
@@ -71,10 +96,13 @@ intersphinx_mapping = {
 html_theme = 'sphinx_book_theme'
 html_theme_options = {
     'launch_buttons': {
-                        'binderhub_url': 'https://mybinder.org',
-                        'collapse_navigation': False},
+        'binderhub_url': 'https://mybinder.org',
+        'thebe': True,
+        'notebook_interface': 'jupyterlab',
+        'collapse_navigation': False
+    },
     'repository_url': 'https://github.com/ecohydraulics/flusstools/',
-    'repository_branch': 'master',
+    'repository_branch': 'main',
     'use_edit_page_button': False,
     'use_repository_button': True,
 }
@@ -85,9 +113,10 @@ html_context = {
     'github_user': 'ecohydraulics',
     'github_repo': 'flusstools',
     'github_version': 'main/',
+    'conf_py_path': '/docs/'
 }
 
-if not 'READTHEDOCS' in os.environ:
+if not ('READTHEDOCS' in os.environ):
     html_static_path = ['_static/']
     html_js_files = ['debug.js']
 
@@ -97,21 +126,26 @@ if not 'READTHEDOCS' in os.environ:
         range(1, 100)
     ))
 
+html_last_updated_fmt = ""
 html_logo = os.path.abspath('..') + '/docs/img/icon.svg'
 html_show_sourcelink = True
 htmlhelp_basename = 'FlussTools'
 
 
 latex_documents = [
-  ('index', '{0}.tex'.format(slug), project, author, 'manual'),
+  (master_doc, '{0}.tex'.format(slug), project, author, 'manual'),
 ]
 
 man_pages = [
-    ('index', slug, project, [author], 1)
+    (master_doc, slug, project, [author], 1)
 ]
+# allow errors
+execution_allow_errors = True
+# execute cells only if any of the cells is missing output
+jupyter_execute_notebooks = "auto"
 
 texinfo_documents = [
-  ('index', slug, project, author, slug, project, 'Miscellaneous'),
+  (master_doc, slug, project, author, slug, project, 'Miscellaneous'),
 ]
 
 
