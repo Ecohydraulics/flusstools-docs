@@ -70,39 +70,34 @@ The following diagram highlights function locations in *Python* scripts and how 
 Script and function docs
 ========================
 
-```{automodule}
-.. automodule:: geotools.geotools
-   :members:
 
-```
+.. automodule:: geotools.geotools
+    :members:
+    :class: full-width
+
 
 
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```{note}
 .. automodule:: geotools.geotools
    :members:
 
-```
 
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```
 .. automodule:: geotools.raster_mgmt
    :members:
 
-```
 
 ``shp_mgmt`` shapefile management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```{note}
-:class: full-width
+
 .. automodule:: geotools.shp_mgmt
    :members:
-```
+
 
 ``srs_mgmt`` projection management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,87 +119,4 @@ KML/KML file management
    :members:
 
 
-Contributing
-=======================
-
-How to document
-~~~~~~~~~~~~~~~~
-
-This package uses *Sphinx* `readthedocs <https://readthedocs.org/>`_ and the documentation regenerates automatically after pushing changes to the repositories ``main`` branch.
-
-To set styles, configure or add extensions to the documentation use ``ROOT/.readthedocs.yml`` and ``ROOT/docs/conf.py``.
-
-Functions and classes are automatically parsed for `docstrings <https://www.python.org/dev/peps/pep-0257/>`_ and implemented in the documentation. ``hylas`` docs use `google style <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_ docstring formats - please familiarize with the style format and strictly apply in all commits.
-
-To modify this documentation file, edit ``ROOT/docs/index.rst`` (uses `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ format).
-
-In the class or function docstrings use the following section headers:
-
-* ``Args (alias of Parameters)``
-* ``Arguments (alias of Parameters)``
-* ``Attention``
-* ``Attributes``
-* ``Caution``
-* ``Danger``
-* ``Error``
-* ``Example``
-* ``Examples``
-* ``Hint``
-* ``Important``
-* ``Keyword Args (alias of Keyword Arguments)``
-* ``Keyword Arguments``
-* ``Methods``
-* ``Note``
-* ``Notes``
-* ``Other Parameters``
-* ``Parameters``
-* ``Return (alias of Returns)``
-* ``Returns``
-* ``Raise (alias of Raises)``
-* ``Raises``
-* ``References``
-* ``See Also``
-* ``Tip``
-* ``Todo``
-* ``Warning``
-* ``Warnings (alias of Warning)``
-* ``Warn (alias of Warns)``
-* ``Warns``
-* ``Yield (alias of Yields)``
-* ``Yields``
-
-For local builds of the documentation, the following packages are required:
-
-.. code:: console
-
-   $ sudo apt-get install build-essential
-   $ sudo apt-get install python-dev python-pip python-setuptools
-   $ sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
-   $ apt-cache search libffi
-   $ sudo apt-get install -y libffi-dev
-   $ sudo apt-get install python3-dev default-libmysqlclient-dev
-   $ sudo apt-get install python3-dev
-   $ sudo apt-get install redis-server
-
-To generate a local html version of the ``hylas`` documentation, ``cd`` into the  ``docs`` directory  and type:
-
-.. code:: console
-
-   make html
-
-Learn more about *Sphinx* documentation and the automatic generation of *Python* code docs through docstrings in the tutorial provided at `github.com/sschwindt/docs-with-sphinx <https://github.com/sschwindt/docs-with-sphinx>`_
-
-Indices and tables
-==================
-
-* :ref:``genindex``
-* :ref:``modindex``
-* :ref:``search``
-
-
 .. _Python programming for Water Resources Engineering and Research: https://hydro-informatics.github.io/hy_ppwrm.html
-.. _hydro-informatics.github.io: https://hydro-informatics.github.io/hy_ide.html
-.. _git: https://hydro-informatics.github.io/hy_git.html
-.. _install Git Bash: https://git-scm.com/downloads
-.. _course function: https://hydro-informatics.github.io/geo-shp.html#create-a-new-shapefile
-

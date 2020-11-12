@@ -222,7 +222,7 @@ Module documentation
 ====================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Home
 
     index
@@ -395,7 +395,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .. _git: https://hydro-informatics.github.io/hy_git.html
 .. _git bash: https://git-scm.com/downloads
 .. _Institute for Modelling Hydraulic and Environmental Systems: https://www.iws.uni-stuttgart.de/en/lww/
-.. _write an email: sebastian.schwindtA@Tiws.uni-stuttgart.de
 .. _gdal: https://gdal.org/
 .. _lastools: http://lastools.org/
 .. _Beatriz Negreiros: https://beatriznegreiros.github.io/
