@@ -148,6 +148,10 @@ Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.
     cd to\flusstools\directory
     conda env create -f environment.yml
 
+.. admonition:: Be patient...
+
+    Installing the *flusstools* environment takes a while (> 1h).
+
 Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
 
 
@@ -219,6 +223,12 @@ Module documentation
 
 .. toctree::
     :maxdepth: 2
+    :caption: Home
+
+    index
+
+.. toctree::
+    :maxdepth: 2
     :caption: Geo-spatial analyst tools
 
     geotools
@@ -231,7 +241,7 @@ Module documentation
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lidar tools (analyze *las* and *laz* files)
+    :caption: Lidar tools (las / laz analyst)
 
     lidartools
 
@@ -338,6 +348,46 @@ Please use *PEP 8* for any code (read more on `hydro-informatics.github.io <http
 .. important::
 
     Only push debugged code to the main branch - Thank you!
+
+
+Disclaimer and License
+======================
+
+Disclaimer (general)
+--------------------
+
+No warranty is expressed or implied regarding the usefulness or completeness of the information provided for *fuzzycorr* and its documentation. References to commercial products do not imply endorsement by the Authors of *fuzzycorr*. The concepts, materials, and methods used in the codes and described in the docs are for informational purposes only. The Authors have made substantial effort to ensure the accuracy of the code and the docs and the Authors shall not be held liable, nor their employers or funding sponsors, for calculations and/or decisions made on the basis of application of *fuzzycorr*. The information is provided "as is" and anyone who chooses to use the information is responsible for her or his own choices as to what to do with the code, docs, and data and the individual is responsible for the results that follow from their decisions.
+
+BSD 3-Clause License
+--------------------
+
+Copyright (c) 2020, Beatriz Negreiros and all other the Authors of *fuzzycorr*.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/

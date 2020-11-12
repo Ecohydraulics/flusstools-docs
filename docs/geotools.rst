@@ -1,15 +1,15 @@
 .. geo_utils documentation master file.
 
-The geo-utils docs
-==================
+GeoTools
+========
 
-**Geospatial Utility Functions for Hydraulics and Morphodynamics**
+**Geospatial Functions for Hydraulics and Morphodynamics**
 
-``geo_utils`` provides *Python3* functions for many sorts of
+``geotools`` provides *Python3* functions for many sorts of
 river-related analyses with geospatial data. The package is intended as
 support material for the lecture `Python programming for Water Resources
 Engineering and Research`_, where primarily *conda* environments are
-used. Even though ``geo_utils`` basically works in all *Python3*
+used. Even though ``geotools`` basically works in all *Python3*
 environments, make sure to follow the *Get Started* instructions on
 `hydro-informatics.github.io`_ to get ready with *Anaconda* and
 familiarize with `git`_.
@@ -17,45 +17,17 @@ familiarize with `git`_.
 .. note::
     This documentation is also as available as style-adapted PDF (`download <https://geo-utils.readthedocs.io/_/downloads/en/latest/pdf/>`_).
 
-Installation
-============
-
-Use ``git`` to download the ``geo_utils`` repository (make sure to
-`install Git Bash`_):
-
-1. Open *Git Bash* (or any other git-able *Terminal*)
-2. Create or select a target directory for ``geo_utils`` (e.g., in your
-   *Python* project folder)
-3. Type ``cd "D:/Target/Directory/"`` to change to the target
-   installation directory.
-4. Clone the repository.
-
-.. code:: console
-
-    cd "D:/Target/Directory/"
-    git clone https://github.com/hydro-informatics/geo-utils.git
-
-Now, ``geo_utils`` lives in ``"D:/Target/Directory/geo-utils/geo_utils"``.
-
 Usage
 =====
 
 Import
 ~~~~~~~
 
-1. Run *Python* and add the download directory of ``geo-utils`` to the
-   system path:
+Import ``geotools`` from *flusstools*:
 
 .. code:: python
 
-    import os, sys
-    sys.path.append("D:/Target/Directory/geo-utils/")  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
-
-2. Import ``geo_utils``:
-
-.. code:: python
-
-    import geo_utils.geo_utils as gu
+    from flusstools import geotools as gt
 
 
 Example
@@ -63,8 +35,8 @@ Example
 
 .. code:: python
 
-    import geo_utils as gu
-    raster, array, geo_transform = gu.raster2array("/sample-data/froude.tif")
+    import geotools as gt
+    raster, array, geo_transform = gt.raster2array("/sample-data/froude.tif")
     type(raster)
     # >>> <class 'osgeo.gdal.Dataset'>
     type(array)
@@ -74,31 +46,13 @@ Example
     print(geo_transform)
     # >>> (6748604.7742, 3.0, 0.0, 2207317.1771, 0.0, -3.0)
 
-
-Requirements
-============
-
-*  Python 3.x (read more on `hydro-informatics.github.io`_)
-*  Dependencies:
-
-    * alphashape
-    * fiona
-    * gdal (read more on `hydro-informatics.github.io/geo-pckg <https://hydro-informatics.github.io/geo-pckg.html#gdal>`_)
-    * geojson
-    * geopandas
-    * numpy
-    * pandas
-    * pyshp
-    * shapely
-
-
 Code structure
 ==================
 
 
 The following diagram highlights function locations in *Python* scripts and how those are linked to each other.
 
-.. figure:: https://github.com/hydro-informatics/geo-utils/raw/master/graphs/geo-utils-uml.png
+.. figure:: https://github.com/Ecohydraulics/flusstools/raw/master/docs/img/geotools-uml.png
    :alt: structure
 
    *Diagram of the code structure (needs to be updated).*
@@ -109,38 +63,38 @@ Script and function docs
 ========================
 
 
-``geo_utils`` (MASTER)
+``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geo_utils.geo_utils
+.. automodule:: geotools.geotools
    :members:
 
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geo_utils.raster_mgmt
+.. automodule:: geotools.raster_mgmt
    :members:
 
 ``shp_mgmt`` shapefile management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geo_utils.shp_mgmt
+.. automodule:: geotools.shp_mgmt
    :members:
 
 ``srs_mgmt`` projection management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geo_utils.srs_mgmt
+.. automodule:: geotools.srs_mgmt
    :members:
 
 ``dataset_mgmt`` dataset conversion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geo_utils.dataset_mgmt
+.. automodule:: geotools.dataset_mgmt
    :members:
 
 KML/KML file management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: geo_utils.kml
+.. automodule:: geotools.kml
    :members:
 
-.. automodule:: geo_utils.kmx_parser
+.. automodule:: geotools.kmx_parser
    :members:
 
 Examples
