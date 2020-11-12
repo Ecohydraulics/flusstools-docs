@@ -2,13 +2,10 @@
 The TIF files in this example have a prefix and suffix name, which are separated by a 4-digits number.
 The origin of the new GeoTIFF files is derived from a KML file.
 """
-# append geo_utils script directory to interpreter path
-import os, sys
-sys.path.append(os.path.abspath(".."))
+
 
 # import geo_utils - and this script also requires pyproj (install with pyshp)
-from geo_utils.geo_utils import *
-import pyproj
+from flusstools.geotools import *
 
 
 @cache

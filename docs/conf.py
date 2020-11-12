@@ -131,7 +131,7 @@ if not ('READTHEDOCS' in os.environ):
 html_last_updated_fmt = ""
 html_logo = os.path.abspath('..') + '/docs/img/icon.svg'
 html_show_sourcelink = True
-html_title = "FlussTools"
+html_title = "FlussTools " + version
 htmlhelp_basename = 'FlussTools'
 
 

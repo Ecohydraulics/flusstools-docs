@@ -46,7 +46,7 @@ The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 -  ``plot_salzach.py``, ``plot_class_rasters.py`` and ``performance_salzach``: example of the usage of the module ``plotter.py``.
 -  ``random_map``: example of generating a raster following a uniform random distribution, which uses the module ``prepro.py``.
 
-.. automodule:: pre_pro_salzach
+.. automodule:: prepro_salzach
    :members:
    :private-members:
 

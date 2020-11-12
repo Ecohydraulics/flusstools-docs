@@ -261,7 +261,7 @@ Become a contributor
 
 Most team members joined in the framework of their Bachelor or Master's Thesis with innovative contributions. So if you are a student and you want to contribute to *flusstools*, why not in the scope of an innovative thesis? Check out our currently open `Bachelor and Master Thesis topics <https://www.iws.uni-stuttgart.de/en/lww/education/>`_.
 
-Obviously you do not have to be a student to join us - please use `Sebastian Schwindt`_s informal contact form - quick response (most of the time) for sure.
+Obviously you do not have to be a student to join us - please use `Sebastian Schwindt`_ s informal contact form - quick response (most of the time) for sure.
 
 
 How to document
@@ -397,6 +397,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .. _Institute for Modelling Hydraulic and Environmental Systems: https://www.iws.uni-stuttgart.de/en/lww/
 .. _write an email: sebastian.schwindtA@Tiws.uni-stuttgart.de
 .. _gdal: https://gdal.org/
+.. _lastools: http://lastools.org/
 .. _Beatriz Negreiros: https://beatriznegreiros.github.io/
 .. _Kilian Mouris: https://www.iws.uni-stuttgart.de/en/institute/team/Mouris/
 .. _Kenny Larrieu: https://klarrieu.github.io/
