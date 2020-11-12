@@ -1,5 +1,6 @@
 Sphinx>=3.2.1
 sphinx-book-theme
+sphinx-thebe
 matplotlib
 ipython
 jupyter-sphinx
