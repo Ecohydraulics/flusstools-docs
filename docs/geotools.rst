@@ -70,6 +70,12 @@ The following diagram highlights function locations in *Python* scripts and how 
 Script and function docs
 ========================
 
+```{automodule}
+.. automodule:: geotools.geotools
+   :members:
+
+```
+
 
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,6 +83,7 @@ Script and function docs
 ```{note}
 .. automodule:: geotools.geotools
    :members:
+
 ```
 
 ``raster_mgmt`` raster management
@@ -85,6 +92,7 @@ Script and function docs
 ```
 .. automodule:: geotools.raster_mgmt
    :members:
+
 ```
 
 ``shp_mgmt`` shapefile management
