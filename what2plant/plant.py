@@ -2,6 +2,10 @@
 Description
 """
 
+import os, sys
+sys.path.insert(0, os.path.abspath(".") + '/lidartools')
+from lidartools.lidartools import *
+
 
 class Plant:
     """
@@ -9,7 +13,7 @@ class Plant:
     """
 
     def __init__(self, species, name, nativ, habitat, endangered, waterdepthmin, waterdepthmax, rootdepth, groundwatertablechange, floodheightmax, floodloss, flooddurationmax):
-        '''
+        """
 
         Args:
             species: scientific name
@@ -24,7 +28,7 @@ class Plant:
             floodheightmax: maximum flood height the plant can survive
             floodloss: losses during maximum height and days that occured in plant population
             flooddurationmax: maximum day of flooding the plant can survive
-        '''
+        """
         self.species = species
         self.name_german = name
         self.status = nativ

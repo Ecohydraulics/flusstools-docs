@@ -37,7 +37,7 @@ Get ready with Linux
 Optional: Use a Virtual Machine (VM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_  or `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io <https://hydro-informatics.github.io/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io <https://hydro-informatics.github.io/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
+Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_  or `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io/vm#about <https://hydro-informatics.github.io/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io/vm#create-a-vm-with-virtualbox <https://hydro-informatics.github.io/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
 
 * `Install Guest Additions <https://hydro-informatics.github.io/vm.html#setup-debian>`_ for *Linux* VMs in *VirtualBox*.
 * `Enable folder sharing <https://hydro-informatics.github.io/vm.html#share>`_ between the host and guest (*Debian*, *Ubuntu*, or *Lubuntu* image).
@@ -343,7 +343,7 @@ How to add new package or library imports:
 * If you need to import a library or package that is not yet listed in the *ROOT/environments.yml* and *ROOT/requirements.txt* files, please make sure to add the new library or package in both files.
 * Add the new library or package to the ``autodoc_mock_imports`` *list* in *ROOT/docs/conf.py*.
 
-Please use *PEP 8* for any code (read more on `hydro-informatics.github.io <https://hydro-informatics.github.io/hypy_pystyle.html>`_) and try to keep the number of lines per script below 150 (it's hard or even apparently impossible sometimes - just try please).
+Please use *PEP 8* for any code (read more on `hydro-informatics.github.io/hypy_pystyle <https://hydro-informatics.github.io/hypy_pystyle.html>`_) and try to keep the number of lines per script below 150 (it's hard or even apparently impossible sometimes - just try please).
 
 .. important::
 
@@ -354,12 +354,12 @@ Disclaimer and License
 ======================
 
 Disclaimer (general)
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 No warranty is expressed or implied regarding the usefulness or completeness of the information provided for *fuzzycorr* and its documentation. References to commercial products do not imply endorsement by the Authors of *fuzzycorr*. The concepts, materials, and methods used in the codes and described in the docs are for informational purposes only. The Authors have made substantial effort to ensure the accuracy of the code and the docs and the Authors shall not be held liable, nor their employers or funding sponsors, for calculations and/or decisions made on the basis of application of *fuzzycorr*. The information is provided "as is" and anyone who chooses to use the information is responsible for her or his own choices as to what to do with the code, docs, and data and the individual is responsible for the results that follow from their decisions.
 
 BSD 3-Clause License
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Copyright (c) 2020, Beatriz Negreiros and all other the Authors of *fuzzycorr*.
 All rights reserved.

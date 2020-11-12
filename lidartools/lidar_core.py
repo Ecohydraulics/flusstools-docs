@@ -9,6 +9,7 @@ Things to consider adding:
 
 from file_functions import *
 
+
 class DF(pd.DataFrame):
     """Extended pandas DataFrame class with an additional title attribute"""
 
@@ -41,13 +42,13 @@ def cmd(command):
         res = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except:
         msg = 'Command failed: %s' % command
-        logger.error(msg)
+        logging.error(msg)
         raise Exception(msg)
 
     msg = str(res.communicate()[1])
     # if using for LAStools, get rid of the annoying LAStools licensing message.
     msg = msg.replace(msg_from_lastools, '')
-    logger.info(msg)
+    logging.info(msg)
     return
 
 
@@ -95,11 +96,11 @@ def lof_text(pwd, src):
     f = open(filename, 'w+')
 
     if type(src) == str:
-        for i in las_files(src):
+        for i in get_las_files(src):
             f.write('%s\n' % i)
     else:
         # this is the case when there are multiple source folders
-        for i in [name for source in src for name in las_files(source)]:
+        for i in [name for source in src for name in get_las_files(source)]:
             f.write('%s\n' % i)
     f.close()
     return filename
@@ -300,7 +301,7 @@ def process_lidar(lastoolsdir,
 
     # get point density for each .las file
     ds = []
-    for filename in las_files(lidardir + '00_declassified/'):
+    for filename in get_las_files(lidardir + '00_declassified/'):
         ds.append(pd(filename))
     # use max point density out of all files to determine tile size
     max_d = max(ds)

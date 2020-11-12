@@ -174,7 +174,5 @@ def create_gui():
 
 
 if __name__ == '__main__':
-    # initialize the logger
-    init_logger(__file__)
     # launch GUI
     create_gui()

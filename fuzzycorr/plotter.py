@@ -2,23 +2,24 @@
 Description
 """
 
-import os, sys
-sys.path.insert(0, os.path.abspath("."))
-from import_mgmt import *
+from prepro import *
 
 
-def read_raster(path):
+def read_raster(raster_path):
     """Opens a raster
 
     Args:
-        path (str): directory and name of a raster
+        raster_path (str): directory and name of a raster
 
     Returns:
         ``ndarray``: a numpy array of the raster
     """
-    with rio.open(path) as src:
+    with rio.open(raster_path) as src:
         raster_np = src.read(1, masked=True)
-    return raster_np
+        nodatavalue = src.nodata  # storing nodatavalue of raster
+        meta = src.meta.copy()
+        print('Number of active cells (non-masked) of raster ', raster_path, ': ', np.ma.count(raster_np))
+    return raster_np, nodatavalue, meta, meta['crs'], meta['dtype']
 
 
 class RasterDataPlotter:

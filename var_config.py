@@ -21,3 +21,20 @@ gdal_dtype_dict = {
 }
 
 msg_from_lastools = 'Please note that LAStools is not "free" (see http://lastools.org/LICENSE.txt)\r\ncontact \'martin.isenburg@rapidlasso.com\' to clarify licensing terms if needed.\r\n'
+
+sql_command = """
+CREATE TABLE IF NOT EXISTS plants (
+species VARCHAR(255),
+name VARCHAR(255),
+nativ BOOLEAN,
+endangered VARCHAR(255),
+habitat VARCHAR(255),
+waterdepthmin INTEGER(255),
+waterdepthmax  INTEGER(255),
+rootdepth INTEGER(255),
+groundwatertablechange VARCHAR(255),
+floodheightmax INTEGER(255),
+floodloss REAL(255),
+floodduration INTEGER(255),
+PRIMARY KEY (species, name, habitat)
+);"""

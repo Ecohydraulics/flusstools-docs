@@ -2,12 +2,7 @@
 functions related to search for vegetation matching the users input
 """
 
-import os, sys
-sys.path.insert(0, os.path.abspath("."))
-from import_mgmt import *
-from shapely.geometry import Point
-
-shp_driver = ogr.GetDriverByName("ESRI Shapefile")
+from plant import *
 
 
 def search_db_via_query(query):

@@ -1,6 +1,7 @@
 """Basic imports and functions for geo_utils"""
 try:
     import logging
+    import csv
     import glob
     import os
     import sys

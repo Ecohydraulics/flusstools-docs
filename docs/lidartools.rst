@@ -1,6 +1,6 @@
 .. lidartools documentation master file.
 
-The lidartools docs
+LidarTools
 ====================
 
 *las4windows* is forked from `GCS_scripts by Kenny Larrieu <https://github.com/klarrieu>`_. The original code is designed for *Python2* and the commercial ``arcpy`` library. The tweaked codes of *las4windows* run with Python 3.8 and work without ``arcpy``. This repository only uses the GUI for lidar processing with `LASTools <https://rapidlasso.com/lastools/>`_.

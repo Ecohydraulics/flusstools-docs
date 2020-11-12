@@ -51,7 +51,7 @@ Example (showcase)
 
 A showcase is provided with the *ROOT/examples/geotools-showcase/georeference_tifs.py* script that illustrates geo-referencing *tif* images that do not have a projection assigned.
 
-.. automodule:: examples/geotools-showcase/georeference_tifs
+.. automodule:: georeference_tifs
    :members:
 
 Code structure

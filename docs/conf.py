@@ -26,6 +26,8 @@ sys.path.append(os.path.abspath('..') + '/geotools')
 sys.path.append(os.path.abspath('..') + '/fuzzycorr')
 sys.path.append(os.path.abspath('..') + '/what2plant')
 sys.path.append(os.path.abspath('..') + '/lidartools')
+sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
+sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
@@ -137,11 +139,8 @@ latex_documents = [
 ]
 
 man_pages = [
-    (master_doc, [author], 1)
+    (master_doc, slug, project, [author], 1)
 ]
-# man_pages = [
-#     (master_doc, slug, project, [author], 1)
-# ]
 # allow errors
 execution_allow_errors = True
 # execute cells only if any of the cells is missing output

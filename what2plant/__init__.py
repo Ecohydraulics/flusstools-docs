@@ -1,8 +1,3 @@
-import sys, os
-sys.path.append(r'' + os.path.abspath(''))
+__all__ = ['plant', 'search', 'sqlinput', 'what2plant']
 
-__all__ = ['plant.py', 'search.py', 'sqlinput.py']
-
-from plant import *
-from search import *
-from sqlinput import *
+from .what2plant import *

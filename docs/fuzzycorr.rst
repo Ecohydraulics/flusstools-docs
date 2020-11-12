@@ -40,11 +40,15 @@ The best way to learn the usage is by examples. In the directory  ``examples``, 
 
 The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 
-   -  ``prepro_salzach.py``: example of the usage of the class ``PreProFuzzy`` of the module ``prepro.py``, where vector data is interpolated and rasterized.
+   -  ``prepro_salzach.py``: example of the usage of the class ``FuzzyPreProcessor`` of the module ``prepro.py``, where vector data is interpolated and rasterized.
    -  ``classification_salzach.py``: example of the usage of the class ``PreProCategorization`` of the module ``prepro.py``.
    -  ``fuzzycomparison_salzach.py``: example of the usage of the class ``FuzzyComparison`` of the module ``fuzzycomp.py``, which creates a correlation (similarity) measure between simulated and observed datasets.
    -  ``plot_salzach.py``, ``plot_class_rasters.py`` and ``performance_salzach``: example of the usage of the module ``plotter.py``.
    -  ``random_map``: example of generating a raster following a uniform random distribution, which uses the module ``prepro.py``.
+
+.. automodule:: pre_pro_salzach
+   :members:
+   :private-members:
 
 
 Structure
@@ -75,7 +79,7 @@ Fuzzy map comparison core: fuzzycomp.py
 Plot routines: plotter.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: fuzzycorr/plotter
+.. automodule:: plotter
    :members:
    :private-members:
 

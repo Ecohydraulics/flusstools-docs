@@ -1,28 +1,18 @@
 """
-Description
+
+Hints:
+    - many class methods could be imported from geotools
+    - already removed: clip_raster, which is a duplicate of raster_mgmt
 """
 
-import os, sys
-sys.path.insert(0, os.path.abspath("."))
-from import_mgmt import *
+
+from geotools.geotools import *
 
 
-def clip_raster(polygon, in_raster, out_raster):
-    """ Clips a raster based on the given polygon
-
-    :param polygon: string, file with path of the polygon (*.shp)
-    :param in_raster: string, file and path of the input raster (*.tif)
-    :param in_raster: string, file and path of the output raster (*.tif)
-    :return: no output, saves the raster (*.tif) with the selected filename
-    """
-
-    gdal.Warp(out_raster, in_raster, cutlineDSName=polygon)
-
-
-class PreProFuzzy:
+class FuzzyPreProcessor:
     """Parent pre-processing structure for the comparison of numeric maps
 
-    :param pd: pandas dataframe, can be obtained by reading the textfile as pandas dataframe
+    :param df: pandas dataframe, can be obtained by reading the textfile as pandas dataframe
     :param attribute: string, name of the attribute to burn in the raster (ex.: deltaZ, Z)
     :param crs: string, coordinate reference system
     :param nodatavalue: float, value to indicate nodata cells
@@ -37,7 +27,7 @@ class PreProFuzzy:
         if not isinstance(attribute, str):
             print("ERROR: attribute must be a string, check the name on your textfile")
 
-        self.crs = CRS(crs)
+        self.crs = pyproj.CRS(crs)
         self.attribute = attribute
         self.nodatavalue = nodatavalue
 
@@ -194,6 +184,9 @@ class PreProFuzzy:
         :param save_ascii: boolean, true to save also an ascii raster
 
         :returns: saves the raster with the selected filename
+
+        Hint:
+            Function can be moved to geotools/raster_mgmt
         """
         if '.' not in raster_file[-4:]:
             raster_file += '.tif'
@@ -219,6 +212,9 @@ class PreProFuzzy:
         :param alpha: float, excentricity of the alphashape (polygon) to be created
 
         :returns: saves the polygon (*.shp) with the selected filename
+
+        Hint:
+            Function can be moved to geotools/shp_mgmt
         """
         if np.isfinite(alpha):
             try:
@@ -239,7 +235,7 @@ class PreProFuzzy:
                 print('Polygon *.shp saved successfully.')
 
 
-class PreProCategorization:
+class CategorizationPreProcessor:
     """Structured for ... (UNCLEAR)
 
     :param raster: string, path of the raster to be categorized

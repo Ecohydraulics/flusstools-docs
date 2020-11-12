@@ -2,32 +2,18 @@
 Description
 """
 
-import os, sys
-sys.path.insert(0, os.path.abspath("."))
-from import_mgmt import *
-
-connection = sqlite3.connect("Pflanzendaten.db")
-cursor = connection.cursor()
+from search import *
 
 
-sql_command ="""
-CREATE TABLE IF NOT EXISTS plants (
-species VARCHAR(255),
-name VARCHAR(255),
-nativ BOOLEAN,
-endangered VARCHAR(255),
-habitat VARCHAR(255),
-waterdepthmin INTEGER(255),
-waterdepthmax  INTEGER(255),
-rootdepth INTEGER(255),
-groundwatertablechange VARCHAR(255),
-floodheightmax INTEGER(255),
-floodloss REAL(255),
-floodduration INTEGER(255),
-PRIMARY KEY (species, name, habitat)
-);"""
+def send_request():
+    connection = sqlite3.connect("Pflanzendaten.db")
+    cursor = connection.cursor()
+    cursor.execute(sql_command)
 
-cursor.execute(sql_command)
+    inputquestion()
+    cursor.execute("SELECT * FROM plants")
+    content = cursor.fetchall()
+    print(content)
 
 
 def inputquestion():
@@ -61,13 +47,3 @@ def inputquestion():
         cursor.execute("COMMIT")
     else:
         print('only able to import data to table using csv file or sql command')
-
-
-inputquestion()
-cursor.execute("SELECT * FROM plants")
-content = cursor.fetchall()
-print(content)
-
-
-
-
