@@ -1,5 +1,7 @@
 .. flusstools documentation master file.
 
+.. _home:
+
 FlussTools
 ==========
 
@@ -225,7 +227,7 @@ Module documentation
     :maxdepth: 1
     :caption: Home
 
-    index
+    index:ref:`home`
 
 .. toctree::
     :maxdepth: 2

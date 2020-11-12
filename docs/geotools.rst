@@ -60,7 +60,7 @@ Code structure
 
 The following diagram highlights function locations in *Python* scripts and how those are linked to each other.
 
-.. figure:: https://github.com/Ecohydraulics/flusstools/raw/master/docs/img/geotools-uml.png
+.. figure:: https://github.com/Ecohydraulics/flusstools/raw/main/docs/img/geotools-uml.png
    :alt: structure
 
    *Diagram of the code structure (needs to be updated).*
@@ -85,7 +85,9 @@ Script and function docs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: geotools.raster_mgmt
-    :members:
+
+
+.. autofunction:: geotools.raster_mgmt.raster2array
 
 
 ``shp_mgmt`` shapefile management
