@@ -52,7 +52,7 @@ Example (showcase)
 A showcase is provided with the *ROOT/examples/geotools-showcase/georeference_tifs.py* script that illustrates geo-referencing *tif* images that do not have a projection assigned.
 
 .. automodule:: georeference_tifs
-   :members:
+    :members:
 
 Code structure
 ==================
@@ -71,24 +71,21 @@ Script and function docs
 ========================
 
 
-.. automodule:: geotools.geotools
-    :members:
-    :class: full-width
-
-
-
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: geotools.geotools
-   :members:
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: geotools.raster_mgmt
-   :members:
+    :members:
 
 
 ``shp_mgmt`` shapefile management
@@ -96,27 +93,28 @@ Script and function docs
 
 
 .. automodule:: geotools.shp_mgmt
-   :members:
+    :members:
 
 
 ``srs_mgmt`` projection management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. automodule:: geotools.srs_mgmt
-   :members:
+    :members:
 
 ``dataset_mgmt`` dataset conversion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. automodule:: geotools.dataset_mgmt
-   :members:
+    :members:
 
 KML/KML file management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: geotools.kml
-   :members:
+    :members:
 
 .. automodule:: geotools.kmx_parser
-   :members:
+    :members:
 
 
 .. _Python programming for Water Resources Engineering and Research: https://hydro-informatics.github.io/hy_ppwrm.html
