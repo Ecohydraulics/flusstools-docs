@@ -28,7 +28,6 @@ sys.path.append(os.path.abspath('..') + '/what2plant')
 sys.path.append(os.path.abspath('..') + '/lidartools')
 sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
 sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
-from flusstools import *
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
@@ -54,6 +53,7 @@ autodoc_mock_imports = [
     "tkinter", "tk", "messagebox", "filedialog",
 ]
 
+from flusstools import *
 import sphinx_rtd_theme
 from sphinx.locale import _
 
