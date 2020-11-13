@@ -33,13 +33,10 @@ sys.path.insert(0, os.path.abspath('..') + '/examples/geotools-showcase')
 autodoc_mock_imports = [
     "gdal", "ogr", "osr",
     "shapefile",
+    "tkinter", "tk", "messagebox", "filedialogue",
+    "sqlite3",
 ]
 
-try:
-    from flusstools import *
-    autodoc_mock_imports.append(["flusstools", "geotools", "lidartools", "fuzzycorr"])
-except ImportError:
-    print("WARNING: Could not import flusstools - some example files may not render.")
 import sphinx_rtd_theme
 from sphinx.locale import _
 

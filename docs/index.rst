@@ -201,7 +201,7 @@ Import
 Example
 ~~~~~~~
 
-.. code-block:: python
+.. code-block::
 
     from flusstools import geo_utils as gu
     raster, array, geo_transform = gu.raster2array("/sample-data/froude.tif")
