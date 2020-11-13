@@ -25,12 +25,11 @@ Usage
 Basics
 ~~~~~~~
 
-The following code block exemplifies the usage of *fuzzycore* to explore the correlation between two (e.g., observed and modeled) maps (in *GeoTIFF* format):
+The following code block exemplifies the usage of *fuzzycorr* to explore the fuzzy correlation between two (e.g., observed and modeled) maps (in *GeoTIFF* format):
 
 .. code:: python
 
    from flusstools import fuzzycorr as fc
-   # Bea - please complete
 
 
 Example (showcase)
@@ -62,7 +61,7 @@ This package contains the following modules, which were designed in *Python 3.6*
 -  The package documentation is located in the folder *docs*.
 
 
-Pre- and post-processing: prepro.py
+Pre-processing: prepro.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: prepro
