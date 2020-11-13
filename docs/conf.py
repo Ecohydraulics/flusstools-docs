@@ -22,38 +22,23 @@ def is_development_build():
 
 
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.append(os.path.abspath('..') + '/geotools')
-sys.path.append(os.path.abspath('..') + '/fuzzycorr')
-sys.path.append(os.path.abspath('..') + '/what2plant')
-sys.path.append(os.path.abspath('..') + '/lidartools')
-sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
-sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
+sys.path.insert(0, os.path.abspath('..') + '/geotools')
+sys.path.insert(0, os.path.abspath('..') + '/fuzzycorr')
+sys.path.insert(0, os.path.abspath('..') + '/what2plant')
+sys.path.insert(0, os.path.abspath('..') + '/lidartools')
+sys.path.insert(0, os.path.abspath('..') + '/examples/fuzzycorr-showcase')
+sys.path.insert(0, os.path.abspath('..') + '/examples/geotools-showcase')
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
-    # "alphashape",
-    # "earthpy", "earthpy.plot", "ep",
-    # "fiona",
     "gdal", "ogr", "osr",
-    # "geojson",
-    # "geopandas",
-    # "laspy",
-    # "mapclassify", "mapclassify.classifiers", "mc",
-    # "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
-    # "numpy", "np",
-    # "pandas", "pd",
-    # "pyshp", "pyproj",
-    # "rasterio", "rio",
-    # "rasterstats",
-    # "scipy", "scipy.stats", "stats", "interpolate",
     "shapefile",
-    # "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
-    # "sqlite3",
-    # "tabulate",
-    # "tkinter", "tk", "messagebox", "filedialog",
 ]
 
-# from flusstools import *
+try:
+    from flusstools import *
+except ImportError:
+    print("WARNING: Could not import flusstools - some example files may not render.")
 import sphinx_rtd_theme
 from sphinx.locale import _
 
