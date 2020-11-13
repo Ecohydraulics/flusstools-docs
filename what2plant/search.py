@@ -6,7 +6,7 @@ from plant import *
 
 
 def search_db_via_query(query):
-    '''function that checks database for matching entries with user input
+    """function that checks database for matching entries with user input
 
     the function take the users input and adds it to the used sql command to search for matching entries in the provided database
     if there are matching entries these will be printed in the python console
@@ -16,7 +16,7 @@ def search_db_via_query(query):
 
     Returns:
         table entries matching with user input
-    '''
+    """
     connection = sqlite3.connect("Pflanzendaten.db")
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM plants WHERE " + query)
