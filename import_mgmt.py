@@ -98,7 +98,8 @@ except ImportError as e:
 try:
     import sqlite3
 except ImportError as e:
-    raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
+    # raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
+    pass
 
 # GUI mgmt
 try:

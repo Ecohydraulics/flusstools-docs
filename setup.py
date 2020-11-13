@@ -66,7 +66,6 @@ setup(
             "rasterstats",
             "scipy",
             "shapely",
-            "sqlite3",
             "tabulate",
             "tkinter",
         ],
