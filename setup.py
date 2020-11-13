@@ -44,6 +44,7 @@ setup(
             "matplotlib",
             "ipywidgets",
             "pandas",
+            "tabulate",
             "nbclient",
             "myst-nb~=0.10.1",
             "sphinx-togglebutton>=0.2.1",
