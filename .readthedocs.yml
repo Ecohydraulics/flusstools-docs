@@ -24,7 +24,10 @@ formats:
 python:
   version: 3.8
   install:
-    - requirements: docs/docs-requirements.txt
+    - method: pip
+        path: .
+        extra_requirements:
+          - sphinx
 
 # Server Side Search settings
 search:
