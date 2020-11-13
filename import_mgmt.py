@@ -38,7 +38,8 @@ try:
     import osr
     from gdal import ogr
 except ImportError as e:
-    raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
+    # raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
+    pass
 
 # import other geospatial python packages
 try:

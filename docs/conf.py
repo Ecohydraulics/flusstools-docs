@@ -34,7 +34,7 @@ autodoc_mock_imports = [
     # "alphashape",
     # "earthpy", "earthpy.plot", "ep",
     # "fiona",
-    # "gdal", "ogr", "osr",
+    "gdal", "ogr", "osr",
     # "geojson",
     # "geopandas",
     # "laspy",

@@ -31,7 +31,6 @@ setup(
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
-        "GDAL",
         "breathe",
         "click",
         "pydata-sphinx-theme~=0.4.1",
