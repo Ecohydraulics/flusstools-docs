@@ -39,8 +39,8 @@ Import
 
 .. code:: python
 
-   import os, sys
-   sys.path.append("D:/Target/Directory/plantDB/")  # Of course: replace "D:/Target/Directory/", e.g., with  r'' + os.path.abspath('')
+   from flusstools import what2plant as w2p
+
 
 2. Import ``plantDB``:
 
@@ -82,19 +82,6 @@ Example
    #by that you get to choose in the console if you want to add data via sql command or get the data from an existing csv file
    #the column names and entries of the csv file need to match the specified database format
 
-   
-
-Requirements
-============
-
-*  Python 3.x (read more on `hydro-informatics.github.io`_)
-*  Dependencies:
-
-   * numpy
-   * gdal (read more on `hydro-informatics.github.io/geo-pckg <https://hydro-informatics.github.io/geo-pckg.html#gdal>`_)
-   * geopandas
-   * alphashape
-   * shapely
 
 
 Code Documentation
@@ -128,41 +115,5 @@ SQL mgmt
    :members:
 
 
-Contributing
-=======================
-
-How to document
-~~~~~~~~~~~~~~~~
-
-This package uses *Sphinx* `readthedocs <https://readthedocs.org/>`_ and the documentation regenerates automatically after pushing changes to the repositories ``main`` branch.
-
-To set styles, configure or add extensions to the documentation use ``ROOT/.readthedocs.yml`` and ``ROOT/docs/conf.py``.
-
-Functions and classes are automatically parsed for `docstrings <https://www.python.org/dev/peps/pep-0257/>`_ and implemented in the documentation. ``hylas`` docs use `google style <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_ docstring formats - please familiarize with the style format and strictly apply in all commits.
-
-To modify this documentation file, edit ``ROOT/docs/index.rst`` (uses `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ format).
-
-In the class or function docstrings use the following section headers:
-
-For local builds of the documentation, the following packages are required:
-
-.. code:: console
-
-   $ sudo apt-get install build-essential
-   $ sudo apt-get install python-dev python-pip python-setuptools
-   $ sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
-   $ apt-cache search libffi
-   $ sudo apt-get install -y libffi-dev
-   $ sudo apt-get install python3-dev default-libmysqlclient-dev
-   $ sudo apt-get install python3-dev
-   $ sudo apt-get install redis-server
-
-To generate a local html version of the ``hylas`` documentation, ``cd`` into the  ``docs`` directory  and type:
-
-.. code:: console
-
-   make html
-
-Learn more about *Sphinx* documentation and the automatic generation of *Python* code docs through docstrings in the tutorial provided at `github.com/sschwindt/docs-with-sphinx <https://github.com/sschwindt/docs-with-sphinx>`_
 
 
