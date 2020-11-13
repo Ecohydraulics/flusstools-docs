@@ -31,6 +31,8 @@ setup(
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
+        "build-essentiallibxml2-dev",
+        "libxslt1-dev",
         "libgdal-dev",
         "python-gdal",
         "breathe",
