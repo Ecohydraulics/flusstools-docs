@@ -53,7 +53,7 @@ autodoc_mock_imports = [
     # "tkinter", "tk", "messagebox", "filedialog",
 ]
 
-from flusstools import *
+# from flusstools import *
 import sphinx_rtd_theme
 from sphinx.locale import _
 
