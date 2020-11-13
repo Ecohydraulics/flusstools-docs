@@ -1,6 +1,4 @@
-from pathlib import Path
-import prepro as pp
-import pandas as pd
+from flusstools.fuzzycorr import *
 
 
 # ---------------Data Pre-processing---------------------------------
@@ -43,7 +41,7 @@ for file in list_files:
     raster_out = str(current_dir / 'rasters') + '/' + file + '_res5.tif'
 
     # Instanciating object of SpatialField
-    map_file = pp.FuzzyPreProcessor(pd.read_csv(path_file, skip_blank_lines=True), attribute=attribute, crs=crs, nodatavalue=nodatavalue, res=res, ulc=ulc, lrc=lrc)
+    map_file = FuzzyPreProcessor(pd.read_csv(path_file, skip_blank_lines=True), attribute=attribute, crs=crs, nodatavalue=nodatavalue, res=res, ulc=ulc, lrc=lrc)
 
     # Normalize points to a grid-ed array
     array_ = map_file.norm_array(method=interpol_method)
@@ -52,6 +50,6 @@ for file in list_files:
     map_file.array2raster(array_, raster_out, save_ascii=False)
 
     # Clip raster and save it
-    clip_raster = str(current_dir / 'rasters') + '/' + file + '_res5_clipped' + '.tif'
+    clip_raster_name = str(current_dir / 'rasters') + '/' + file + '_res5_clipped' + '.tif'
     # map_file.create_polygon(poly_path, alpha=0.01)
-    pp.clip_raster(poly_path, raster_out, clip_raster)
+    clip_raster(poly_path, raster_out, clip_raster_name)

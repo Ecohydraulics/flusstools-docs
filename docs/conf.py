@@ -51,6 +51,7 @@ autodoc_mock_imports = [
     "sqlite3",
     "tabulate",
     "tkinter", "tk", "messagebox", "filedialog",
+    "pp", "prepro", "flusstools",
 ]
 
 import sphinx_rtd_theme
@@ -72,11 +73,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    # 'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
     'sphinx_thebe',
-    # 'sphinxcontrib.googleanalytics',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'myst_nb',
@@ -204,19 +203,3 @@ def setup(app):
             ),
         ]
     )
-
-
-# Napoleon settings
-napoleon_google_docstring = True
-napoleon_numpy_docstring = True
-napoleon_include_init_with_doc = False
-napoleon_include_private_with_doc = False
-napoleon_include_special_with_doc = False
-napoleon_use_admonition_for_examples = False
-napoleon_use_admonition_for_notes = False
-napoleon_use_admonition_for_references = False
-napoleon_use_ivar = True
-napoleon_use_param = True
-napoleon_use_rtype = True
-napoleon_use_keyword = True
-napoleon_custom_sections = None

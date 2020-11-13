@@ -5,14 +5,7 @@ GeoTools
 
 **Geospatial Functions for Hydraulics and Morphodynamics**
 
-``geotools`` provides *Python3* functions for many sorts of
-river-related analyses with geospatial data. The package is intended as
-support material for the lecture `Python programming for Water Resources
-Engineering and Research`_, where primarily *conda* environments are
-used. Even though ``geotools`` basically works in all *Python3*
-environments, make sure to follow the *Get Started* instructions on
-`hydro-informatics.github.io`_ to get ready with *Anaconda* and
-familiarize with `git`_.
+``geotools`` provides *Python3* functions for many sorts of river-related analyses with geospatial data. The package is intended as support material for the lecture `Python programming for Water Resources Engineering and Research`_, where primarily *conda* environments are used.
 
 .. note::
     This documentation is also as available as style-adapted PDF (`download <https://geo-utils.readthedocs.io/_/downloads/en/latest/pdf/>`_).
@@ -78,7 +71,6 @@ Script and function docs
     :members:
     :undoc-members:
     :show-inheritance:
-
 
 
 ``raster_mgmt`` raster management

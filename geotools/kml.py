@@ -25,8 +25,7 @@ def kmx2other(file, output="df"):
     
     Parameters:
         file (str): The  path to a KMZ or KML file.
-        output (str): Defines the output type. Valid options are: ``"shapefile"``, ``"shp"``, ``"shapefile"``, or
-                        ``"ESRI Shapefile"``.
+        output (str): Defines the output type. Valid options are: ``"shapefile"``, ``"shp"``, ``"shapefile"``, or ``"ESRI Shapefile"``.
 
     Hint:
             The core function is taken from http://programmingadvent.blogspot.com/2013/06/kmzkml-file-parsing-with-python.html

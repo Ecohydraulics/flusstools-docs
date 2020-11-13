@@ -108,8 +108,7 @@ def raster2polygon(file_name, out_shp_fn, band_number=1, field_name="values"):
         out_shp_fn (str): Shapefile name (with directory e.g., ``"C:/temp/poly.shp"``)
         band_number (int): Raster band number to open (default: ``1``)
         field_name (str): Field name where raster pixel values will be stored (default: ``"values"``)
-        add_area (bool): If ``True``, an "area" field will be added, where the area
-                          in the shapefiles unit system is calculated (default: ``False``)
+        add_area (bool): If ``True``, an "area" field will be added, where the area in the shapefiles unit system is calculated (default: ``False``)
 
      Returns:
          osgeo.ogr.DataSource: Python object of the provided ``out_shp_fn``.

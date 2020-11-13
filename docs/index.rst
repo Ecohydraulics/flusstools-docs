@@ -226,9 +226,8 @@ Module documentation
 .. toctree::
     :maxdepth: 1
     :caption: Home
-    :titlesonly:
 
-    index
+    index.home
 
 .. toctree::
     :maxdepth: 2
