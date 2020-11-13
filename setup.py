@@ -57,7 +57,7 @@ setup(
             "ablog~=0.10.11",
             "alphashape",
             "earthpy",
-            "GDAL",
+            "osgeo",
             "geojson",
             "geopandas",
             "laspy",
