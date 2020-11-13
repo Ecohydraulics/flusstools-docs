@@ -67,7 +67,6 @@ setup(
             "scipy",
             "shapely",
             "tabulate",
-            "tkinter",
         ],
         "testing": [
             "myst_nb~=0.10.1",

@@ -39,7 +39,7 @@ try:
     from gdal import ogr
 except ImportError as e:
     # raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
-    pass
+    print("WARNING: Cannot import gdal - Ignore this message when building Sphinx docs.")
 
 # import other geospatial python packages
 try:
@@ -64,7 +64,7 @@ try:
     import shapefile
 except ImportError as e:
     # raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
-    pass
+    print("WARNING: Cannot import shapefile - Ignore this message when building Sphinx docs.")
 try:
     import geojson
 except ImportError as e:
@@ -99,7 +99,7 @@ try:
     import sqlite3
 except ImportError as e:
     # raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
-    pass
+    print("WARNING: Cannot import sqlite3 - Ignore this message when building Sphinx docs.")
 
 # GUI mgmt
 try:
