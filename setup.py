@@ -31,6 +31,7 @@ setup(
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
+        "libgdal1-dev",
         "breathe",
         "click",
         "pydata-sphinx-theme~=0.4.1",
@@ -41,7 +42,6 @@ setup(
         "code_style": ["pre-commit~=2.7.0"],
         "sphinx": [
             "folium",
-            "breathe",
             "numpy",
             "matplotlib",
             "ipywidgets",
