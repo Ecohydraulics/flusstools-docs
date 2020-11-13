@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 
+
 try:
     import importlib.resources as resources
 except ImportError:

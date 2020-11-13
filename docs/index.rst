@@ -227,7 +227,7 @@ Module documentation
     :maxdepth: 1
     :caption: Home
 
-    index:ref:`home`
+    index#home
 
 .. toctree::
     :maxdepth: 2
