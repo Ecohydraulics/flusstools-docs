@@ -37,6 +37,7 @@ autodoc_mock_imports = [
 
 try:
     from flusstools import *
+    autodoc_mock_imports.append(["flusstools", "geotools", "lidartools", "fuzzycorr"])
 except ImportError:
     print("WARNING: Could not import flusstools - some example files may not render.")
 import sphinx_rtd_theme
