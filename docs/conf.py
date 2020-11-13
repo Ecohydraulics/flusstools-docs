@@ -51,7 +51,7 @@ autodoc_mock_imports = [
     "sqlite3",
     "tabulate",
     "tkinter", "tk", "messagebox", "filedialog",
-    "pp", "prepro", "flusstools",
+    "pp", "prepro", "flusstools", "fuzzycorr", "geotools", "lidartools", "fuzzycomp",
 ]
 
 import sphinx_rtd_theme
