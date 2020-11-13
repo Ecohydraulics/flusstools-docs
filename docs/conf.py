@@ -46,7 +46,7 @@ autodoc_mock_imports = [
     # "rasterio", "rio",
     # "rasterstats",
     # "scipy", "scipy.stats", "stats", "interpolate",
-    # "shapefile",
+    "shapefile",
     # "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
     # "sqlite3",
     # "tabulate",

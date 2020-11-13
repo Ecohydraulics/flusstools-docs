@@ -63,7 +63,8 @@ try:
     # install pyshp to enable shapefile import
     import shapefile
 except ImportError as e:
-    raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
+    # raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
+    pass
 try:
     import geojson
 except ImportError as e:

@@ -65,7 +65,6 @@ setup(
             "rasterio",
             "rasterstats",
             "scipy",
-            "shapefile",
             "shapely",
             "sqlite3",
             "tabulate",
