@@ -201,7 +201,7 @@ Import
 Example
 ~~~~~~~
 
-.. code:: python
+.. code-block:: python
 
     from flusstools import geo_utils as gu
     raster, array, geo_transform = gu.raster2array("/sample-data/froude.tif")
@@ -224,7 +224,7 @@ Module documentation
 ====================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Home
 
     self
