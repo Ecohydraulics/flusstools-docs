@@ -66,10 +66,13 @@ language = 'en'
 
 extensions = [
     'sphinx.ext.intersphinx',
+    "sphinx_copybutton",
+    "sphinx_togglebutton",
+    "sphinxcontrib.bibtex",
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx.ext.napoleon',
+    # 'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
     'sphinx_thebe',
@@ -82,7 +85,7 @@ extensions = [
 
 templates_path = ['_templates']
 source_suffix = '.rst'
-exclude_patterns = []
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 locale_dirs = ['locale/', 'docs/']
 gettext_compact = False
 
@@ -91,15 +94,30 @@ suppress_warnings = ['image.nonlocal_uri']
 pygments_style = 'sphinx'
 
 intersphinx_mapping = {
+    "python": ("https://docs.python.org/3.8", None),
     'rtd': ('https://docs.readthedocs.io/en/latest/', None),
     'sphinx': ('http://www.sphinx-doc.org/en/stable/', None),
 }
 
+nitpick_ignore = [
+    ("py:class", "docutils.nodes.document"),
+    ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
+]
+
+numfig = True
+
+myst_admonition_enable = True
+myst_deflist_enable = True
+myst_url_schemes = ("http", "https", "mailto")
+panels_add_bootstrap_css = False
+
 html_theme = 'sphinx_book_theme'
 html_theme_options = {
+
+    "theme_dev_mode": True,
     'launch_buttons': {
         'binderhub_url': 'https://mybinder.org',
-        'thebe': False,
+        'thebe': True,
         'notebook_interface': 'jupyterlab',
         'collapse_navigation': False
     },
@@ -133,7 +151,15 @@ html_logo = os.path.abspath('..') + '/docs/img/icon.svg'
 html_show_sourcelink = True
 html_title = "FlussTools " + version
 htmlhelp_basename = 'FlussTools'
+html_copy_source = True
+html_sourcelink_suffix = ""
 
+
+jupyter_execute_notebooks = "cache"
+thebe_config = {
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
+}
 
 latex_documents = [
   (master_doc, '{0}.tex'.format(slug), project, author, 'manual'),
