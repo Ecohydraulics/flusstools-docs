@@ -22,19 +22,35 @@ def is_development_build():
 
 
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('..') + '/geotools')
-sys.path.insert(0, os.path.abspath('..') + '/fuzzycorr')
-sys.path.insert(0, os.path.abspath('..') + '/what2plant')
-sys.path.insert(0, os.path.abspath('..') + '/lidartools')
-sys.path.insert(0, os.path.abspath('..') + '/examples/fuzzycorr-showcase')
-sys.path.insert(0, os.path.abspath('..') + '/examples/geotools-showcase')
+sys.path.append(os.path.abspath('..') + '/geotools')
+sys.path.append(os.path.abspath('..') + '/fuzzycorr')
+sys.path.append(os.path.abspath('..') + '/what2plant')
+sys.path.append(os.path.abspath('..') + '/lidartools')
+sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
+sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
+    "alphashape",
+    "earthpy", "earthpy.plot", "ep",
+    "fiona",
     "gdal", "ogr", "osr",
+    "geojson",
+    "geopandas",
+    "laspy",
+    "mapclassify", "mapclassify.classifiers", "mc",
+    "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
+    "numpy", "np",
+    "pandas", "pd",
+    "pyshp", "pyproj",
+    "rasterio", "rio",
+    "rasterstats",
+    "scipy", "scipy.stats", "stats", "interpolate",
     "shapefile",
-    "tkinter", "tk", "messagebox", "filedialogue",
+    "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
     "sqlite3",
+    "tabulate",
+    "tkinter", "tk", "messagebox", "filedialog",
 ]
 
 import sphinx_rtd_theme
@@ -56,9 +72,11 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    # 'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinx.ext.todo',
     'sphinx_thebe',
+    # 'sphinxcontrib.googleanalytics',
     'IPython.sphinxext.ipython_console_highlighting',
     'IPython.sphinxext.ipython_directive',
     'myst_nb',
@@ -186,3 +204,19 @@ def setup(app):
             ),
         ]
     )
+
+
+# Napoleon settings
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = False
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = True
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_use_keyword = True
+napoleon_custom_sections = None
