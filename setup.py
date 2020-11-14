@@ -31,7 +31,6 @@ setup(
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
-        "breathe",
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
