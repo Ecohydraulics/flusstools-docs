@@ -238,7 +238,7 @@ Module documentation
 ====================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Home
 
     self
@@ -268,13 +268,13 @@ Module documentation
     what2plant
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Contributing
 
     contribute
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Disclaimer and License
 
     license

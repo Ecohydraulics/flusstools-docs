@@ -75,38 +75,38 @@ Script and function docs
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: flusstools.geotools.raster_mgmt
+.. automodule:: flusstools.flusstools.geotools.raster_mgmt
 
 
-.. autofunction:: geotools.raster_mgmt.raster2array
+.. autofunction:: flusstools.geotools.raster_mgmt.raster2array
 
 
 ``shp_mgmt`` shapefile management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. automodule:: geotools.shp_mgmt
+.. automodule:: flusstools.geotools.shp_mgmt
     :members:
 
 
 ``srs_mgmt`` projection management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: geotools.srs_mgmt
+.. automodule:: flusstools.geotools.srs_mgmt
     :members:
 
 ``dataset_mgmt`` dataset conversion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: geotools.dataset_mgmt
+.. automodule:: flusstools.geotools.dataset_mgmt
     :members:
 
 KML/KML file management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: geotools.kml
+.. automodule:: flusstools.geotools.kml
     :members:
 
-.. automodule:: geotools.kmx_parser
+.. automodule:: flusstools.geotools.kmx_parser
     :members:
 
 
