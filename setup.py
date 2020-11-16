@@ -65,6 +65,7 @@ setup(
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     include_package_data=True,
+    dependency_links=["http://github.com/Ecohydraulics/flusstools-pckg/tarball/main#egg=package-1.0"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
