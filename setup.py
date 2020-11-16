@@ -34,7 +34,11 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
+        "flusstools @ git+https://github.com/Ecohydraulics/flusstools-pckg.git#egg=flusstools",
         'importlib-resources~=3.0.0; python_version < "3.7"',
+    ],
+    dependency_links=[
+        "git+https://github.com/Ecohydraulics/flusstools-pckg.git#egg=flusstools"
     ],
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
@@ -65,7 +69,6 @@ setup(
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     include_package_data=True,
-    dependency_links=["http://github.com/Ecohydraulics/flusstools-pckg/tarball/main#egg=package-1.0"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
