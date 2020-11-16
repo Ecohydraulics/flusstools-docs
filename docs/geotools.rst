@@ -67,7 +67,7 @@ Script and function docs
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: geotools.geotools
+.. automodule:: flusstools.geotools.geotools
     :members:
     :undoc-members:
     :show-inheritance:
@@ -76,7 +76,7 @@ Script and function docs
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: geotools.raster_mgmt
+.. automodule:: flusstools.geotools.raster_mgmt
 
 
 .. autofunction:: geotools.raster_mgmt.raster2array
