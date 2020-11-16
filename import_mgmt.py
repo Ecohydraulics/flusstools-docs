@@ -38,8 +38,7 @@ try:
     import osr
     from gdal import ogr
 except ImportError as e:
-    # raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
-    print("WARNING: Cannot import gdal - Ignore this message when building Sphinx docs.")
+    raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
 
 # import other geospatial python packages
 try:
@@ -63,8 +62,7 @@ try:
     # install pyshp to enable shapefile import
     import shapefile
 except ImportError as e:
-    # raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
-    print("WARNING: Cannot import shapefile - Ignore this message when building Sphinx docs.")
+    raise ImportError("Could not import shapefile (included in pyshp - is it installed?). {0}".format(e))
 try:
     import geojson
 except ImportError as e:
@@ -98,8 +96,7 @@ except ImportError as e:
 try:
     import sqlite3
 except ImportError as e:
-    # raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
-    print("WARNING: Cannot import sqlite3 - Ignore this message when building Sphinx docs.")
+    raise ImportError("Could not import sqlite3 (is it installed?). {0}".format(e))
 
 # GUI mgmt
 try:
@@ -108,3 +105,11 @@ try:
     from tkinter import filedialog
 except ImportError as e:
     raise ImportError("Could not import tkinter (is it installed?). {0}".format(e))
+
+# append own directories
+
+sys.path.append(r'' + os.path.abspath(''))
+sys.path.insert(0, r'' + os.path.abspath('') + '/geotools')
+sys.path.insert(0, r'' + os.path.abspath('') + '/fuzzycorr')
+sys.path.insert(0, r'' + os.path.abspath('') + '/lidartools')
+sys.path.insert(0, r'' + os.path.abspath('') + '/what2plant')

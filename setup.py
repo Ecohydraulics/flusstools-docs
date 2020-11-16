@@ -1,31 +1,32 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-lines = Path("sphinx_book_theme").joinpath("__init__.py")
+lines = Path(".").joinpath("__init__.py")
+version = "0.1.1"  # will be overwritten if defined in init
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
         break
 
 setup(
-    name="sphinx-book-theme",
+    name="flusstools",
     version=version,
     python_requires=">=3.6",
-    author="Project Jupyter Contributors",
-    author_email="jupyter@googlegroups.com",
-    url="https://jupyterbook.org/",
+    author="FlussTeam",
+    author_email="sebastian.schwindt@iws.uni-stuttgart.de",
+    url="https://flusstools.readthedocs.io/",
     project_urls={
-        "Documentation": "https://jupyterbook.org",
-        "Funding": "https://jupyter.org/about",
-        "Source": "https://github.com/jupyter/jupyter-book/",
-        "Tracker": "https://github.com/jupyter/jupyter-book/issues",
+        "Documentation": "https://flusstools.readthedocs.io/",
+        "Funding": "https://www.uni-stuttgart.de/",
+        "Source": "https://github.com/Ecohydraulics/flusstools",
+        "Tracker": "https://github.com/Ecohydraulics/flusstools/issues",
     },
     # this should be a whitespace separated string of keywords, not a list
     keywords="rivers geo-spatial data processing numerical model validation",
     description="Analyze and design fluvial ecosystems",
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
-    license="BSD",
+    license="BSD 3-Clause",
     packages=find_packages(),
     install_requires=[
         "pyyaml",
@@ -65,4 +66,9 @@ setup(
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     include_package_data=True,
+    classifiers=[
+        "Programming Language :: Python :: 3.7",
+        "License :: OSI Approved :: BSD License",
+        "Development Status :: 2 - Pre-Alpha",
+    ],
 )

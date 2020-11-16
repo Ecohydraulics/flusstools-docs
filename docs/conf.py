@@ -60,7 +60,7 @@ project = u'FlussTools'
 slug = re.sub(r'\W+', '-', project.lower())
 version = '0.1'
 release = 'latest'
-author = u'Sebastian Schwindt, Beatriz Negreiros, Kilian Mouris, Kenneth Larrieu, Lukas Schoeberl'
+author = u'Sebastian Schwindt, Beatriz Negreiros\nKilian Mouris, Kenneth Larrieu\nLukas Schoeberl'
 copyright = author
 language = 'en'
 
