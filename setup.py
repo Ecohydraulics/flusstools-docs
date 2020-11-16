@@ -34,11 +34,11 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools @ git+https://github.com/Ecohydraulics/flusstools-pckg.git#egg=flusstools",
+        "flusstools @ git+https://github.com/Ecohydraulics/flusstools-pckg/archive/0.1.tar.gz",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     dependency_links=[
-        "git+https://github.com/Ecohydraulics/flusstools-pckg.git#egg=flusstools"
+        "git+https://github.com/Ecohydraulics/flusstools-pckg/archive/0.1.tar.gz"
     ],
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],

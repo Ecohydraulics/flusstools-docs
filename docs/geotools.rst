@@ -76,9 +76,14 @@ Script and function docs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.flusstools.geotools.raster_mgmt
+    :members:
 
 
 .. autofunction:: flusstools.geotools.raster_mgmt.raster2array
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 
 ``shp_mgmt`` shapefile management
