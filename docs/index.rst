@@ -279,6 +279,7 @@ Module documentation
 
     license
 
+More information and examples are available in the docs of every *flusstools* module.
 
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/
 .. _hydro-informatics.github.io: https://hydro-informatics.github.io

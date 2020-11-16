@@ -96,3 +96,5 @@ Please use *PEP 8* for any code (read more on `hydro-informatics.github.io/hypy_
 .. important::
 
     Only push debugged code to the main branch - Thank you!
+
+.. _Sebastian Schwindt: https://sebastian-schwindt.org/
