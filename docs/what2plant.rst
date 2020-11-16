@@ -8,25 +8,7 @@ Nature-Based Solutions (NBS) for river engineering experience incresing populari
 
 .. This documentation is also as available as style-adapted PDF (`download <https://.readthedocs.io/plantDB/downloads/en/latest/pdf/>`_).
 
-Installation
-============
 
-Use ``git`` to download the ``plantDB`` repository (make sure to
-`install Git Bash`_):
-
-1. Open *Git Bash* (or any other git-able *Terminal*)
-2. Create or select a target directory for ``plantDB`` (e.g., in your
-   *Python* project folder)
-3. Type ``cd "D:/Target/Directory/"`` to change to the target
-   installation directory.
-4. Clone the repository.
-
-.. code:: console
-
-   $ cd "D:/Target/Directory/"
-   $ git clone https://github.com/Lukas-create/plantDB.git
-
-Now, ``plantDB`` lives in ``"D:/Target/Directory/plantDB/plantDB"``.
 
 Usage
 =====
@@ -42,11 +24,6 @@ Import
    from flusstools import what2plant as w2p
 
 
-2. Import ``plantDB``:
-
-.. code:: python
-
-   import plantDB as 
 
 Example
 ~~~~~~~
@@ -101,17 +78,17 @@ Scripts and functions
 
 ``plantDB`` 
 ~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: plant
+.. automodule:: flusstools.what2plant.plant
    :members:
 
 Search something
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: search
+.. automodule:: flusstools.what2plant.search
    :members:
 
 SQL mgmt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: sqlinput
+.. automodule:: flusstools.what2plant.sqlinput
    :members:
 
 

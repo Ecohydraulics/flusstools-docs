@@ -75,7 +75,7 @@ Script and function docs
 ``raster_mgmt`` raster management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: flusstools.flusstools.geotools.raster_mgmt
+.. automodule:: flusstools.geotools.raster_mgmt
     :members:
 
 

@@ -33,16 +33,16 @@ Code Documentation
 
 The GUI script
 ~~~~~~~~~~~~~~
-.. automodule:: LiDAR_processing_GUI
+.. automodule:: flusstools.lidartools.LiDAR_processing_GUI
    :members:
 
 LiDAR processing
 ~~~~~~~~~~~~~~~~
-.. automodule:: lidar_core
+.. automodule:: flusstools.lidartools.lidar_core
    :members:
 
 File functions
 ~~~~~~~~~~~~~~
-.. automodule:: file_functions
+.. automodule:: flusstools.lidartools.file_functions
    :members:
 

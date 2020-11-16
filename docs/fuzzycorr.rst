@@ -46,8 +46,6 @@ The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 -  ``random_map``: example of generating a raster following a uniform random distribution, which uses the module ``prepro.py``.
 
 
-
-
 Structure
 ==========
 
@@ -61,25 +59,22 @@ This package contains the following modules, which were designed in *Python 3.6*
 
 Pre-processing: prepro.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. automodule:: numpy
-   :members:
-   :private-members:
 
-.. automodule:: prepro
+.. automodule:: flusstools.fuzzycorr.prepro
    :members:
    :private-members:
 
 Fuzzy map comparison core: fuzzycomp.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: fuzzycomp
+.. automodule:: flusstools.fuzzycorr.fuzzycomp
    :members:
    :private-members:
 
 Plot routines: plotter.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: plotter
+.. automodule:: flusstools.fuzzycorr.plotter
    :members:
    :private-members:
 
