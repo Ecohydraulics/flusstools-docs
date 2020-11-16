@@ -17,6 +17,8 @@ Currently, *flusstools* comes with the following modules:
 .. note::
     The documentation is also as available as `style-adapted PDF <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_).
 
+.. _install:
+
 Installation
 ============
 

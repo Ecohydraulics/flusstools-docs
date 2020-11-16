@@ -61,6 +61,9 @@ This package contains the following modules, which were designed in *Python 3.6*
 
 Pre-processing: prepro.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. automodule:: numpy
+   :members:
+   :private-members:
 
 .. automodule:: prepro
    :members:

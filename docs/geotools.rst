@@ -66,7 +66,7 @@ Script and function docs
 ``geotools`` (MASTER)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/flusstools/geotools/geotools.py
+.. automodule:: flusstools.geotools.geotools
     :members:
     :undoc-members:
     :show-inheritance:
