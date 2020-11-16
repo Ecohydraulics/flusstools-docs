@@ -22,10 +22,6 @@ def is_development_build():
 
 
 sys.path.insert(0, os.path.abspath('..'))
-sys.path.append(os.path.abspath('..') + '/geotools')
-sys.path.append(os.path.abspath('..') + '/fuzzycorr')
-sys.path.append(os.path.abspath('..') + '/what2plant')
-sys.path.append(os.path.abspath('..') + '/lidartools')
 sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
 sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
 
@@ -34,6 +30,7 @@ autodoc_mock_imports = [
     "alphashape",
     "earthpy", "earthpy.plot", "ep",
     "fiona",
+    "flusstools",
     "gdal", "ogr", "osr",
     "geojson",
     "geopandas",

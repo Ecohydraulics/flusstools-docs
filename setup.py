@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from pathlib import Path
 
 lines = Path(".").joinpath("__init__.py")
-version = "0.1.1"  # will be overwritten if defined in init
+version = "0.1"  # will be overwritten if defined in init
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
@@ -11,10 +11,10 @@ for line in lines.read_text().split("\n"):
 setup(
     name="flusstools",
     version=version,
-    python_requires=">=3.6",
+    python_requires=">=3.4",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
-    url="https://flusstools.readthedocs.io/",
+    url="https://github.com/Ecohydraulics/flusstools-pckg",
     project_urls={
         "Documentation": "https://flusstools.readthedocs.io/",
         "Funding": "https://www.uni-stuttgart.de/",
@@ -26,9 +26,9 @@ setup(
     description="Analyze and design fluvial ecosystems",
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
-    license="BSD 3-Clause",
     packages=find_packages(),
     install_requires=[
+        "git+https://github.com/Ecohydraulics/flusstools-pckg.git@main"
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
@@ -67,7 +67,7 @@ setup(
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
     include_package_data=True,
     classifiers=[
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",

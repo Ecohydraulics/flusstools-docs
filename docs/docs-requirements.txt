@@ -1,4 +1,4 @@
-Sphinx>=3.2.1
+Sphinx
 sphinx-book-theme
 sphinx-thebe
 matplotlib
