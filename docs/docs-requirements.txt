@@ -5,6 +5,7 @@ matplotlib
 ipython
 jupyter-sphinx
 git+https://github.com/pandas-dev/pydata-sphinx-theme.git@master
+git+https://github.com/Ecohydraulics/flusstools-pckg.git@main
 IPython
 jupyter_client
 ipykernel

@@ -123,54 +123,35 @@ Install *PyCharm* with snap (requires snap):
 Install flusstools
 ~~~~~~~~~~~~~~~~~~
 
+.. _installcondaenv:
+
 CONDA users
 ^^^^^^^^^^^
 
-Download our [environment.yml]() file
+1. Download our `environment.yml`_ file and save it in a temporary folder (e.g., *C:\temp\* or *USER/Downloads/*).
+1. Open *Anaconda Prompt* (on *Windows*) or *Terminal* (on *Linux*).
+1. Navigate to your download directory (e.g., ``cd C:\temp`` or ``cd Downloads/``).
+1. Install the *flusstools* environment:
+    * ``conda env create -f environment.yml``
+    * Geospatial libraries and other :ref:`dependencies` are being installed in a new environment called *flusstools* - this may take a while ...
+    * Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io/hpy_install <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
+1. Activate the *flusstools* environment:
+    * ``conda activate flusstools``
+1. Install *flusstools* in the new environments:
+    * ``pip install flusstools``
 
-Use ``git`` to download the ``flusstools`` repository (*Windows* users make sure to install `git bash`_):
+.. _installvenv:
 
-1. Open *Git Bash* or any other git-able *Terminal* (standard in most *Linux* systems and *macOS*)
-2. Create or select a target directory for ``flusstools`` (e.g., in a local *Python* project folder)
-3. Type ``cd "D:/Target/Directory/"`` to change to the target installation directory.
-4. Clone the repository.
+PIP / VENV
+^^^^^^^^^^
 
-.. code:: console
-
-    cd "D:/Target/Directory/"
-    git clone https://github.com/ecohydraulics/flusstools.git
-
-Now, ``flusstools`` lives in ``"D:/Target/Directory/flusstools"``.
-
-Setup  *Python* environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Anaconda
-^^^^^^^^
-
-Open  *Terminal* (*Linux* / *macOS*) or `Anaconda Prompt <https://docs.anaconda.com/anaconda/install/verify-install/>`_ (*Windows*) and install the *flusstools* environment by typing:
+Consider to create and activate a new virtual environment before installing *flusstools* requirements (read more at `python.org <https://docs.python.org/3/library/venv.html>`_). Then, download our `requirements.txt`_ file and save it in a temporary folder (e.g., *C:\temp\* or *USER/Downloads/*). In *Terminal* (*Linux* / *macOS*) or `Windows Command Prompt`_ type:
 
 .. code:: console
 
-    cd to\flusstools\directory
-    conda env create -f environment.yml
-
-.. admonition:: Be patient...
-
-    Installing the *flusstools* environment takes a while (> 30 min.).
-
-Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io/hpy_install <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
-
-
-PIP
-^^^
-
-Consider to create and activate a new virtual environment before installing *flusstools* requirements (read more at `python.org <https://docs.python.org/3/library/venv.html>`_). Then, in *Terminal* (*Linux* / *macOS*) or `Windows Command Prompt`_ type:
-
-.. code:: console
-
-    cd to\flusstools\directory
+    cd C:\temp # or cd Downloads/
     pip install -r requirements.txt
+    pip install flusstools
 
 
 Setup *IDE* environment
@@ -208,8 +189,8 @@ Example
 
 .. code-block::
 
-    from flusstools import geo_utils as gu
-    raster, array, geo_transform = gu.raster2array("/sample-data/froude.tif")
+    from flusstools import geotools as gt
+    raster, array, geo_transform = gt.raster2array("/sample-data/froude.tif")
     type(raster)
     <class 'osgeo.gdal.Dataset'>
     type(array)
@@ -219,11 +200,33 @@ Example
     print(geo_transform)
     (6748604.7742, 3.0, 0.0, 2207317.1771, 0.0, -3.0)
 
+.. _requirements:
 
 Requirements
 ============
 
-Have a look at the *requirements.txt* (*pip* / *venv*) or the *environment.yml* (*conda*) to check out dependencies.
+*FlussTools* requires geo-spatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a virtual environment (:ref:`installvenv`) with `requirements.txt`_ (*pip* / *venv*) or a conda environment (:ref:`installcondaenv`) with `environment.yml`_  (*conda*) to check out the following dependencies:
+
+* pip
+* tabulate
+* numpy
+* platform
+* pandas
+* matplotlib
+* plotly
+* alphashape
+* earthpy
+* gdal
+* geopandas
+* geojson
+* laspy
+* mapclassify
+* pyshp
+* rasterio
+* rasterstats
+* shapely
+* tk
+
 
 Module documentation
 ====================
@@ -399,6 +402,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/
 .. _hydro-informatics.github.io: https://hydro-informatics.github.io
+.. _environment.yml: https://raw.githubusercontent.com/Ecohydraulics/flusstools/main/environment.yml
 .. _git: https://hydro-informatics.github.io/hy_git.html
 .. _git bash: https://git-scm.com/downloads
 .. _Institute for Modelling Hydraulic and Environmental Systems: https://www.iws.uni-stuttgart.de/en/lww/
@@ -409,5 +413,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 .. _Kenny Larrieu: https://klarrieu.github.io/
 .. _Lukas Schoeberl: https://github.com/Lukas-create/
 .. _QGIS: https://qgis.org/en/site/
+.. _requirements.txt: https://raw.githubusercontent.com/Ecohydraulics/flusstools/main/requirements.txt
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/
 .. _Windows Command Prompt: https://www.wikihow.com/Open-the-Command-Prompt-in-Windows

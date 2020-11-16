@@ -28,7 +28,6 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
-        "git+https://github.com/Ecohydraulics/flusstools-pckg.git@main",
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
