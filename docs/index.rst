@@ -76,7 +76,7 @@ In this example, *Python2.7* and *Python3.8* are installed. To overwrite *Python
    alias python=python3
 
 
-PIP3 and additional libraries for geospatial analysis
+PIP3 and additional libraries for geospatial analyses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure that `PyGeos <https://pygeos.readthedocs.io>`_ and `tkinter <https://hydro-informatics.github.io/hypy_gui.>`_ are available for use with `geopandas <https://geopandas.org/>`_:
@@ -120,8 +120,13 @@ Install *PyCharm* with snap (requires snap):
    sudo snap install pycharm-community --classic
 
 
-Clone flusstools
-~~~~~~~~~~~~~~~~
+Install flusstools
+~~~~~~~~~~~~~~~~~~
+
+CONDA users
+^^^^^^^^^^^
+
+Download our [environment.yml]() file
 
 Use ``git`` to download the ``flusstools`` repository (*Windows* users make sure to install `git bash`_):
 
