@@ -46,18 +46,17 @@ setup(
     ]),
     install_requires=[
         "pyyaml",
-        "GDAL==1.9.0",
         "docutils>=0.15",
         "sphinx",
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools", ## --always-copy
+        # "flusstools --always-copy", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
-    # dependency_links=[
-    #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools"
-    # ],
+    dependency_links=[
+        "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
+    ],
     include_package_data=True,
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
