@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 import os, sys
+from unittest.mock import MagicMock
 
-sys.path.insert(0, os.path.abspath("") + "/gdal")
 
 lines = Path(".").joinpath("__init__.py")
 version = "0.1"
@@ -10,6 +10,15 @@ for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
         break
+
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+MOCK_MODULES = ['gdal', 'System', 'System.Windows.Forms', 'System.Threading']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
 setup(
     name="flusstools-docs",
