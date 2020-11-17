@@ -51,7 +51,6 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "GDAL-3.1.4-win_amd64.whl",
         "flusstools", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
