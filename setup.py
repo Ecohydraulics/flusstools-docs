@@ -27,7 +27,20 @@ setup(
     license="BSD License",
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
-    packages=find_packages(),
+    packages=find_packages(exclude=[
+        "gdal",
+        "geopandas",
+        "earthpy",
+        "laspy",
+        "geojson",
+        "alphashape",
+        "mapclassfiy",
+        "pyshp",
+        "rasterio",
+        "rasterstats",
+        "shapely",
+        "tk",
+    ]),
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
@@ -35,7 +48,7 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools --no-deps",
+        "flusstools", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     # dependency_links=[
