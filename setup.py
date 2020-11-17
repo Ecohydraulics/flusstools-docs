@@ -10,9 +10,6 @@ for line in lines.read_text().split("\n"):
         version = line.split(" = ")[-1].strip('"')
         break
 
-
-
-
 setup(
     name="flusstools-docs",
     version=version,
