@@ -13,7 +13,7 @@ for line in lines.read_text().split("\n"):
 setup(
     name="flusstools-docs",
     version=version,
-    python_requires=">=3.8",
+    python_requires=">=3.7",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
     url="https://github.com/Ecohydraulics/flusstools-docs",
