@@ -28,7 +28,7 @@ Example (code block)
 
 .. code:: python
 
-    import geotools as gt
+    from flusstools import geotools as gt
     raster, array, geo_transform = gt.raster2array("/sample-data/froude.tif")
     type(raster)
     # >>> <class 'osgeo.gdal.Dataset'>
@@ -80,9 +80,6 @@ Script and function docs
 
 
 .. autofunction:: flusstools.geotools.raster_mgmt.raster2array
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 
 

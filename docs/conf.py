@@ -29,8 +29,6 @@ sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
 autodoc_mock_imports = [
     "alphashape",
     "earthpy", "earthpy.plot", "ep",
-    "fiona",
-    "flusstools",
     "gdal", "ogr", "osr",
     "geojson",
     "geopandas",
