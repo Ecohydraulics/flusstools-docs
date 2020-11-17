@@ -28,7 +28,6 @@ python:
       path: .
       extra_requirements:
         - sphinx
-        - gdal
 
 # Server Side Search settings
 search:
