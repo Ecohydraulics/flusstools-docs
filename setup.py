@@ -1,3 +1,7 @@
+from distutils.command.build import build as _build
+from distutils.command.build_ext import build_ext as _build_ext
+from distutils.command.install import install as _install
+
 from setuptools import setup, find_packages
 from pathlib import Path
 import subprocess
@@ -47,7 +51,7 @@ else:
 setup(
     name="flusstools-docs",
     version=version,
-    python_requires=">=3.6",
+    python_requires=">=3.8",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
     url="https://github.com/Ecohydraulics/flusstools-docs",
