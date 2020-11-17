@@ -25,6 +25,16 @@ sys.path.insert(0, os.path.abspath('..'))
 sys.path.append(os.path.abspath('..') + '/examples/fuzzycorr-showcase/')
 sys.path.append(os.path.abspath('..') + '/examples/geotools-showcase/')
 
+
+class Mock(MagicMock):
+    @classmethod
+    def __getattr__(cls, name):
+        return MagicMock()
+
+
+MOCK_MODULES = ['gdal', 'System', 'System.Windows.Forms', 'System.Threading']
+sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
+
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
     "alphashape",
