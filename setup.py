@@ -35,7 +35,7 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools",
+        "flusstools --no-deps",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     # dependency_links=[
