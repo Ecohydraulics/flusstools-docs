@@ -1,7 +1,7 @@
 __all__ = [
-    "file_functions",
-    "lidar_core",
-    "lidartools",
+    "laspy_main",
+    "lastools_core",
 ]
 
-from .lidartools import *
+from .laspy_main import *
+from .lastools_core import *

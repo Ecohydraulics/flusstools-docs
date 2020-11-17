@@ -2,7 +2,7 @@
 Main script to run lidar processing through the GUI
 """
 
-from .lidar_core import *
+from .lastools_core import *
 
 
 def create_gui():

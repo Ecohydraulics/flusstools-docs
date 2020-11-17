@@ -1,19 +1,61 @@
 .. lidartools documentation master file.
 
 LidarTools
-====================
+===========
 
-*lidartools* is forked from `GCS_scripts by Kenny Larrieu <https://github.com/klarrieu>`_. The original code is designed for *Python2* and the commercial ``arcpy`` library. The tweaked codes of *las4windows* run with Python 3.8 and work without ``arcpy``. This repository only uses the GUI for lidar processing with `LASTools <https://rapidlasso.com/lastools/>`_.
+*laspy* is universal *Python3*.
+
+*lastools* builds on `LAStools from rapidlasso <https://rapidlasso.com/lastools/>`_ and is *Windows* only.
+
+
+LasPy
+=====
+
+describe
+
+Usage
+~~~~~
+
+todo
+
+
+Code Documentation
+~~~~~~~~~~~~~~~~~~
+
+
+LasFile main
+^^^^^^^^^^^^
+
+.. automodule:: flusstools.lidartools.laspy_main
+   :members:
+
+Las processor
+^^^^^^^^^^^^^^
+
+.. automodule:: flusstools.lidartools.laspy_processor
+   :members:
+
+Analysis config
+^^^^^^^^^^^^^^^
+
+.. automodule:: flusstools.lidartools.laspy_config
+   :members:
+
+
+LasTools (Windows only)
+=======================
+
+*lastools* is forked from `GCS_scripts by Kenny Larrieu <https://github.com/klarrieu>`_. The original code is designed for *Python2* and the commercial ``arcpy`` library. The tweaked codes of *las4windows* run with Python 3.8 and work without ``arcpy``. This repository only uses the GUI for lidar processing with `LASTools <https://rapidlasso.com/lastools/>`_.
 
 Because *LASTools* is proprietary, its executables can hardly be run on Linux or other UNIX-based systems. This is why *las4windows* is a *Windows*-only (*nomen est omen*).
 
 Additional requirements
-==========================
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 *LASTools* is used for LiDAR Data Processing and can be downloaded `here <https://rapidlasso.com/lastools/>`_.
 
 Usage
-=====
+~~~~~
 
 *lidartools* starts as a graphical user interface and can be started as follows (from *Windows Prompt*):
 
@@ -28,15 +70,15 @@ Usage
 
 
 Code Documentation
-==================
+~~~~~~~~~~~~~~~~~~
 
 
 LiDAR processing
-~~~~~~~~~~~~~~~~
-.. automodule:: flusstools
+^^^^^^^^^^^^^^^^
+.. automodule:: flusstools.lidartools.lastools_core
    :members:
 
 File functions
-~~~~~~~~~~~~~~
-.. automodule:: flusstools.lidartools.file_functions
+^^^^^^^^^^^^^^
+.. automodule:: flusstools.lidartools.lastools_fun
    :members:

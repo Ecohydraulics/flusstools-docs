@@ -7,7 +7,7 @@ Things to consider adding:
     use veg polygon (if given) instead of inverse ground polygon to clip veg points
 """
 
-from .file_functions import *
+from .lastools_fun import *
 
 
 class DF(pd.DataFrame):
