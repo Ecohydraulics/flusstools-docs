@@ -1,0 +1,70 @@
+species,name,nativ,type,occurance,habitat,waterdepthmin,waterdepthmax,rootdepth,floodheightmax,floodloss,flooddurationmax
+alnus Incana,Grau-Erle,1,Baum,Aue,Alpenvorland,90,NoData,90,282,25,1
+carex sylvatica,Wald-Segge,1,gras,Aue,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+carex acuta,Schlanke Segge,1,Krautig,Ufer,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+circaea lutetiana,großes Hexenkraut,1,Krautig,Aue,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+clematis Vitalba,gewöhnliche waldrebe,1,Kletterpflanze,Hohe Aue,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+fraxinus excelsior,gemeine esche,1,Baum,Aue,Alpenvorland,NoData,NoData,NoData,340 (2),<25 (2),45
+hydrocharis morsus ranae,Froschbiss,1,Wasserpflanze,Fluss,Alpenvorland,20,40,NoData,NoData,NoData,1
+Humulus,Humulus Lupulus,1,Kletterpflanze,Aue/,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Myricaria,Myricaria germanica,1,Strauch,Aue,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Phalaris,Phalaris arundinacea,1,Gras,Ufer,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Phragmites,Phragmites australis,1,Gras,Ufer/Sumpf,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Populus,Populus nigra,1,Baum,Aue,Alpenvorland,NoData,NoData,NoData,323(2),NoData,1
+Populus,Populus alba,1,Baum,Aue,Alpenvorland,NoData,NoData,NoData,180(2),NoData,1
+Potamogeto,Potamogeto pectinatus,1,Krautig,Fluss,Alpenvorland,20,350,NoData,NoData,NoData,1
+Salix,Salix purpurea,1,Strauch,Ufer,Alpenvorland,NoData,NoData,NoData,210 (2),NoData,1
+Salix,Salix alba ,1,Baum,Aue,Alpenvorland,NoData,NoData,NoData,350 (1),NoData,169(1)
+Salix,Salix fragilis,1,baum,Aue,Alpenvorland,NoData,NoData,NoData,351 (2),NoData,1
+Salix,Salix eleagnos,1,Strauch,Ufer,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Solanum,Solanum Dulcamara,1,Kletterpflanze,Aue/Rhricht,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Sparganium,Sparganium erectum,1,Wasserpflanze,Fluss,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Typha,Typha latifola,1,Wasserpflanze,Fluss,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Ufer,Calamagrostis pseudophragmites,1,gras,Ufer,Alpenvorland,NoData,NoData,NoData,NoData,NoData,1
+Betula pendula,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,240 (2),25,1
+Quercus robur,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,349 (2),jungwuchs,113 (altholz) 37(Stangenholz)
+Betula pubescens s.str.,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Alnus glutinosa,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,312 (2),50,29-45 (3)
+Fraxinus excelsior,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Frangula alnus Mill.,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Ribes rubrum  ,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Ribes nigrum,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Rubus caesius,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,300 (2),NoData,1
+Populus nigra,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Viburnum opulus,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,200 (1),280 - 300 <25 (2),120
+Prunus padus,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Ulmus laevis Pall.,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,400 (2),absterben jungwuchs (2),1
+Salix fragilis,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Salix viminalis,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,>250 (2),NoData,1
+Salix aurita,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Salix purpurea,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Ribes uva-crispa,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,NoData,NoData,1
+Ulmus minor,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,270 (2),absterben jungwuchs (2),1
+Salix cinerea,NoData,1,NoData,NoData,niederrheinisches Tiefland,NoData,NoData,NoData,200 (2),NoData,1
+Groenlandia densa (L.) Fourr.,NoData,1, stark gefhrdet (2),NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Potamogeto pectinatus,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Potamogeton perfoliatus,NoData,1 vorwarnliste,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Hippuris vulgaris,NoData,1 vorwarnliste,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Epilobium dodonaei,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Scrophularia canina,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Calamagrostis pseudophragmites,NoData,1 stark gefhrdet (2),NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Gypsophila repens,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Salix nigricans,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Hippophae rhamnoides subsp. fluviatilis Soest,NoData,1, gefhrdet (3),NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Ulmus minor,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,270 (2),absterben jungwuchs (2),1
+Quercus robur,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Alnus glutinosa,NoData,1,NoData,NoData,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Populus,Populus nigra,1,Baum,Aue,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Populus,Populus alba,1,Baum,Aue,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Salix,Salix purpurea,1,Strauch,Ufer,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Salix,Salix alba ,1,Baum,Aue,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Salix,Salix eleagnos,1,Strauch,Ufer,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+fraxinus,Fraxinus excelsior,1,Baum,Aue,Breisach ,NoData,NoData,NoData,NoData,NoData,1
+Ulmus laevis,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,NoData,NoData,1
+Rhamnus cathartica,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,190-200 (2),<25 (2),1
+robinia pseudacacia,NoData,etablierte (neophytische) Vorkommen,NoData,NoData,NoData,NoData,NoData,NoData,135-140 (2),<50 (2),55(3)
+cornus sanguinea,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,200(1),<50(2),120(1)
+sambucus nigra,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,250 (2),>50(2),1
+prunus spinosa,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,250 (2),>50(2),1
+Euonymus europaeus,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,190 (1),NoData,117 (1)
+acer pseudoplatanus,NoData,1,NoData,NoData,NoData,NoData,NoData,NoData,150 - 190 (4),NoData,40 (3)
