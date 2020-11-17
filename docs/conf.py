@@ -126,7 +126,7 @@ html_context = {
     'date': datetime.date.today().strftime('%Y-%m-%d'),
     'display_github': True,
     'github_user': 'Ecohydraulics',
-    'github_repo': 'flusstools',
+    'github_repo': 'flusstools-docs',
     'github_version': 'main/',
     'conf_py_path': '/docs/'
 }
@@ -151,8 +151,8 @@ html_sourcelink_suffix = ""
 
 
 thebe_config = {
-    "repository_url": "https://github.com/ecohydraulics/flusstools-pckg",
-    "repository_branch": "main",
+    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
+    "repository_branch": "master",
 }
 
 latex_documents = [

@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 from pathlib import Path
-import os
 
 lines = Path(".").joinpath("__init__.py")
 version = "0.1"  # will be overwritten if defined in init
@@ -10,7 +9,7 @@ for line in lines.read_text().split("\n"):
         break
 
 setup(
-    name="flusstools",
+    name="flusstools-docs",
     version=version,
     python_requires=">=3.4",
     author="FlussTeam",
@@ -19,8 +18,8 @@ setup(
     project_urls={
         "Documentation": "https://flusstools.readthedocs.io/",
         "Funding": "https://www.uni-stuttgart.de/",
-        "Source": "https://github.com/Ecohydraulics/flusstools",
-        "Tracker": "https://github.com/Ecohydraulics/flusstools/issues",
+        "Source": "https://github.com/Ecohydraulics/flusstools-pckg",
+        "Tracker": "https://github.com/Ecohydraulics/flusstools-pckg/issues",
     },
     # this should be a whitespace separated string of keywords, not a list
     keywords="rivers geo-spatial data processing numerical model validation",
