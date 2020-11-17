@@ -1,7 +1,3 @@
-from distutils.command.build import build as _build
-from distutils.command.build_ext import build_ext as _build_ext
-from distutils.command.install import install as _install
-
 from setuptools import setup, find_packages
 from pathlib import Path
 import subprocess
@@ -14,38 +10,6 @@ for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
         break
-
-
-def GDAL_with_version():
-    try:
-        tmp = subprocess.check_output(["gdal-config", "--version"])
-        return "gdal==" + str(tmp.decode("utf8").replace("\n", ""))
-    except NOT_FOUND_EXCEPTION:
-        print("The gdal-config binary was not found")
-        raise
-    except:
-        raise
-
-
-def command_call(cmd, *args, **kwargs):
-    print("Calling the following command: '{}'".format(" ".join(cmd)))
-    process = subprocess.Popen(cmd, *args, **kwargs)
-    process.wait()
-    if process.returncode != 0:
-        raise RuntimeError(
-            "The return code of the process is {}".format(process.returncode))
-
-
-if sys.version_info[0] < 3:
-    NOT_FOUND_EXCEPTION = OSError
-    NUMPY = "numpy<1.17"
-    CFTIME = "cftime==1.1.1"
-    setup_kwargs = {"setup_requires": [NUMPY]}
-else:
-    NOT_FOUND_EXCEPTION = FileNotFoundError
-    NUMPY = "numpy"
-    CFTIME = "cftime"
-    setup_kwargs = {}
 
 
 setup(
@@ -68,16 +32,13 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
-        GDAL_with_version(),
-        NUMPY,
-        CFTIME,
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools", ## --always-copy
+        "flusstools @ git+git@github.com:Ecohydraulics/flusstools-pckg.git@docs", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     # dependency_links=[
