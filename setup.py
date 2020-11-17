@@ -1,7 +1,5 @@
 from setuptools import setup, find_packages
 from pathlib import Path
-import subprocess
-import sys
 
 
 lines = Path(".").joinpath("__init__.py")
@@ -73,7 +71,6 @@ setup(
     },
     entry_points={
         "sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"],
-        "console_scripts": ['pycif=pycif.__main__:main'],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -87,5 +84,4 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Development Status :: 2 - Pre-Alpha",
     ],
-    **setup_kwargs
 )
