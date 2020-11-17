@@ -46,7 +46,7 @@ setup(
     ]),
     install_requires=[
         "pyyaml",
-        "GDAL==$(gdal-config --version) --global-option=build_ext --global-option='-I/usr/include/gdal'",
+        "GDAL==1.9.0",
         "docutils>=0.15",
         "sphinx",
         "click",
