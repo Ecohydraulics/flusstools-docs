@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
-import os, sys
+import subprocess
+import sys
 
 
 lines = Path(".").joinpath("__init__.py")
@@ -10,10 +11,43 @@ for line in lines.read_text().split("\n"):
         version = line.split(" = ")[-1].strip('"')
         break
 
+
+def GDAL_with_version():
+    try:
+        tmp = subprocess.check_output(["gdal-config", "--version"])
+        return "gdal==" + str(tmp.decode("utf8").replace("\n", ""))
+    except NOT_FOUND_EXCEPTION:
+        print("The gdal-config binary was not found")
+        raise
+    except:
+        raise
+
+
+def command_call(cmd, *args, **kwargs):
+    print("Calling the following command: '{}'".format(" ".join(cmd)))
+    process = subprocess.Popen(cmd, *args, **kwargs)
+    process.wait()
+    if process.returncode != 0:
+        raise RuntimeError(
+            "The return code of the process is {}".format(process.returncode))
+
+
+if sys.version_info[0] < 3:
+    NOT_FOUND_EXCEPTION = OSError
+    NUMPY = "numpy<1.17"
+    CFTIME = "cftime==1.1.1"
+    setup_kwargs = {"setup_requires": [NUMPY]}
+else:
+    NOT_FOUND_EXCEPTION = FileNotFoundError
+    NUMPY = "numpy"
+    CFTIME = "cftime"
+    setup_kwargs = {}
+
+
 setup(
     name="flusstools-docs",
     version=version,
-    python_requires=">=3.4",
+    python_requires=">=3.6",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
     url="https://github.com/Ecohydraulics/flusstools-docs",
@@ -30,6 +64,9 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
+        GDAL_with_version(),
+        NUMPY,
+        CFTIME,
         "pyyaml",
         "docutils>=0.15",
         "sphinx",
@@ -70,7 +107,10 @@ setup(
         ],
         "live-dev": ["sphinx-autobuild", "web-compile~=0.2.1"],
     },
-    entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
+    entry_points={
+        "sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"],
+        "console_scripts": ['pycif=pycif.__main__:main'],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
@@ -83,4 +123,5 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Development Status :: 2 - Pre-Alpha",
     ],
+    **setup_kwargs
 )
