@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 from pathlib import Path
+import os, sys
+
+sys.path.insert(0, os.path.abspath("") + "/site-packages")
 
 lines = Path(".").joinpath("__init__.py")
 version = "0.1"  # will be overwritten if defined in init

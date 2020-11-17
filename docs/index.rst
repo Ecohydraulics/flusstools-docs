@@ -1,11 +1,10 @@
 .. flusstools documentation master file.
 
-.. _home:
 
 FlussTools
 ==========
 
-The analysis, research and science-based design of fluvial ecosystems involve complex challenges for interdisciplinary experienced teams. We have created flusstools to meet the complex challenges and to at least partially automate time-consuming, repetitive processes. "We" stands for individuals with a great passion for rivers (in German, plural for "Fluss") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With flusstools we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or amend a module) at any time - read more in the :ref:`contribute` section.
+The analysis, research and science-based design of fluvial ecosystems involve complex challenges for interdisciplinary experienced teams. We have created *flusstools* to meet the complex challenges and to at least partially automate time-consuming, repetitive processes. "We" stands for individuals with a great passion for rivers (German: "Flüsse") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With *flusstools*, we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or amend a module) at any time - read more in the :ref:`contribute` section.
 
 Currently, *flusstools* comes with the following modules:
 
@@ -285,7 +284,7 @@ More information and examples are available in the docs of every *flusstools* mo
 
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/
 .. _hydro-informatics.github.io: https://hydro-informatics.github.io
-.. _environment.yml: https://raw.githubusercontent.com/Ecohydraulics/flusstools/main/environment.yml
+.. _environment.yml: https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/environment.yml
 .. _git: https://hydro-informatics.github.io/hy_git.html
 .. _git bash: https://git-scm.com/downloads
 .. _Institute for Modelling Hydraulic and Environmental Systems: https://www.iws.uni-stuttgart.de/en/lww/
@@ -296,6 +295,6 @@ More information and examples are available in the docs of every *flusstools* mo
 .. _Kenny Larrieu: https://klarrieu.github.io/
 .. _Lukas Schoeberl: https://github.com/Lukas-create/
 .. _QGIS: https://qgis.org/en/site/
-.. _requirements.txt: https://raw.githubusercontent.com/Ecohydraulics/flusstools/main/requirements.txt
+.. _requirements.txt: https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/requirements.txt
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/
 .. _Windows Command Prompt: https://www.wikihow.com/Open-the-Command-Prompt-in-Windows
