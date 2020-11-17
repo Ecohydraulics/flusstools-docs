@@ -54,9 +54,9 @@ setup(
         "flusstools", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
-    # dependency_links=[
-    #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
-    # ],
+    dependency_links=[
+        "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
+    ],
     include_package_data=True,
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
