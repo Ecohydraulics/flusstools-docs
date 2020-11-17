@@ -40,7 +40,7 @@ Get ready with Linux
 Optional: Use a Virtual Machine (VM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_  or `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io/vm#about <https://hydro-informatics.github.io/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io/vm#create-a-vm-with-virtualbox <https://hydro-informatics.github.io/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
+Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_,  `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io/vm#about <https://hydro-informatics.github.io/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io/vm#create-a-vm-with-virtualbox <https://hydro-informatics.github.io/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
 
 * `Install Guest Additions <https://hydro-informatics.github.io/vm.html#setup-debian>`_ for *Linux* VMs in *VirtualBox*.
 * `Enable folder sharing <https://hydro-informatics.github.io/vm.html#share>`_ between the host and guest (*Debian*, *Ubuntu*, or *Lubuntu* image).
@@ -239,7 +239,6 @@ Module documentation
 ====================
 
 .. toctree::
-    :maxdepth: 1
     :caption: Home
 
     self
@@ -277,6 +276,7 @@ Module documentation
 .. toctree::
     :maxdepth: 3
     :caption: Disclaimer and License
+    :includehidden:
 
     license
 

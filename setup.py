@@ -2,10 +2,10 @@ from setuptools import setup, find_packages
 from pathlib import Path
 import os, sys
 
-sys.path.insert(0, os.path.abspath("") + "/site-packages")
+sys.path.insert(0, os.path.abspath("") + "/gdal")
 
 lines = Path(".").joinpath("__init__.py")
-version = "0.1"  # will be overwritten if defined in init
+version = "0.1"
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
@@ -17,12 +17,11 @@ setup(
     python_requires=">=3.4",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
-    url="https://github.com/Ecohydraulics/flusstools-pckg",
+    url="https://github.com/Ecohydraulics/flusstools-docs",
     project_urls={
         "Documentation": "https://flusstools.readthedocs.io/",
         "Funding": "https://www.uni-stuttgart.de/",
-        "Source": "https://github.com/Ecohydraulics/flusstools-pckg",
-        "Tracker": "https://github.com/Ecohydraulics/flusstools-pckg/issues",
+        "Source": "https://github.com/Ecohydraulics/flusstools-docs",
     },
     # this should be a whitespace separated string of keywords, not a list
     keywords="rivers geo-spatial data processing numerical model validation",
@@ -30,20 +29,7 @@ setup(
     license="BSD License",
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
-    packages=find_packages(exclude=[
-        "gdal",
-        "geopandas",
-        "earthpy",
-        "laspy",
-        "geojson",
-        "alphashape",
-        "mapclassfiy",
-        "pyshp",
-        "rasterio",
-        "rasterstats",
-        "shapely",
-        "tk",
-    ]),
+    packages=find_packages(),
     install_requires=[
         "pyyaml",
         "docutils>=0.15",
@@ -54,9 +40,9 @@ setup(
         "flusstools", ## --always-copy
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
-    dependency_links=[
-        "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
-    ],
+    # dependency_links=[
+    #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
+    # ],
     include_package_data=True,
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
