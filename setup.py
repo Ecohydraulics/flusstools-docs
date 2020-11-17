@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 from pathlib import Path
+import os
 
 lines = Path(".").joinpath("__init__.py")
 version = "0.1"  # will be overwritten if defined in init
@@ -35,12 +36,13 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        "flusstools @ git+https://github.com/ecohydraulics/flusstools-pckg#egg=0.1",
+        "flusstools",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
-    dependency_links=[
-        "git+https://github.com/ecohydraulics/flusstools-pckg#egg=0.1"
-    ],
+    # dependency_links=[
+    #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools"
+    # ],
+    include_package_data=True,
     extras_require={
         "code_style": ["pre-commit~=2.7.0"],
         "sphinx": [
@@ -69,7 +71,6 @@ setup(
         "live-dev": ["sphinx-autobuild", "web-compile~=0.2.1"],
     },
     entry_points={"sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"]},
-    include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",

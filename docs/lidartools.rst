@@ -33,7 +33,7 @@ Code Documentation
 
 LiDAR processing
 ~~~~~~~~~~~~~~~~
-.. automodule:: flusstools-pckg.flusstools.lidartools.lidar_core
+.. automodule:: flusstools
    :members:
 
 File functions

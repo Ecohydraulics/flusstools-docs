@@ -116,7 +116,7 @@ html_theme_options = {
         'notebook_interface': 'jupyterlab',
         'collapse_navigation': False
     },
-    'repository_url': 'https://github.com/ecohydraulics/flusstools/',
+    'repository_url': 'https://github.com/ecohydraulics/flusstools-pckg/',
     'repository_branch': 'main',
     'use_edit_page_button': False,
     'use_repository_button': True,
@@ -125,7 +125,7 @@ html_theme_options = {
 html_context = {
     'date': datetime.date.today().strftime('%Y-%m-%d'),
     'display_github': True,
-    'github_user': 'ecohydraulics',
+    'github_user': 'Ecohydraulics',
     'github_repo': 'flusstools',
     'github_version': 'main/',
     'conf_py_path': '/docs/'
@@ -150,10 +150,9 @@ html_copy_source = True
 html_sourcelink_suffix = ""
 
 
-jupyter_execute_notebooks = "cache"
 thebe_config = {
-    "repository_url": "https://github.com/binder-examples/jupyter-stacks-datascience",
-    "repository_branch": "master",
+    "repository_url": "https://github.com/ecohydraulics/flusstools-pckg",
+    "repository_branch": "main",
 }
 
 latex_documents = [
@@ -202,16 +201,16 @@ def setup(app):
 
 
 # Napoleon settings
-napoleon_google_docstring = True
-napoleon_numpy_docstring = True
-napoleon_include_init_with_doc = False
-napoleon_include_private_with_doc = False
-napoleon_include_special_with_doc = False
-napoleon_use_admonition_for_examples = False
-napoleon_use_admonition_for_notes = False
-napoleon_use_admonition_for_references = False
-napoleon_use_ivar = True
-napoleon_use_param = True
-napoleon_use_rtype = True
-napoleon_use_keyword = True
-napoleon_custom_sections = None
+# napoleon_google_docstring = True
+# napoleon_numpy_docstring = True
+# napoleon_include_init_with_doc = False
+# napoleon_include_private_with_doc = False
+# napoleon_include_special_with_doc = False
+# napoleon_use_admonition_for_examples = False
+# napoleon_use_admonition_for_notes = False
+# napoleon_use_admonition_for_references = False
+# napoleon_use_ivar = True
+# napoleon_use_param = True
+# napoleon_use_rtype = True
+# napoleon_use_keyword = True
+# napoleon_custom_sections = None
