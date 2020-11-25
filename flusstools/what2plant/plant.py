@@ -3,7 +3,7 @@ Plant specifications
 """
 
 
-from ..lidartools.lidartools import *
+from ..lidartools import *
 
 
 class Plant:
