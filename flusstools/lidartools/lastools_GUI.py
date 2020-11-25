@@ -148,24 +148,23 @@ def create_gui():
 
     # make 'Run' button in GUI to call the process_lidar() function
     b = tk.Button(root, text='  Run   ',
-                  command=lambda: process_lidar(
-                      lastoolsdir=E1.get(),
-                      lidardir=E2.get(),
-                      ground_poly=E3.get(),
-                      cores=core_num.get(),
-                      units_code=unit_var.get()[1:-1],
-                      keep_orig_pts=keep_originals.get(),
-                      coarse_step=E1a.get(),
-                      coarse_bulge=E2a.get(),
-                      coarse_spike=E3a.get(),
-                      coarse_down_spike=E4a.get(),
-                      coarse_offset=E5a.get(),
-                      fine_step=E1b.get(),
-                      fine_bulge=E2b.get(),
-                      fine_spike=E3b.get(),
-                      fine_down_spike=E4b.get(),
-                      fine_offset=E5b.get()
-                  )
+                  command=lambda: process_lidar(lastoolsdir=E1.get(),
+                                                lidardir=E2.get(),
+                                                ground_poly=E3.get(),
+                                                cores=core_num.get(),
+                                                units_code=unit_var.get()[1:-1],
+                                                keep_orig_pts=keep_originals.get(),
+                                                coarse_step=E1a.get(),
+                                                coarse_bulge=E2a.get(),
+                                                coarse_spike=E3a.get(),
+                                                coarse_down_spike=E4a.get(),
+                                                coarse_offset=E5a.get(),
+                                                fine_step=E1b.get(),
+                                                fine_bulge=E2b.get(),
+                                                fine_spike=E3b.get(),
+                                                fine_down_spike=E4b.get(),
+                                                fine_offset=E5b.get()
+                                                )
                   )
 
     b.grid(sticky=tk.W, row=17, column=2)

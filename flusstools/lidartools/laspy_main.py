@@ -20,7 +20,6 @@ def lookup_epsg(file_name):
     webbrowser.open(google_qry + search_string)
 
 
-@log_actions
 @cache
 def process_file(source_file_name, epsg, **opts):
     """Loads a las-file and convert it to another geospatial file format (keyword arguments ``**opts``).

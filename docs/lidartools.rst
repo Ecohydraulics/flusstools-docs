@@ -35,13 +35,13 @@ To convert a *las* file to an ESRI shapefile or GeoTIFF, load *flusstools.lidart
    hylas.process_file(las_file_name, epsg=3857, methods=methods)
 
 
-The above code block defines a ``las_file_name`` variable and ``methods`` to be used with ``flusstools.lidartools.laspy_main.process_file`` (see :ref:`hylas-code`). The function accepts many more optional arguments:
+The above code block defines a ``las_file_name`` variable and ``methods`` to be used with ``flusstools.lidartools.laspy_main.process_file`` (see :ref:`hylas`). The function accepts many more optional arguments:
 
 .. automodule:: hylas.process_file
    :special-members:
 
 .. note::
-   The ``LasPoint`` class (see :ref:`las-point-code`) can also be directly called in any script with ``hylas.LasPoint``. Have a look at the ``hylas.process_file`` function (:ref:`hylas-code`) to see how an instance of the ``LasPoint`` class is used.
+   The ``LasPoint`` class (see :ref:`hylas`) can also be directly called in any script with ``laspy_processor.LasPoint``. Have a look at the ``laspy_processor.process_file`` function (:ref:`hylas`) to see how an instance of the ``LasPoint`` class is used.
 
 Application example
 ^^^^^^^^^^^^^^^^^^^
@@ -77,6 +77,7 @@ The following code block converts a file called *las-example.las* first into a s
 Code Documentation
 ~~~~~~~~~~~~~~~~~~
 
+.. _hylas:
 LasFile main
 ^^^^^^^^^^^^
 
@@ -128,7 +129,6 @@ Las processor
    :members:
 
 .. _laspy_config:
-
 Analysis config
 ^^^^^^^^^^^^^^^
 
@@ -139,7 +139,6 @@ Troubleshooting
 ~~~~~~~~~~~~~~~
 
 .. _memory_error:
-
 Memory errors
 ^^^^^^^^^^^^^
 
