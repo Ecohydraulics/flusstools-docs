@@ -14,7 +14,7 @@ Currently, *flusstools* comes with the following modules:
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
 .. note::
-    The documentation is also as available as `style-adapted PDF <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_).
+    The documentation is also as available as `style-adapted PDF <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_.
 
 
 Module documentation
@@ -71,8 +71,10 @@ More information and examples are available in the docs of every *flusstools* mo
 
 .. _Institute for Modelling Hydraulic and Environmental Systems: https://www.iws.uni-stuttgart.de/en/lww/
 .. _Beatriz Negreiros: https://beatriznegreiros.github.io/
+.. _gdal: https://gdal.org/
 .. _Kilian Mouris: https://www.iws.uni-stuttgart.de/en/institute/team/Mouris/
 .. _Kenny Larrieu: https://klarrieu.github.io/
+.. _lastools: https://rapidlasso.com/lastools/
 .. _Lukas Schoeberl: https://github.com/Lukas-create/
 .. _QGIS: https://qgis.org/en/site/
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/

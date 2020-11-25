@@ -37,7 +37,7 @@ To convert a *las* file to an ESRI shapefile or GeoTIFF, load *flusstools.lidart
 
 The above code block defines a ``las_file_name`` variable and ``methods`` to be used with ``flusstools.lidartools.laspy_main.process_file`` (see :ref:`hylas`). The function accepts many more optional arguments:
 
-.. automodule:: hylas.process_file
+.. automodule:: flusstools.lidartools.laspy_main.process_file
    :special-members:
 
 .. note::
@@ -78,6 +78,7 @@ Code Documentation
 ~~~~~~~~~~~~~~~~~~
 
 .. _hylas:
+
 LasFile main
 ^^^^^^^^^^^^
 
@@ -98,18 +99,31 @@ Arguments:
 
 Keyword Arguments (``**opts``):
       * **create_dem** (``bool``): Set to True for creating a digital elevation model (DEM - default: ``False``)
+
       * **extract_attributes** (``str``): Attributes to extract from the las-file available in ``pattr`` (``config.py``)
-      * **methods** (``list`` [``str``]): Enabled list strings are ``las2shp``, ``las2tif``, ``shp2tif``, ``las2dem``
+
+      * **methods** (``list`` [``str``]): Enabled list strings are ``las2shp``, ``las2tif``, ``shp2tif``, ``las2dem``.
+
       * **overwrite** (``bool``): Overwrite existing shapefiles and/or GeoTIFFs (default: ``True``).
+
       * **pixel_size** (``float``): Use with *2tif  to set the size of pixels relative to base units (``pixel_size=5`` indicates 5x5-m pixels)
+
       * **shapefile_name** (``str``): Name of the point shapefile to produce with ``las2*``
+
       * **tif_prefix** (``str``): Prefix include folder path to use for GeoTiFFs (defined extract_attributes are appended to file name)
+
       * **interpolate_gap_pixels** (``bool``): Fill empty pixels that are not touched by a shapefile point with interpolated values (default: ``True``)
+
       * **radius1** (``float``): Define the x-radius for interpolating pixels (default: ``-1``, corresponding to infinity). Only applicable ``with interpolate_gap_pixels``.
+
       * **radius2** (``float``): Define the y-radius for interpolating pixels (default: ``-1``, corresponding to infinity). Only applicable ``with interpolate_gap_pixels``.
+
       * **power** (``float``): Power of the function for interpolating pixel values (default: ``1.0``, corresponding to linear).
+
       * **smoothing** (``float``): Smoothing parameter for interpolating pixel values (default: ``0.0``).
+
       * **min_points** (``int``): Minimum number of points to use for interpolation. If the interpolator cannot find at least ``min_points`` for a pixel, it assigns a ``no_data`` value to that pixel  (default: ``0``).
+
       * **max_points** (``int``): Maximum number of points to use for interpolation. The interpolator will not use more than ``max_points`` closest points to interpolate a pixel value (default: ``0``).
 
 Returns:

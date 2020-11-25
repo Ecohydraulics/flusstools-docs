@@ -32,6 +32,7 @@ autodoc_mock_imports = [
     "gdal", "ogr", "osr",
     "geojson",
     "geopandas",
+    "h5py",
     "laspy",
     "mapclassify", "mapclassify.classifiers", "mc",
     "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
