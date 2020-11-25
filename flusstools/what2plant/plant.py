@@ -1,6 +1,9 @@
 """
-plant specifications
+Plant specifications
 """
+
+
+from ..lidartools.lidartools import *
 
 
 class Plant:
@@ -40,7 +43,7 @@ class Plant:
 
     def print_habitat(self):
         """
-        prints the plant parameters as string in console
+        Prints the plant parameters as string in console
 
         Returns:
             String in console

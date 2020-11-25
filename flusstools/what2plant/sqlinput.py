@@ -1,39 +1,29 @@
-import csv
-import sqlite3
-from tabulate import tabulate
+"""
+Description
+"""
 
-connection = sqlite3.connect("Pflanzendaten.db")
-cursor = connection.cursor()
+from .search import *
 
 
-sql_command = """
-CREATE TABLE IF NOT EXISTS plants (
-species TEXT(255),
-name TEXT(255),
-nativ BOOLEAN,
-endangered TEXT(255),
-habitat TEXT(255),
-waterdepthmin INTEGER(255),
-waterdepthmax  INTEGER(255),
-rootdepth INTEGER(255),
-groundwatertablechange VARCHAR(255),
-floodheightmax INTEGER(255),
-floodloss REAL(255),
-floodduration INTEGER(255),
-PRIMARY KEY (species, name, habitat)
-);"""
+def send_request():
+    connection = sqlite3.connect("Pflanzendaten.db")
+    cursor = connection.cursor()
+    cursor.execute(sql_command)
 
-cursor.execute(sql_command)
+    inputquestion()
+    cursor.execute("SELECT * FROM plants")
+    content = cursor.fetchall()
+    print(content)
 
 
 def inputquestion():
-    """function that lets the user put data into the database
+    """Function that lets the user put data into the database
 
-    the function provides 2 options for data input, if option 1 is chosen via console input "1", the user can provide the name of a csv file
-    if option 2 is chosen, the user can add a single row via sql command. If neither of those two options is chosen, the function will print a string in the python console
+    The function provides 2 options for data input, if option 1 is chosen via console input "1", the user can provide the name of a csv file.
+    If option 2 is chosen, the user can add a single row via sql command. If neither of those two options is chosen, the function will print a string in the python console.
 
     Returns:
-        string in console if none of the two options above is chosen
+        String in console
     """
     print('Enter 1 to input data from csv file\n Enter 2 to input data via sql command')
     src = int(input('Enter here:'))
@@ -56,11 +46,3 @@ def inputquestion():
         cursor.execute("COMMIT")
     else:
         print('only able to import data to table using csv file or sql command')
-
-
-cursor.execute("SELECT * FROM plants")
-content = cursor.fetchall()
-print(tabulate(content))
-
-
-

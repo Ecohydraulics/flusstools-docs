@@ -1,17 +1,8 @@
-"""functions related to search for vegetation matching the users input"""
-import geopandas as geopandas
-import numpy as np
-import pandas as pd
-import os
-import platform
-import sqlite3
-from gdal import ogr
-from shapely.geometry import Point
-from tabulate import tabulate
-import gdal
-from plantDB.plant import Plant
+"""
+Functions related to search for vegetation matching the users input
+"""
 
-shp_driver = ogr.GetDriverByName("ESRI Shapefile")
+from .plant import *
 
 
 def search_db_via_query(query):
@@ -97,7 +88,7 @@ def point_in_bound(filename, x, y, area):
         area (str): name of the study area
 
     Returns:
-        string to console
+        String to console
     """
     file_shape = geopandas.read_file(filename)
     polygon = list(file_shape.geometry)[0]
@@ -140,7 +131,7 @@ def elevation(x, y):
         y (float): y - coordinate
 
     Returns:
-        elevation data for coordinate input in console
+        Elevation data for coordinate input in console
     """
     file = os.path.abspath("..") + "\Shape\Shape.vrt"
     layer = gdal.Open(file)
@@ -153,9 +144,9 @@ def elevation(x, y):
 def question():
     """Function to let the user decide if he wants to search by habitat in csv file, search by habitat in database or search by coordinates.
 
-    The function prints a string in the console to ask the user if he wants to search by putting in coordinates or the name of the habitat,
+    The function prints a string in the console to ask the user if he wants to search by entering coordinates or the name of the habitat,
     furthermore it is asking the user if he wants to search by the name of the habitat in the provided csv file or database.
-    If option 1 is chosen, user is asked for an habitat name before calling search_db_via_query()
+    If option 1 is chosen, user is asked for an habitat name before calling search_db_via_query().
 
     Args:
         1 (int): calls search_db_via_query()
@@ -163,7 +154,7 @@ def question():
         3 (int): calls search_by_habitat()
 
     Returns:
-        text string 'no data' if the input is anything else then 1, 2 or 3
+        String in console
     """
     print('Enter 1 to search database by habitat with detailed information\nEnter 2 to search database by coordinates \nEnter 3 to search by habitat in csv file for a quick overview without detail')
     print('habitat search options so far:\n Alpenvorland, Niederrheinisches Tiefland, Oberrheinisches Tiefland')
@@ -179,6 +170,3 @@ def question():
         search_by_habitat()
     else:
         print('no data')
-
-
-
