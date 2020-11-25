@@ -1,19 +1,29 @@
-"""
-Description
-"""
+import csv
+import sqlite3
+from tabulate import tabulate
 
-from .search import *
+connection = sqlite3.connect("Pflanzendaten.db")
+cursor = connection.cursor()
 
 
-def send_request():
-    connection = sqlite3.connect("Pflanzendaten.db")
-    cursor = connection.cursor()
-    cursor.execute(sql_command)
+sql_command = """
+CREATE TABLE IF NOT EXISTS plants (
+species TEXT(255),
+name TEXT(255),
+nativ BOOLEAN,
+endangered TEXT(255),
+habitat TEXT(255),
+waterdepthmin INTEGER(255),
+waterdepthmax  INTEGER(255),
+rootdepth INTEGER(255),
+groundwatertablechange VARCHAR(255),
+floodheightmax INTEGER(255),
+floodloss REAL(255),
+floodduration INTEGER(255),
+PRIMARY KEY (species, name, habitat)
+);"""
 
-    inputquestion()
-    cursor.execute("SELECT * FROM plants")
-    content = cursor.fetchall()
-    print(content)
+cursor.execute(sql_command)
 
 
 def inputquestion():
@@ -24,7 +34,6 @@ def inputquestion():
 
     Returns:
         string in console if none of the two options above is chosen
-
     """
     print('Enter 1 to input data from csv file\n Enter 2 to input data via sql command')
     src = int(input('Enter here:'))
@@ -47,3 +56,11 @@ def inputquestion():
         cursor.execute("COMMIT")
     else:
         print('only able to import data to table using csv file or sql command')
+
+
+cursor.execute("SELECT * FROM plants")
+content = cursor.fetchall()
+print(tabulate(content))
+
+
+
