@@ -8,8 +8,6 @@ Nature-Based Solutions (NBS) for river engineering experience increasing popular
 
 .. This documentation is also as available as style-adapted PDF (`download <https://.readthedocs.io/plantDB/downloads/en/latest/pdf/>`_).
 
-
-
 Usage
 =====
 
@@ -132,14 +130,15 @@ Code Documentation
 ==================
 
 Package structure
------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-*Placeholder*
+.. figure:: https://en.wikipedia.org/wiki/File:UML_diagrams_overview.svg
+   :alt: structure
 
 
 
 Scripts and functions
----------------------
+=====================
 
 
 ``plant``
