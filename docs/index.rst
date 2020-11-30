@@ -53,6 +53,7 @@ Module documentation
     :caption: Plant database
 
     what2plant
+    jupyterexample
 
 .. toctree::
     :maxdepth: 3
