@@ -10,7 +10,6 @@ Currently, *flusstools* comes with the following modules:
 
 * *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries.
 * *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assesss the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
-* *what2plant* - finds the best plant species for a fluvial ecosystems (currently implemented only for the Rhine bassin and the Bavarian Pre-Alps - principal developer: `Lukas Schoeberl`_).
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
 .. note::
@@ -47,13 +46,6 @@ Module documentation
     :caption: Lidar tools (las / laz analyst)
 
     lidartools
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Plant database
-
-    what2plant
-    jupyterexample
 
 .. toctree::
     :maxdepth: 3

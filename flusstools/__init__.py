@@ -3,7 +3,6 @@ __all__ = [
     "geotools",
     "fuzzycorr",
     "lidartools",
-    "what2plant",
 ]
 
 try:

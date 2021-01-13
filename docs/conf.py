@@ -44,8 +44,6 @@ autodoc_mock_imports = [
     "scipy", "scipy.stats", "stats", "interpolate",
     "shapefile",
     "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
-    "sqlite3",
-    "tabulate",
     "tkinter", "tk", "messagebox", "filedialog",
 ]
 
@@ -56,7 +54,7 @@ project = u'FlussTools'
 slug = re.sub(r'\W+', '-', project.lower())
 version = '0.1'
 release = 'latest'
-author = u'Sebastian Schwindt, Beatriz Negreiros\nKilian Mouris, Kenneth Larrieu\nLukas Schoeberl'
+author = u'Sebastian Schwindt, Beatriz Negreiros\nKilian Mouris, Kenneth Larrieu'
 copyright = author
 language = 'en'
 
