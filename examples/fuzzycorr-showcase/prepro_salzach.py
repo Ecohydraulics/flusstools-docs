@@ -20,7 +20,7 @@ polyname = 'polygon_salzach'
 res = 5
 
 # Projection
-crs = 'EPSG:4326'
+crs = 'EPSG:5684'
 nodatavalue = -9999
 
 # Corners of raster
