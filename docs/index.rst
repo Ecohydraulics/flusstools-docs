@@ -24,7 +24,7 @@ Currently, *flusstools* comes with the following modules:
 .. toctree::
     :hidden:
 
-    Get started <getstarted>
+    Get started (install) <getstarted>
 
 .. toctree::
     :hidden:
