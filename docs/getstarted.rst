@@ -5,8 +5,8 @@ Installation
 
 To work with *flusstools*, a couple of dependencies have to be installed and depending on what platform you are working (*Window* or *Linux*), it might be preferable to use either a *PIP3* or a *CONDA* environment. We have made good experience with *conda* environments in *Windows* and with *pip* environments in *Linux* (*Ubuntu*). However, both *pip* and *conda* both work fine on both platforms (and also with *macOS*). Since *Python 3.4* (and *Python 2.7.9*), *pip* is installed with the basic *Python* installation (`download and install Python <https://www.python.org/downloads/>`_ if you do not want to use *conda*). Find the instructions for installing *Anaconda* tailored for your ooperating system (*Linux*, *Windows*, or *macOS*) in the `Anaconda docs`_. The following paragraphs guide through setting up your system for the best experience with *flusstools* (and basically any geo-spatial *Python* application).
 
-Get ready with Windows
-~~~~~~~~~~~~~~~~~~~~~~
+Get ready on Windows
+--------------------
 
 On *Windows*, a convenient option for working with *flusstools* is to use a conda environment. In addition, *GitBash* is necessary to clone (download) *flusstools* (and to keep posted on updates). In detail:
 
@@ -16,8 +16,8 @@ On *Windows*, a convenient option for working with *flusstools* is to use a cond
 * We recommend to work with an *IDE*, such as `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ or `Spyder <https://www.spyder-ide.org/>`_, which is natively implemented in the *Anaconda* installation.
 * Download and install `QGIS`_ to visualize and draw geospatial data.
 
-Get ready with Linux
-~~~~~~~~~~~~~~~~~~~~~~
+Get ready on Linux
+------------------
 
 Optional: Use a Virtual Machine (VM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,8 +153,8 @@ Depending on the *IDE* you are using, create a new project and define the above 
 * *Notebook* users are served at `jupyter.org <https://jupyter.org/install>`_
 
 
-Usage
-=====
+Basic Usage
+-----------
 
 Import
 ~~~~~~~
@@ -192,7 +192,7 @@ Example
 .. _requirements:
 
 Requirements
-============
+------------
 
 *FlussTools* requires geo-spatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a virtual environment (:ref:`installvenv`) with `requirements.txt`_ (*pip* / *venv*) or a conda environment (:ref:`installcondaenv`) with `environment.yml`_  (*conda*) to check out the following dependencies:
 

@@ -20,7 +20,7 @@ In this context, the concept of fuzzy set theory has capacities to consider simi
 The algorithms provided with ``fuzzycorr`` address the necessity in evaluating (or validating) model performance through the use of fuzzy map comparison. Future developments aim to go beyond a one-way validation towards a two-way communication between the validation algorithms and the models. The two-way communication represents a feedback loop that will eventually enable an automated calibration of numerical hydro-morphodynamic models.
 
 Usage
-=====
+-----
 
 Basics
 ~~~~~~~
@@ -47,7 +47,7 @@ The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 
 
 Structure
-==========
+---------
 
 This package contains the following modules, which were designed in *Python 3.6*:
 

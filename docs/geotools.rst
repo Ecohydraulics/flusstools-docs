@@ -11,7 +11,7 @@ GeoTools
     This documentation is also as available as style-adapted PDF (`download <https://geo-utils.readthedocs.io/_/downloads/en/latest/pdf/>`_).
 
 Usage
-=====
+-----
 
 Import
 ~~~~~~~
@@ -47,7 +47,7 @@ A showcase is provided with the *ROOT/examples/geotools-showcase/georeference_ti
 
 
 Code structure
-==================
+--------------
 
 
 The following diagram highlights function locations in *Python* scripts and how those are linked to each other.
@@ -60,7 +60,7 @@ The following diagram highlights function locations in *Python* scripts and how 
 
 
 Script and function docs
-========================
+------------------------
 
 
 ``geotools`` (MASTER)

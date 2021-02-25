@@ -1,16 +1,16 @@
 """
-Modified script (original: Linwood Creekmore III)
+    Modified script (original: Linwood Creekmore III)
 
-Examples:
+    Examples:
 
-    # output to geopandas dataframe (gdf)
-    gdf = kmx2other("my-places.kmz", output="gpd")
+        # output to geopandas dataframe (gdf)
+        gdf = kmx2other("my-places.kmz", output="gpd")
 
-    # plot the new gdf (use %matplotlib inline in notebooks)
-    gdf.plot()
+        # plot the new gdf (use %matplotlib inline in notebooks)
+        gdf.plot()
 
-    # convert a kml-file to a shapefile
-    success = kmx2other("my-places.kml", output="shp")
+        # convert a kml-file to a shapefile
+        success = kmx2other("my-places.kml", output="shp")
 """
 
 # from io import BytesIO, StringIO
