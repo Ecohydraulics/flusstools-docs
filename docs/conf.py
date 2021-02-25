@@ -44,6 +44,7 @@ autodoc_mock_imports = [
     "scipy", "scipy.stats", "stats", "interpolate",
     "shapefile",
     "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
+    "tabulate",
     "tkinter", "tk", "messagebox", "filedialog",
 ]
 
