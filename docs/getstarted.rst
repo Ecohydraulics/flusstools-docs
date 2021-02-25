@@ -108,7 +108,7 @@ Install flusstools
 
 .. _installcondaenv:
 
-CONDA
+conda
 ^^^^^
 
 1. Download our `environment.yml`_ file and save it in a temporary folder (e.g., *C:\temp\* or *USER/Downloads/*).
@@ -119,19 +119,21 @@ CONDA
 
 4. Install the *flusstools* environment:
 
-* ``conda env create -f environment.yml``
-* Geospatial libraries and other dependencies (see below) are being installed in a new environment called *flusstools* - this may take a while ...
-* Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io (install) <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
+    * ``conda env create -f environment.yml``
+    * Geospatial libraries and other dependencies (see below) are being installed in a new environment called *flusstools* - this may take a while ...
+    * Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io (install) <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
 
 5. Activate the *flusstools* environment:
+
     * ``conda activate flusstools``
 
-6. Install *flusstools* in the new environments:
+6. Install *flusstools* in the new environments (yes, use ``pip`` in *conda*):
+
     * ``pip install flusstools``
 
 .. _installvenv:
 
-PIP / VENV
+pip / venv
 ^^^^^^^^^^
 
 Consider to create and activate a new virtual environment before installing *flusstools* requirements (read more at `python.org <https://docs.python.org/3/library/venv.html>`_). Then, download our `requirements.txt`_ file and save it in a temporary folder (e.g., *C:\temp\* or *USER/Downloads/*). In *Terminal* (*Linux* / *macOS*) or `Windows Command Prompt`_ type:

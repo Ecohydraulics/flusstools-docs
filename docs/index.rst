@@ -29,17 +29,17 @@ Currently, *flusstools* comes with the following modules:
 .. toctree::
     :hidden:
 
-    Geo-spatial analyst <geotools>
+    Geo-spatial analyst (GeoTools) <geotools>
 
 .. toctree::
     :hidden:
 
-    Map correlation <fuzzycorr>
+    Map correlation (FuzzyCorr) <fuzzycorr>
 
 .. toctree::
     :hidden:
 
-    Lidar tools (las / laz analyst) <lidartools>
+    Lidar tools (LasPy/LasTools) <lidartools>
 
 .. toctree::
     :hidden:
