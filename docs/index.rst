@@ -1,4 +1,4 @@
-.. flusstools documentation master file.
+.. flusstools documentation parent file.
 
 
 FlussTools
@@ -16,49 +16,40 @@ Currently, *flusstools* comes with the following modules:
     The documentation is also as available as `style-adapted PDF <https://flusstools.readthedocs.io/_/downloads/en/latest/pdf/>`_.
 
 
-Module documentation
-====================
+.. toctree::
+    :hidden:
+
+    About <self>
 
 .. toctree::
+    :hidden:
 
-    self
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Get started
-
-    getstarted
+    Get started <getstarted>
 
 .. toctree::
-    :maxdepth: 2
-    :caption: Geo-spatial analyst tools
+    :hidden:
 
-    geotools
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Map correlation
-
-    fuzzycorr
+    Geo-spatial analyst <geotools>
 
 .. toctree::
-    :maxdepth: 2
-    :caption: Lidar tools (las / laz analyst)
+    :hidden:
 
-    lidartools
-
-.. toctree::
-    :maxdepth: 3
-    :caption: Contributing
-
-    contribute
+    Map correlation <fuzzycorr>
 
 .. toctree::
-    :maxdepth: 3
-    :caption: Disclaimer and License
-    :includehidden:
+    :hidden:
 
-    license
+    Lidar tools (las / laz analyst) <lidartools>
+
+.. toctree::
+    :hidden:
+
+    Contributing <contribute>
+
+.. toctree::
+    :hidden:
+
+    Disclaimer and License <license>
 
 More information and examples are available in the docs of every *flusstools* module.
 
