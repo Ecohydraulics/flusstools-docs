@@ -104,7 +104,7 @@ Install *PyCharm* with snap (requires snap):
 
 
 Install flusstools
-~~~~~~~~~~~~~~~~~~
+------------------
 
 .. _installcondaenv:
 
@@ -144,7 +144,7 @@ Consider to create and activate a new virtual environment before installing *flu
 
 
 Setup *IDE* environment
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Depending on the *IDE* you are using, create a new project and define the above created environment (either *conda* or *pip*) as project interpreter.
 
