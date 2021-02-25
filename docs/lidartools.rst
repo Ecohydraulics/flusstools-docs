@@ -7,7 +7,7 @@ The *laspy_X* modules are universal *Python3* scripts, which are completely open
 
 
 LasPy
-=====
+-----
 
 The *laspy_X* modules extract geospatial information from *las* files and convert them to ESRI shapefiles or GeoTIFF rasters. *las* is the typical file format for storing airborne lidar (`Light Detection and Ranging <https://oceanservice.noaa.gov/facts/lidar.html>`_) data. The *flusstools* *laspy_X* modules make use of the inter-platform and open source `laspy`_ *Python* package. The currently implemented capacities involve:
 
@@ -171,7 +171,7 @@ Memory errors
 
 
 LasTools (Windows only)
-=======================
+-----------------------
 
 *lastools* is forked from `GCS_scripts by Kenny Larrieu <https://github.com/klarrieu>`_. The original code is designed for *Python2* and the commercial ``arcpy`` library. The tweaked codes of *las4windows* run with Python 3.8 and work without ``arcpy``. This repository only uses the GUI for lidar processing with `LASTools <https://rapidlasso.com/lastools/>`_.
 
