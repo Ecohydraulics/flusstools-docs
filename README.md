@@ -71,8 +71,29 @@ This is a code block.::
 
 Note that every file cited in the `toctree` of *index.rst* needs to have a header with `====` underline (level). Make sure that `license` and `help` are exactly indented four spaces, after one empty line after `:maxdepth:`, and directly under the first `:` of `:maxdepth:`.
 
+## Embedd other files
+
+### Link to Python code
+
+Files to embedd should live in `docs/`.
+.. literalinclude:: ../code.py
+    :lines: 1-
+
+### Image
+
+Images to embedd should live in `docs/img/`. Define reference to image:
 
 ```
+.. |imageAliasName| image:: ../img/image-name.png
+   :align: middle
+```
+
+Place image in document:
+
+```
+  |imageAliasName|
+```
+
 
 
 ## Rendering tools
