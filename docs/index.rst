@@ -8,8 +8,8 @@ The analysis, research and science-based design of fluvial ecosystems involve co
 
 Currently, *flusstools* comes with the following modules:
 
-* *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries.
-* *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assesss the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
+* *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries (developers: `Kilian Mouris`_, `Beatriz Negreiros`_, and `Sebastian Schwindt`_).
+* *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assess the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
 .. note::
