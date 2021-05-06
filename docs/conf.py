@@ -141,6 +141,7 @@ if not ("READTHEDOCS" in os.environ):
         range(1, 100)
     ))
 
+html_favicon = os.path.abspath("..") + "/docs/img/browser-icon.ico"
 html_last_updated_fmt = ""
 html_logo = os.path.abspath("..") + "/docs/img/icon.svg"
 html_show_sourcelink = True

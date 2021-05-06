@@ -13,7 +13,6 @@ On *Windows*, a convenient option for working with *flusstools* is to use a cond
 * Install *Anaconda*, for example, as described on `hydro-informatics.github.io (IDEs) <https://hydro-informatics.github.io/hy_ide.html#anaconda>`_.
 * Alternatively, `download and install Python <https://www.python.org/downloads/>`_, open `Windows Command Prompt`_, and make sure to upgrade *pip* with your basic *Python* installer by typing: ``python -m pip install -U pip``.
 * `Download <https://git-scm.com/downloads>`_ and install *GitBash*.
-* We recommend to work with an *IDE*, such as `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ or `Spyder <https://www.spyder-ide.org/>`_, which is natively implemented in the *Anaconda* installation.
 * Download and install `QGIS`_ to visualize and draw geospatial data.
 
 Get ready on Linux
@@ -55,7 +54,7 @@ In this example, *Python2.7* and *Python3.8* are installed. To overwrite *Python
 
 .. code:: console
 
-   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+   sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
    alias python=python3
 
 
@@ -89,18 +88,15 @@ Then install *QGIS* and ``GDAL`` for *Linux* (this should work with any *Debian*
 
 More guidance for installing GDAL (also on other platforms) is available at `gdal.org <https://gdal.org/download.html>`_.
 
-Install an IDE (*PyCharm*)
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install an IDE
+--------------
+
+We recommend to work with an *IDE*, such as `Atom <https://atom.io/>`_, `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ , or `Spyder <https://www.spyder-ide.org/>`_.
 
 .. note:: IDE - your choice
-   Any other Python IDE is also OK for working with *hylas*. Setting up *PyCharm* is explained here as just one option for working with *flusstools*.
+   Any other Python IDE is also OK for working with *flusstools*.
 
-Install *PyCharm* with snap (requires snap):
-
-.. code:: console
-
-   sudo apt install snapd
-   sudo snap install pycharm-community --classic
+Read more about installing IDEs on `https://hydro-informatics.github.io <https://hydro-informatics.github.io/get-started/ide.html>`_.
 
 
 Install flusstools

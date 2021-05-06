@@ -24,7 +24,7 @@ Currently, *flusstools* comes with the following modules:
 .. toctree::
     :hidden:
 
-    Get started (install) <getstarted>
+    Installation <getstarted>
 
 .. toctree::
     :hidden:
@@ -59,6 +59,5 @@ More information and examples are available in the docs of every *flusstools* mo
 .. _Kilian Mouris: https://www.iws.uni-stuttgart.de/en/institute/team/Mouris/
 .. _Kenny Larrieu: https://klarrieu.github.io/
 .. _lastools: https://rapidlasso.com/lastools/
-.. _Lukas Schoeberl: https://github.com/Lukas-create/
 .. _QGIS: https://qgis.org/en/site/
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/
