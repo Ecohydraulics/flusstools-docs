@@ -3,14 +3,14 @@
 Installation
 ============
 
-To work with *flusstools*, a couple of dependencies have to be installed and depending on what platform you are working (*Window* or *Linux*), it might be preferable to use either a *PIP3* or a *CONDA* environment. We have made good experience with *conda* environments in *Windows* and with *pip* environments in *Linux* (*Ubuntu*). However, both *pip* and *conda* both work fine on both platforms (and also with *macOS*). Since *Python 3.4* (and *Python 2.7.9*), *pip* is installed with the basic *Python* installation (`download and install Python <https://www.python.org/downloads/>`_ if you do not want to use *conda*). Find the instructions for installing *Anaconda* tailored for your ooperating system (*Linux*, *Windows*, or *macOS*) in the `Anaconda docs`_. The following paragraphs guide through setting up your system for the best experience with *flusstools* (and basically any geo-spatial *Python* application).
+To work with *flusstools*, a couple of dependencies have to be installed and depending on what platform you are working (*Windows* or *Linux*), it might be preferable to use either a *PIP3* or a *CONDA* environment. We have made good experience with *conda* environments in *Windows* and with *pip* environments in *Linux* (*Ubuntu*). However, both *pip* and *conda* both work fine on both platforms (and also with *macOS*). Since *Python 3.4* (and *Python 2.7.9*), *pip* is installed with the basic *Python* installation (`download and install Python <https://www.python.org/downloads/>`_ if you do not want to use *conda*). Find the instructions for installing *Anaconda* tailored for your operating system (*Linux*, *Windows*, or *macOS*) in the `Anaconda docs`_. The following paragraphs guide through setting up your system for the best experience with *flusstools* (and basically any geo-spatial *Python* application).
 
 Get ready on Windows
 --------------------
 
 On *Windows*, a convenient option for working with *flusstools* is to use a conda environment. In addition, *GitBash* is necessary to clone (download) *flusstools* (and to keep posted on updates). In detail:
 
-* Install *Anaconda*, for example, as described on `hydro-informatics.github.io (IDEs) <https://hydro-informatics.github.io/hy_ide.html#anaconda>`_.
+* Install *Anaconda*, for example, as described on `hydro-informatics.github.io (IDEs) <https://hydro-informatics.github.io/get-started/ide.html#anaconda>`_.
 * Alternatively, `download and install Python <https://www.python.org/downloads/>`_, open `Windows Command Prompt`_, and make sure to upgrade *pip* with your basic *Python* installer by typing: ``python -m pip install -U pip``.
 * `Download <https://git-scm.com/downloads>`_ and install *GitBash*.
 * Download and install `QGIS`_ to visualize and draw geospatial data.
@@ -21,12 +21,12 @@ Get ready on Linux
 Optional: Use a Virtual Machine (VM)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_,  `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io (about VMs) <https://hydro-informatics.github.io/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io (VirtualBox) <https://hydro-informatics.github.io/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
+Either download a net-installer *ISO* of `Debian Linux <https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/>`_,  `Ubuntu <https://ubuntu.com/download>`_, or one of its light-weight spin-offs such as  the `Lubuntu <https://lubuntu.net/downloads/>`_, and install one of theses images as a Virtual Machine (VM). To get started with VMs read the introduction to VMs on `hydro-informatics.github.io (about VMs) <https://hydro-informatics.github.io/get-started/vm.html#about>`_. Installing any other the *Linux* VM works similar, as described on `hydro-informatics.github.io (VirtualBox) <https://hydro-informatics.github.io/get-started/vm.html#create-a-vm-with-virtualbox>`_ for *Debian Linux*. Just use the *ISO* image in lieu of the *Debian Linux* *ISO*. After installing *Linux* as a VM, make sure to:
 
-* `Install Guest Additions <https://hydro-informatics.github.io/vm.html#setup-debian>`_ for *Linux* VMs in *VirtualBox*.
-* `Enable folder sharing <https://hydro-informatics.github.io/vm.html#share>`_ between the host and guest (*Debian*, *Ubuntu*, or *Lubuntu* image).
+* `Install Guest Additions <https://hydro-informatics.github.io/get-started/vm.html#setup-debian>`_ for *Linux* VMs in *VirtualBox*.
+* `Enable folder sharing <https://hydro-informatics.github.io/get-started/vm.html#share>`_ between the host and guest (*Debian*, *Ubuntu*, or *Lubuntu* image).
 
-Other system setups described on `hydro-informatics.github.io (VM) <https://hydro-informatics.github.io/vm.html>`_ (e.g., *Wine*) are not required in the following.
+Other system setups described on `hydro-informatics.github.io (VM) <https://hydro-informatics.github.io/get-started/vm.html>`_ (e.g., *Wine*) are not required in the following.
 
 Prepare your system
 ^^^^^^^^^^^^^^^^^^^
@@ -61,23 +61,18 @@ In this example, *Python2.7* and *Python3.8* are installed. To overwrite *Python
 PIP3 and additional libraries for geospatial analyses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Make sure that `PyGeos <https://pygeos.readthedocs.io>`_ and `tkinter <https://hydro-informatics.github.io/hypy_gui.>`_ are available for use with `geopandas <https://geopandas.org/>`_:
+Make sure that `PyGeos <https://pygeos.readthedocs.io>`_ and `tkinter <https://hydro-informatics.github.io/jupyter/gui.html>`_ are available for use with `geopandas <https://geopandas.org/>`_:
 
 .. code:: console
 
-   sudo apt install python3-pip
-   sudo apt-get install python3-tk
-   sudo apt install tk8.6-dev
-   sudo apt install libgeos-dev
+   sudo apt install python3-pip python3-tk tk8.6-dev libgeos-dev
 
-Then install *QGIS* and ``GDAL`` for *Linux* (this should work with any *Debian* architecture):
+Then, install *QGIS* and ``GDAL`` for *Linux* (this should work with any *Debian* architecture):
 
 .. code:: console
 
-   sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
-   sudo apt-get update
-   sudo apt-get install gdal-bin
-   sudo apt-get install libgdal-dev
+   sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt update
+   sudo apt install gdal-bin libgdal-dev
    export CPLUS_INCLUDE_PATH=/usr/include/gdal
    export C_INCLUDE_PATH=/usr/include/gdal
    pip3 install GDAL
@@ -86,17 +81,7 @@ Then install *QGIS* and ``GDAL`` for *Linux* (this should work with any *Debian*
 
    Check on the latest GDAL release on the `GDAL website <https://gdal.org/download.html#current-releases>`_.
 
-More guidance for installing GDAL (also on other platforms) is available at `gdal.org <https://gdal.org/download.html>`_.
-
-Install an IDE
---------------
-
-We recommend to work with an *IDE*, such as `Atom <https://atom.io/>`_, `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ , or `Spyder <https://www.spyder-ide.org/>`_.
-
-.. note:: IDE - your choice
-   Any other Python IDE is also OK for working with *flusstools*.
-
-Read more about installing IDEs on `https://hydro-informatics.github.io <https://hydro-informatics.github.io/get-started/ide.html>`_.
+More guidance for installing GDAL (also on other platforms) is available at `gdal.org <https://gdal.org/download.html>`_ and in the troubleshoot section (:ref:`troubleshoot`) on this website.
 
 
 Install flusstools
@@ -116,14 +101,14 @@ conda
 4. Install the *flusstools* environment:
 
     * ``conda env create -f environment.yml``
-    * Geospatial libraries and other dependencies (see below) are being installed in a new environment called *flusstools* - this may take a while ...
-    * Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io (install) <https://hydro-informatics.github.io/hypy_install.html#conda-env>`_.
+    * Geospatial libraries and other dependencies (see below) are being installed in a new environment called *flussenv* - this may take a while ...
+    * Read more about installing, managing, or removing *conda* environments on `hydro-informatics.github.io (install) <https://hydro-informatics.github.io/python-basics/pyinstall.html#conda-env>`_.
 
 5. Activate the *flusstools* environment:
 
-    * ``conda activate flusstools``
+    * ``conda activate flussenv``
 
-6. Install *flusstools* in the new environments (yes, use ``pip`` in *conda*):
+6. Install *flusstools* in the new *flussenv* environment (yes, use ``pip`` in *conda*):
 
     * ``pip install flusstools``
 
@@ -141,21 +126,29 @@ Consider to create and activate a new virtual environment before installing *flu
     pip install flusstools
 
 
-Setup *IDE* environment
------------------------
+Setup an *IDE*
+--------------
+
+We recommend to work with an *IDE*, such as `Atom <https://atom.io/>`_, `PyCharm <https://www.jetbrains.com/pycharm/download/#section=windows>`_ , or `Spyder <https://www.spyder-ide.org/>`_.
+
+.. note:: IDE - your choice
+   Any other Python IDE is also OK for working with *flusstools*.
+
+Read more about installing IDEs on `https://hydro-informatics.github.io <https://hydro-informatics.github.io/get-started/ide.html>`_.
 
 Depending on the *IDE* you are using, create a new project and define the above created environment (either *conda* or *pip*) as project interpreter.
 
+* *Atom* users may install the ``platformio-ide-terminal`` package (read more at `https://hydro-informatics.github.io/get-started <https://hydro-informatics.github.io/get-started/ide.html#enable-python-console>`_).
 * *PyCharm* users get help at `jetbrains.com <https://www.jetbrains.com/help/pycharm/configuring-python-interpreter.html#default-interpreter>`_
 * *Spyder* users find help at `spyder-ide.org <https://docs.spyder-ide.org/current/installation.html>`_
 * *Notebook* users are served at `jupyter.org <https://jupyter.org/install>`_
 
 
 Basic Usage
------------
+===========
 
 Import
-~~~~~~~
+------
 
 1. Run *Python* and add the download directory of ``flusstools`` to the system path:
 
@@ -172,7 +165,7 @@ Import
 
 
 Example
-~~~~~~~
+-------
 
 .. code-block::
 
@@ -218,7 +211,7 @@ Requirements
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/
 .. _hydro-informatics.github.io: https://hydro-informatics.github.io
 .. _environment.yml: https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/environment.yml
-.. _git: https://hydro-informatics.github.io/hy_git.html
+.. _git: https://hydro-informatics.github.io/get-started/git.html
 .. _git bash: https://git-scm.com/downloads
 .. _gdal: https://gdal.org/
 .. _QGIS: https://qgis.org/en/site/
