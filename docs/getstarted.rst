@@ -58,8 +58,8 @@ In this example, *Python2.7* and *Python3.8* are installed. To overwrite *Python
    alias python=python3
 
 
-PIP3 and additional libraries for geospatial analyses
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pip3 and geospatial libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure that `PyGeos <https://pygeos.readthedocs.io>`_ and `tkinter <https://hydro-informatics.github.io/jupyter/gui.html>`_ are available for use with `geopandas <https://geopandas.org/>`_:
 
@@ -71,11 +71,11 @@ Then, install *QGIS* and ``GDAL`` for *Linux* (this should work with any *Debian
 
 .. code:: console
 
-   sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt update
-   sudo apt install gdal-bin libgdal-dev
+   sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable && sudo apt update
+   sudo apt install gdal-bin libgdal-dev libgdal1h
    export CPLUS_INCLUDE_PATH=/usr/include/gdal
    export C_INCLUDE_PATH=/usr/include/gdal
-   pip3 install GDAL
+   pip3 install GDAL==$(gdal-config --version) --global-option=build_ext --global-option="-I/usr/include/gdal/"
 
 .. note::
 
@@ -108,7 +108,7 @@ conda
 
     * ``conda activate flussenv``
 
-6. Install *flusstools* in the new *flussenv* environment (yes, use ``pip`` in *conda*):
+6. Install *flusstools* in the new *flussenv* environment (yes, use ``pip`` in a *conda* environment):
 
     * ``pip install flusstools``
 
@@ -117,13 +117,15 @@ conda
 pip / venv
 ^^^^^^^^^^
 
-Consider to create and activate a new virtual environment before installing *flusstools* requirements (read more at `python.org <https://docs.python.org/3/library/venv.html>`_). Then, download our `requirements.txt`_ file and save it in a temporary folder (e.g., *C:\temp\* or *USER/Downloads/*). In *Terminal* (*Linux* / *macOS*) or `Windows Command Prompt`_ type:
+Consider to create and activate a new virtual environment before installing *flusstools* requirements (read more at `python.org <https://docs.python.org/3/library/venv.html>`_). In *Terminal* (*Linux* / *macOS*) type:
 
 .. code:: console
 
-    cd C:\temp # or cd Downloads/
-    pip install -r requirements.txt
-    pip install flusstools
+    pip3 install flusstools
+
+.. warning::
+
+   On **Windows**, *flusstools* can currently only be installed with *Anaconda* because of an issue with pip-installing *GDAL* on *Windows*. Therefore, **Windows users should go with the conda environment.**
 
 
 Setup an *IDE*
