@@ -5,7 +5,7 @@ GeoTools
 
 **Geospatial Functions for Hydraulics and Morphodynamics**
 
-The *GeoTools* (``flusstools.geotools``) modules provide *Python3* functions for many sorts of river-related analyses with geospatial data (e.g., for working with numerical model input and output). The package is intended as support material for the lecture `Python programming for Water Resources Engineering and Research`_, where primarily *conda* environments are used.
+The *GeoTools* (``flusstools.geotools``) modules provide *Python3* functions for many sorts of river-related analyses with geospatial data (e.g., for working with numerical model input and output). The package is intended as support material for the `hydro-informatics ebook <https://hydro-informatics.github.io/>`_.
 
 
 Usage
