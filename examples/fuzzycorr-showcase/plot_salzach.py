@@ -1,4 +1,4 @@
-import plotter
+import fuzzycorr.plotter as fuzplt
 from pathlib import Path
 from matplotlib import cm
 
@@ -17,7 +17,7 @@ list_colors = ['darkred', 'sienna', 'chocolate', 'sandybrown', 'gold', 'yellow',
 
 for item in list_rasters:
     rast_path = str(current_dir) + '/rasters/' + item + '.tif'
-    raster = plotter.RasterDataPlotter(rast_path)
+    raster = fuzplt.RasterDataPlotter(rast_path)
     path_fig = str(current_dir) + '/rasters/figures/' + item + '.png'
     raster.plot_continuous_w_window(output_file=path_fig, xy=(0, 0), width=170, height=270, cmap=None, list_colors=list_colors, bounds=bounds)
 

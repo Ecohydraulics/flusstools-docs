@@ -1,0 +1,10 @@
+Fuzzy numerical spatial comparison 
+
+Compared maps: 
+C:\Users\Negreiros\fuzzycorr\examples\salzach_case\rasters\vali_hydro_FT_manual_2013_res5_clipped.tif
+C:\Users\Negreiros\fuzzycorr\examples\salzach_case\rasters\vali_meas_2013_res5_clipped.tif
+
+Halving distance: 4 cells  
+Neighbourhood: 8 cells  
+
+Average fuzzy similarity: 0.3470

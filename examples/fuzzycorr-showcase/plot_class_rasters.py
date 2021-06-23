@@ -1,4 +1,4 @@
-import plotter
+import fuzzycorr.plotter as fuzplt
 from pathlib import Path
 from matplotlib import cm
 
@@ -15,6 +15,6 @@ cmap = cm.get_cmap('jet', 12)
 
 for item in list_rasters:
     rast_path = str(current_dir) + '/rasters/' + item + '.tif'
-    raster = plotter.RasterDataPlotter(rast_path)
+    raster = fuzplt.RasterDataPlotter(rast_path)
     path_fig = str(current_dir) + '/rasters/' + item + '_plot_window.png'
     raster.plot_categorical_w_window(path_fig, labels, cmap=cmap, xy=(100, 200), width=170, height=270)

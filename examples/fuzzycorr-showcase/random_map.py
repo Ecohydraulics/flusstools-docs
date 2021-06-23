@@ -1,4 +1,4 @@
-import prepro as pp
+import fuzzycorr.prepro as pp
 from pathlib import Path
 import pandas as pd
 
@@ -13,7 +13,7 @@ attribute = 'dz'
 res = 5
 
 # Projection
-crs = 'EPSG:4326'
+crs = 'EPSG:5684'
 nodatavalue = -9999
 
 # Corners of raster
@@ -33,8 +33,8 @@ clipped_random_raster = str(current_dir / 'rasters') + '/' + file + '_random_cli
 #  --------------------------------------------------------------------------------
 
 # Instanciating object
-map_file = pp.FuzzyPreProcessor(pd.read_csv(path_file, skip_blank_lines=True), attribute=attribute, crs=crs,
-                                nodatavalue=nodatavalue, res=res, ulc=ulc, lrc=lrc)
+map_file = pp.PreProFuzzy(pd.read_csv(path_file, skip_blank_lines=True), attribute=attribute, crs=crs,
+                          nodatavalue=nodatavalue, res=res, ulc=ulc, lrc=lrc)
 
 # Create random raster
 map_file.random_raster(random_raster, minmax=None, save_ascii=False)

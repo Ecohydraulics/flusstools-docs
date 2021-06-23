@@ -1,6 +1,6 @@
 try:
     import matplotlib.pyplot as plt
-    import prepro as pp
+    import fuzzycorr.prepro as pp
     from pathlib import Path
     import numpy as np
     import gdal
@@ -12,8 +12,8 @@ cur_dir = Path.cwd()
 
 Path(cur_dir / "rasters").mkdir(exist_ok=True)
 
-raster_meas = pp.CategorizationPreProcessor(str(cur_dir / 'rasters') + '/' + 'vali_meas_2013_res5_clipped.tif')
-raster_sim = pp.CategorizationPreProcessor(str(cur_dir / 'rasters') + '/' + 'vali_hydro_FT_manual_2013_res5_clipped.tif')
+raster_meas = pp.PreProCategorization(str(cur_dir / 'rasters') + '/' + 'vali_meas_2013_res5_clipped.tif')
+raster_sim = pp.PreProCategorization(str(cur_dir / 'rasters') + '/' + 'vali_hydro_FT_manual_2013_res5_clipped.tif')
 
 n_classes = 12
 

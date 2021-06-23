@@ -53,7 +53,7 @@ from sphinx.locale import _
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "0.1"
+version = "0.2.5"
 release = "latest"
 author = u"FlussTeam"
 copyright = author
