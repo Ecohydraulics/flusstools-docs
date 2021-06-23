@@ -34,9 +34,9 @@ except ImportError as e:
 
 # import osgeo python packages
 try:
-    import gdal
-    import osr
-    from gdal import ogr
+    from osgeo import gdal
+    from osgeo import osr
+    from osgeo import ogr
 except ImportError as e:
     raise ImportError("Could not import gdal and dependent packages (is it installed?). {0}".format(e))
 

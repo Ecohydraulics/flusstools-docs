@@ -39,13 +39,14 @@ def float2int(raster_file_name, band_number=1):
     return new_name
 
 
-def raster2line(raster_file_name, out_shp_fn, pixel_value):
+def raster2line(raster_file_name, out_shp_fn, pixel_value, max_distance_method="simplified"):
     """Converts a raster to a line shapefile, where ``pixel_value`` determines line start and end points.
     
     Args:
         raster_file_name (str): of input raster file name, including directory; must end on ``".tif"``.
         out_shp_fn (str): of target shapefile name, including directory; must end on ``".shp"``.
         pixel_value (``int`` or ``float``): Pixel values to connect.
+        max_distance_method (str): change to (pixel) ``"width"`` or ``"height"`` to force lines to exactly follow pixels (no triangulation).
 
      Returns:
          Writes a new shapefile to disk.
@@ -55,7 +56,16 @@ def raster2line(raster_file_name, out_shp_fn, pixel_value):
     # ensures correct neighbourhoods for start and end pts of lines
     raster, array, geo_transform = raster2array(raster_file_name)
     pixel_width = geo_transform[1]
-    max_distance = np.ceil(np.sqrt(2 * pixel_width**2))
+
+    # verify if user provided max_distance_method argument
+    if not max_distance_method == "simplified":
+        if "height" in max_distance_method:
+            max_distance = geo_transform[1]
+        else:
+            # assume that user want pixel width
+            max_distance = pixel_width
+    else:
+        max_distance = np.ceil(np.sqrt(2 * pixel_width**2))
 
     # extract pixels with the user-defined pixel value from the raster array
     trajectory = np.where(array == pixel_value)

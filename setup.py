@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 lines = Path(".").joinpath("__init__.py")
-version = "0.1"
+version = "0.2.5"
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')

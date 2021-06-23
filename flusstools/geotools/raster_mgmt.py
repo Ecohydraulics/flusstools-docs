@@ -54,7 +54,7 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
         int: ``0`` if successful, otherwise ``-1``.
 
     Hint:
-        For processing airborne imagery, the ``roation_angle`` corresponds to the bearing angle of the aircraft with reference to true, not magnetic North.
+        For processing airborne imagery, the ``rotation_angle`` corresponds to the bearing angle of the aircraft with reference to true, not magnetic North.
     """
     gdal.UseExceptions()
     # check out driver
