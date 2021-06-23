@@ -61,7 +61,7 @@ Script and function docs
 ------------------------
 
 
-``geotools`` (MASTER)
+``geotools`` (parent)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.geotools
