@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 lines = Path(".").joinpath("__init__.py")
-version = "0.2.5"
+version = "0.2.6"
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
@@ -13,7 +13,7 @@ for line in lines.read_text().split("\n"):
 setup(
     name="flusstools-docs",
     version=version,
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     author="FlussTeam",
     author_email="sebastian.schwindt@iws.uni-stuttgart.de",
     url="https://github.com/Ecohydraulics/flusstools-docs",
