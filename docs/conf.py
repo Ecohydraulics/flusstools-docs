@@ -37,6 +37,7 @@ autodoc_mock_imports = [
     "mapclassify", "mapclassify.classifiers", "mc",
     "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
     "numpy", "np",
+    "openpyxl",
     "pandas", "pd",
     "pyshp", "pyproj",
     "rasterio", "rio",
@@ -53,7 +54,7 @@ from sphinx.locale import _
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "0.2.5"
+version = "0.2.8"
 release = "latest"
 author = u"FlussTeam"
 copyright = author

@@ -49,6 +49,7 @@ setup(
             "numpy",
             "matplotlib",
             "ipywidgets",
+            "openpyxl",
             "pandas",
             "nbclient",
             "myst-nb~=0.10.1",
