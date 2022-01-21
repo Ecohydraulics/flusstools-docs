@@ -76,10 +76,6 @@ Script and function docs
     :members:
 
 
-.. autofunction:: flusstools.geotools.raster_mgmt.raster2array
-
-
-
 ``shp_mgmt`` shapefile management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

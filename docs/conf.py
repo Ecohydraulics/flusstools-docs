@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from sphinx.locale import _
+import sphinx_rtd_theme
 import sys
 import os
 import re
 import datetime
+import mock
 
 # If we are building locally, or the build on Read the Docs looks like a PR
 # build, prefer to use the version of the theme in this repo, not the installed
@@ -21,6 +24,7 @@ def is_development_build():
     return True
 
 
+sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.append(os.path.abspath("..") + "/examples/fuzzycorr-showcase/")
 sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")
@@ -49,8 +53,8 @@ autodoc_mock_imports = [
     "tkinter", "tk", "messagebox", "filedialog",
 ]
 
-import sphinx_rtd_theme
-from sphinx.locale import _
+for mod_name in autodoc_mock_imports:
+    sys.modules[mod_name] = mock.Mock()
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
