@@ -34,7 +34,34 @@ except ImportError as e:
     print(
         "Could not import pandas (is it installed?). {0}".format(e))
 
-from osgeo import gdal
+try:
+    from osgeo import gdal
+except ImportError as e:
+    print("did not find osgeo folder. {0}".format(e))
+
+autodoc_mock_imports = [
+    "alphashape",
+    "earthpy",
+    "gdal",
+    "geojson",
+    "geopandas",
+    "h5py",
+    "laspy",
+    "mapclassify",
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "osegeo",
+    "pandas",
+    "pyshp", "pyproj",
+    "rasterio",
+    "rasterstats",
+    "scipy",
+    "shapefile",
+    "shapely",
+    "tabulate",
+    "tkinter",
+]
 
 # append own directories
 sys.path.append(r'' + os.path.abspath('.'))

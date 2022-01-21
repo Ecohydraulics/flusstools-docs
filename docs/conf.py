@@ -25,6 +25,7 @@ def is_development_build():
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath(".."))
+sys.path.append(os.path.abspath("..") + "/flusstools/")
 sys.path.append(os.path.abspath("..") + "/examples/fuzzycorr-showcase/")
 sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")
 
@@ -41,6 +42,7 @@ autodoc_mock_imports = [
     "matplotlib",
     "numpy",
     "openpyxl",
+    "osegeo",
     "pandas",
     "pyshp", "pyproj",
     "rasterio",
