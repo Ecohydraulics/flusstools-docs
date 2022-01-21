@@ -62,21 +62,18 @@ Pre-processing: prepro.py
 
 .. automodule:: flusstools.fuzzycorr.prepro
    :members:
-   :private-members:
 
 Fuzzy map comparison core: fuzzycomp.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.fuzzycorr.fuzzycomp
    :members:
-   :private-members:
 
 Plot routines: plotter.py
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.fuzzycorr.plotter
    :members:
-   :private-members:
 
 
 References
