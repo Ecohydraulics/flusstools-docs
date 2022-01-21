@@ -6,7 +6,6 @@ import sys
 import os
 import re
 import datetime
-import flusstools
 
 # If we are building locally, or the build on Read the Docs looks like a PR
 # build, prefer to use the version of the theme in this repo, not the installed
@@ -25,7 +24,6 @@ def is_development_build():
 
 
 sys.path.insert(0, os.path.abspath('.'))
-# sys.path.insert(0, os.path.abspath('.')) + "/flusstools/"
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.append(os.path.abspath("..") + "/examples/fuzzycorr-showcase/")
 sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")

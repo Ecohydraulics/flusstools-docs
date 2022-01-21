@@ -34,6 +34,8 @@ except ImportError as e:
     print(
         "Could not import pandas (is it installed?). {0}".format(e))
 
+from osgeo import gdal
+
 # append own directories
 sys.path.append(r'' + os.path.abspath('.'))
 sys.path.append(r'' + os.path.abspath('..'))
