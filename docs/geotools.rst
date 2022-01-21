@@ -5,7 +5,7 @@ GeoTools
 
 **Geospatial Functions for Hydraulics and Morphodynamics**
 
-The *GeoTools* (``flusstools.geotools``) modules provide *Python3* functions for many sorts of river-related analyses with geospatial data (e.g., for working with numerical model input and output). The package is intended as support material for the `hydro-informatics ebook <https://hydro-informatics.github.io/>`_.
+The *GeoTools* (``flusstools.geotools``) modules provide *Python3* functions for many sorts of river-related analyses with geospatial data (e.g., for working with numerical model input and output). The package is intended as support material for the `hydro-informatics eBook <https://hydro-informatics.github.io/>`_.
 
 
 Usage
@@ -14,11 +14,11 @@ Usage
 Import
 ~~~~~~~
 
-Import ``geotools`` from *flusstools*:
+Import ``geotools`` from flusstools:
 
 .. code:: python
 
-    from flusstools import geotools as gt
+    from flusstools import geotools as geo
 
 
 Example (code block)
@@ -26,8 +26,8 @@ Example (code block)
 
 .. code:: python
 
-    from flusstools import geotools as gt
-    raster, array, geo_transform = gt.raster2array("/sample-data/froude.tif")
+    from flusstools import geotools as geo
+    raster, array, geo_transform = geo.raster2array("/sample-data/froude.tif")
     type(raster)
     # >>> <class 'osgeo.gdal.Dataset'>
     type(array)
@@ -40,15 +40,14 @@ Example (code block)
 Example (showcase)
 ~~~~~~~~~~~~~~~~~~
 
-A showcase is provided with the *ROOT/examples/geotools-showcase/georeference_tifs.py* script that illustrates geo-referencing *tif* images that do not have a projection assigned.
+A showcase is provided with the ``ROOT/examples/geotools-showcase/georeference_tifs.py`` script that illustrates geo-referencing *tif* images that do not have a projection assigned.
 
 
 
 Code structure
 --------------
 
-
-The following diagram highlights function locations in *Python* scripts and how those are linked to each other.
+The following diagram highlights function locations in Python scripts and how those are linked to each other.
 
 .. figure:: https://github.com/Ecohydraulics/flusstools/raw/main/docs/img/geotools-uml.png
    :alt: structure
@@ -110,4 +109,4 @@ KML/KML file management
     :members:
 
 
-.. _Python programming for Water Resources Engineering and Research: https://hydro-informatics.github.io/hy_ppwrm.html
+.. _Python programming for Water Resources Engineering and Research: https://hydro-informatics.com/python-basics/python.html

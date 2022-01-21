@@ -19,12 +19,12 @@ setup(
     url="https://github.com/Ecohydraulics/flusstools-docs",
     project_urls={
         "Documentation": "https://flusstools.readthedocs.io/",
-        "Funding": "https://www.uni-stuttgart.de/",
+        "Funding": "https://hydro-informatics.com/",
         "Source": "https://github.com/Ecohydraulics/flusstools-docs",
     },
     # this should be a whitespace separated string of keywords, not a list
-    keywords="rivers geo-spatial data processing numerical model validation",
-    description="Analyze and design fluvial ecosystems",
+    keywords="fluvial geospatial data processing numerical model validation",
+    description="Analyze and design river ecosystems",
     license="BSD License",
     long_description=Path("./README.md").read_text(),
     long_description_content_type="text/markdown",
@@ -46,8 +46,6 @@ setup(
         "code_style": ["pre-commit~=2.7.0"],
         "sphinx": [
             "folium",
-            "gdal",
-            "osgeo",
             "numpy",
             "matplotlib",
             "ipywidgets",

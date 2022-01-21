@@ -7,7 +7,7 @@
 FuzzyCorr
 =========
 
-This repository contains the work developed for a Master Thesis on fuzzy map comparison methods to evaluate the performance of hydro-morphodynamic numerical models. Please read the License terms for code usage and re-distribution.
+FuzzyCorr was developed along with novel fuzzy map comparison methods to evaluate the performance of hydro-morphodynamic numerical models. The procedure and math behind the package are described in `Negreiros et al. 2021 (open-access paper) <https://doi.org/10.1002/esp.5285>`_ .
 
 Sediment transport and hydraulic processes can be reproduced with numerical models such as SSIIMM, Hydro_AS_2D, TELEMAC and many more. The accuracy of numerical models is assessed through comparing the simulated and the observed datasets, which constitutes a model validation. With the purpose of analyzing simulated and observed bed elevation change, two methods of comparison can be applied:
 
@@ -25,7 +25,7 @@ Usage
 Basics
 ~~~~~~~
 
-The following code block exemplifies the usage of *fuzzycorr* to explore the fuzzy correlation between two (e.g., observed and modeled) maps (in *GeoTIFF* format):
+The following code block exemplifies the usage of *fuzzycorr* to explore the fuzzy correlation between two (e.g., observed and modeled) maps (in `GeoTIFF <https://hydro-informatics.com/documentation/glossary.html#term-GeoTIFF>`_ format):
 
 .. code:: python
 
@@ -49,7 +49,7 @@ The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 Structure
 ---------
 
-This package contains the following modules, which were designed in *Python 3.6*:
+This package contains the following modules, which were designed in *Python 3.8*:
 
 - *prepro.py* includes functions for reading, normalizing and rasterizing vector data. These are preprocessing steps for fuzzy map comparison (module fuzzycomp).
 - *fuzzycomp.py* provides routines for fuzzy map comparison in continuous valued rasters. Refer to `Hagen (2006) <https://www.researchgate.net/publication/242690490_Comparing_Continuous_Valued_Raster_Data_A_Cross_Disciplinary_Literature_Scan>`__ for more details.
