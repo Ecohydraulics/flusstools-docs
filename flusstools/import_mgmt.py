@@ -34,6 +34,28 @@ except ImportError as e:
     print(
         "Could not import pandas (is it installed?). {0}".format(e))
 
+autodoc_mock_imports = [
+    "alphashape",
+    "earthpy",
+    "gdal",
+    "geojson",
+    "geopandas",
+    "h5py",
+    "laspy",
+    "mapclassify",
+    "matplotlib",
+    "numpy",
+    "openpyxl",
+    "pandas",
+    "pyshp", "pyproj",
+    "rasterio",
+    "rasterstats",
+    "scipy",
+    "shapefile",
+    "shapely",
+    "tabulate",
+    "tkinter",
+]
 
 # append own directories
 
@@ -41,4 +63,3 @@ sys.path.append(r'' + os.path.abspath(''))
 sys.path.insert(0, r'' + os.path.abspath('') + '/geotools')
 sys.path.insert(0, r'' + os.path.abspath('') + '/fuzzycorr')
 sys.path.insert(0, r'' + os.path.abspath('') + '/lidartools')
-sys.path.insert(0, r'' + os.path.abspath('') + '/what2plant')
