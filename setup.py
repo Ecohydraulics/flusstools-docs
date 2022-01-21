@@ -46,6 +46,8 @@ setup(
         "code_style": ["pre-commit~=2.7.0"],
         "sphinx": [
             "folium",
+            "gdal",
+            "osgeo",
             "numpy",
             "matplotlib",
             "ipywidgets",

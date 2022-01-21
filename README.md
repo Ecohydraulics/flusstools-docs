@@ -71,7 +71,7 @@ extensions = [
 ]
 ```
 
-<!-- with earlier than Sphinx 1.4: 
+<!-- with earlier than Sphinx 1.4:
 
 Open *conf.py* and add the following lines at the beginning of the file:
 
@@ -125,13 +125,13 @@ source_suffix = {
 }
 ```
 
-Read more about *Sphinx* and markdown implementation in the [*Sphinx* docs](https://www.sphinx-doc.org/en/master/usage/markdown.html).
+Read more about *Sphinx* and markdown implementation in the [Sphinx docs](https://www.sphinx-doc.org/en/master/usage/markdown.html).
 
-Another guide was written by [johncrossland](https://gist.github.com/johncrossland/9f6f54d559e9136773172aa0a429b46f) (*GitHub* *gist*) for *Sphinx 1.3* (do not use with *Sphinx 1.4 and younger).
+Another guide was written by [johncrossland](https://gist.github.com/johncrossland/9f6f54d559e9136773172aa0a429b46f) (*GitHub* *gist*) for *Sphinx 1.3* (do not use with Sphinx 1.4 and younger).
 
 ## Generate docs
 
-### HTML Website 
+### HTML Website
 
 In `docs/` directory tap:
 
@@ -154,9 +154,9 @@ For PDF output, install *Tex Live*:
  sudo apt install texlive-full -y
 ```
 
-## Modify documentation
+## Update documentation
 
-The source files for the website live in `docs/source/` and the default main document is called *index.rst* (can be modified in *conf.py*). All other *rst*-files containing documentatopm need to be linked here.
+The source files for the website live in `docs/` and the default main document is called *index.rst* (can be modified in *conf.py*). All other *rst*-files containing documentatopm need to be linked here.
 
 Add a new section in *index.rst*, define the section depth to use, for example with links to two other files called *license.rst* and *help.rst*, and add some code block:
 
@@ -166,10 +166,10 @@ Intro
 
 .. toctree::
 	:maxdepth: 2
-	
+
 	license
 	help
-	
+
 
 This is a code block.::
 
@@ -210,6 +210,6 @@ Render *rst* files instantaneously while typing in a web browser for example wit
 
 ## Deploy website
 
-Cleanup the docs directory (the `build/` folder is not needed - consider excluding it with a *.gitignore* file). Then push your website to GitHub or GitLab, create an account on [readthedocs.org](https://readthedocs.org/) and import your project from GitHub or GitLab. 
+Cleanup the docs directory (the `build/` folder is not needed - consider excluding it with a *.gitignore* file). Then push your website to GitHub or GitLab, create an account on [readthedocs.org](https://readthedocs.org/) and import your project from GitHub or GitLab.
 
 *readthedocs.org* will generate the website and publish it on *https://YOUR-REPO-NAME.readthedocs.io*.
