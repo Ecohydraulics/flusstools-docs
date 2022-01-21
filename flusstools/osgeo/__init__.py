@@ -85,31 +85,32 @@ for gdal_ver, py_ver in gdal_version_and_min_supported_python_version:
             this_python_version_will_be_deprecated_in_gdal_version = gdal_ver
             next_version_of_gdal_will_use_python_version = py_ver
 
+try:
+    if (python_version < minimum_supported_python_version_for_this_gdal_version):
+        msg = 'Your Python version is {}, which is no longer supported by GDAL {}. ' \
+              'Please upgrade your Python version to Python >= {}, ' \
+              'or use GDAL <= {}, which supports your Python version.'.\
+            format(ver_str(python_version), ver_str(gdal_version),
+                   ver_str(minimum_supported_python_version_for_this_gdal_version),
+                   ver_str(last_gdal_version_to_supported_your_python_version))
 
-if python_version < minimum_supported_python_version_for_this_gdal_version:
-    msg = 'Your Python version is {}, which is no longer supported by GDAL {}. ' \
-          'Please upgrade your Python version to Python >= {}, ' \
-          'or use GDAL <= {}, which supports your Python version.'.\
-        format(ver_str(python_version), ver_str(gdal_version),
-               ver_str(minimum_supported_python_version_for_this_gdal_version),
-               ver_str(last_gdal_version_to_supported_your_python_version))
+        if fail_on_unsupported_version:
+            raise Exception(msg)
+        else:
+            from warnings import warn, simplefilter
+            simplefilter('always', DeprecationWarning)
+            warn(msg, DeprecationWarning)
+except:
+    if this_python_version_will_be_deprecated_in_gdal_version:
+        msg = 'You are using Python {} with GDAL {}. ' \
+              'This Python version will be deprecated in GDAL {}. ' \
+              'Please consider upgrading your Python version to Python >= {}, ' \
+              'Which will be the minimum supported Python version of GDAL {}.'.\
+            format(ver_str(python_version), ver_str(gdal_version),
+                   ver_str(this_python_version_will_be_deprecated_in_gdal_version),
+                   ver_str(next_version_of_gdal_will_use_python_version),
+                   ver_str(this_python_version_will_be_deprecated_in_gdal_version))
 
-    if fail_on_unsupported_version:
-        raise Exception(msg)
-    else:
         from warnings import warn, simplefilter
         simplefilter('always', DeprecationWarning)
         warn(msg, DeprecationWarning)
-elif this_python_version_will_be_deprecated_in_gdal_version:
-    msg = 'You are using Python {} with GDAL {}. ' \
-          'This Python version will be deprecated in GDAL {}. ' \
-          'Please consider upgrading your Python version to Python >= {}, ' \
-          'Which will be the minimum supported Python version of GDAL {}.'.\
-        format(ver_str(python_version), ver_str(gdal_version),
-               ver_str(this_python_version_will_be_deprecated_in_gdal_version),
-               ver_str(next_version_of_gdal_will_use_python_version),
-               ver_str(this_python_version_will_be_deprecated_in_gdal_version))
-
-    from warnings import warn, simplefilter
-    simplefilter('always', DeprecationWarning)
-    warn(msg, DeprecationWarning)
