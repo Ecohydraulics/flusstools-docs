@@ -35,10 +35,10 @@ def swig_import_helper():
         return importlib.import_module('gdal')
 
 
-_gdal = swig_import_helper()
+gdal = swig_import_helper()
 del swig_import_helper
 
-__version__ = _gdal.__version__ = _gdal.VersionInfo("RELEASE_NAME")
+__version__ = gdal.__version__ = gdal.VersionInfo("RELEASE_NAME")
 
 gdal_version = tuple(int(s)
                      for s in str(__version__).split('.') if s.isdigit())[:3]
