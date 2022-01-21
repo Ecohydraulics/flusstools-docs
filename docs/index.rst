@@ -8,7 +8,7 @@ The analysis, research and science-based design of fluvial ecosystems involve co
 
 .. important::
 
-	Follow the installation instructions on `hydro-informatics.com <https://hydro-informatics.com/python-basics/pyinstall.html>` to make sure that GDAL works on your computer as desired.
+	Follow the installation instructions on `hydro-informatics.com <https://hydro-informatics.com/python-basics/pyinstall.html>`_ to make sure that GDAL works on your computer as desired.
 
 Currently, *flusstools* comes with the following modules:
 

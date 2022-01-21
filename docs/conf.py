@@ -6,7 +6,6 @@ import sys
 import os
 import re
 import datetime
-import mock
 
 # If we are building locally, or the build on Read the Docs looks like a PR
 # build, prefer to use the version of the theme in this repo, not the installed
@@ -32,29 +31,26 @@ sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
     "alphashape",
-    "earthpy", "earthpy.plot", "ep",
-    "gdal", "ogr", "osr",
+    "earthpy",
+    "gdal",
     "geojson",
     "geopandas",
     "h5py",
     "laspy",
-    "mapclassify", "mapclassify.classifiers", "mc",
-    "matplotlib", "plt", "colors", "patches", "matplotlib.transform",
-    "numpy", "np",
+    "mapclassify",
+    "matplotlib",
+    "numpy",
     "openpyxl",
-    "pandas", "pd",
+    "pandas",
     "pyshp", "pyproj",
-    "rasterio", "rio",
+    "rasterio",
     "rasterstats",
-    "scipy", "scipy.stats", "stats", "interpolate",
+    "scipy",
     "shapefile",
-    "shapely", "shapely.geometry", "Point", "LineString", "Polygon",
+    "shapely",
     "tabulate",
-    "tkinter", "tk", "messagebox", "filedialog",
+    "tkinter",
 ]
-
-for mod_name in autodoc_mock_imports:
-    sys.modules[mod_name] = mock.Mock()
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
@@ -184,7 +180,6 @@ def setup(app):
     from sphinx.util.docfields import Field
 
     app.add_object_type(
-        "confval",
         "confval",
         objname="configuration value",
         indextemplate="pair: %s; configuration value",
