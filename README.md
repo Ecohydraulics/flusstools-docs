@@ -6,7 +6,7 @@ Head for Python scripts for the FlussTools docs. The user documentation is avail
 
 ### Update FlussTools
 
-**IMPORTANT:** The documentation is hosted on readthedocs.org, which **cannot import gdal**. Thus, also the automatic pip-installation of flusstools is not possible and the Python scripts need to be copied into the `flusstools/` folder of this repository. For this reason, the import management script (`ROOT/flusstools/import_mgmt.py`) in this repository does not raise import errors; it only prints warning messages.
+**IMPORTANT:** The documentation is hosted on readthedocs.org, which **cannot import gdal**. Thus, also the automatic pip-installation of flusstools is not possible and the Python scripts need to be copied into the `flusstools/` folder of this repository. For this reason, the import management script (`ROOT/flusstools/import_mgmt.py`) in this repository does not raise import errors; it only prints warning messages. Moreover, the `ROOT/flusstools/` folder contains modified versions of `gdal` in **the `ROOT/flusstools/osgeo/` folder**, which **should never be modified**.
 
 To update the documentation according to a new version of FlussTools, please use the following workflow:
 
