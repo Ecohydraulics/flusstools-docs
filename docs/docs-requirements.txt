@@ -1,6 +1,7 @@
 Sphinx
 sphinx-book-theme
 sphinx-thebe
+recommonmark
 ipython
 jupyter-sphinx
 git+https://github.com/pandas-dev/pydata-sphinx-theme.git@master
@@ -9,6 +10,7 @@ IPython
 jupyter_client
 ipykernel
 pandas
+flusstools
 git+https://github.com/jelmer/googleanalytics.git@master
 git+https://github.com/executablebooks/MyST-NB.git@master
 pandas-bokeh

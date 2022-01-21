@@ -77,8 +77,7 @@ Script and function docs
 
 
 ``shp_mgmt`` shapefile management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.shp_mgmt
     :members:
