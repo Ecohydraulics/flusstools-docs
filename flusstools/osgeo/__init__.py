@@ -16,7 +16,7 @@ if version_info >= (3, 8, 0) and platform == 'win32':
 def swig_import_helper():
     import importlib
     from os.path import dirname, basename
-    mname = basename(dirname(__file__)) + '._gdal'
+    mname = basename(dirname(__file__)) + '.gdal'
     try:
         return importlib.import_module(mname)
     except ImportError:
@@ -29,9 +29,10 @@ def swig_import_helper():
 
                 import sys
                 import traceback
-                traceback_string = ''.join(traceback.format_exception(*sys.exc_info()))
+                traceback_string = ''.join(
+                    traceback.format_exception(*sys.exc_info()))
                 raise ImportError(traceback_string + '\n' + msg)
-        return importlib.import_module('_gdal')
+        return importlib.import_module('gdal')
 
 
 _gdal = swig_import_helper()
@@ -39,7 +40,8 @@ del swig_import_helper
 
 __version__ = _gdal.__version__ = _gdal.VersionInfo("RELEASE_NAME")
 
-gdal_version = tuple(int(s) for s in str(__version__).split('.') if s.isdigit())[:3]
+gdal_version = tuple(int(s)
+                     for s in str(__version__).split('.') if s.isdigit())[:3]
 python_version = tuple(version_info)[:3]
 
 # Setting this flag to True will cause importing osgeo to fail on an unsupported Python version.
