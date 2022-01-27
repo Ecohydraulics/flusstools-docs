@@ -1,5 +1,5 @@
 """Global variables"""
-from .import_mgmt import *
+from import_mgmt import *
 
 
 cache_folder = os.path.abspath("") + "/__cache__/"

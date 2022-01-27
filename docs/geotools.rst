@@ -60,8 +60,8 @@ Script and function docs
 ------------------------
 
 
-``geotools`` (parent)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Package Head: ``geotools``
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.geotools
     :members:
@@ -69,32 +69,31 @@ Script and function docs
     :show-inheritance:
 
 
-``raster_mgmt`` raster management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Raster Management ``raster_mgmt``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.raster_mgmt
     :members:
 
 
-``shp_mgmt`` shapefile management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Shapefile Management ``shp_mgmt``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.shp_mgmt
     :members:
 
-
-``srs_mgmt`` projection management
+Projection Management ``srs_mgmt``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. automodule:: flusstools.geotools.srs_mgmt
     :members:
 
-``dataset_mgmt`` dataset conversion
+Dataset Management (``dataset_mgmt``)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.dataset_mgmt
     :members:
 
-KML/KML file management
+KML/KML File Management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.geotools.kml
@@ -103,5 +102,10 @@ KML/KML file management
 .. automodule:: flusstools.geotools.kmx_parser
     :members:
 
+Shortest Path Finder
+~~~~~~~~~~~~~~~~~~~~
+
+.. automodule:: flusstools.geotools.shortest_path
+    :members:
 
 .. _Python programming for Water Resources Engineering and Research: https://hydro-informatics.com/python-basics/python.html

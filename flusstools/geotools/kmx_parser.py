@@ -1,7 +1,6 @@
-"""
-Original Classes written by Linwood Creekmore III (modified for geo_utils)
+"""Original Classes written by Linwood Creekmore III (modified for flusstools)
 
-With code blocks from:
+Flavored with code blocks from:
 
 - http://programmingadvent.blogspot.com/2013/06/kmzkml-file-parsing-with-python.html
 - http://gis.stackexchange.com/questions/159681/geopandas-cant-save-geojson
@@ -9,7 +8,7 @@ With code blocks from:
 
 """
 
-from ..helpers import *
+from helpers import *
 
 import ast
 import xml.sax
@@ -19,21 +18,24 @@ from html.parser import HTMLParser
 
 class ModHTMLParser(HTMLParser):
     """A child of HTMLParser, tailored (modified) for kml/kmy parsing."""
-    
+
     def __init__(self):
         HTMLParser.__init__(self)
         self.in_table = False
-        self.mapping = {} 
+        self.mapping = {}
         self.buffer = ""
         self.name_tag = ""
         self.series = pd.Series()
-        
+
     def handle_starttag(self, tag, attrs):
         """Enables a table if a table-tag is provided.
 
         Args:
             tag (str): Set to "table" for enabling usage of a table.
             attrs (list): List of additional attributes (currently unused).
+
+        Returns:
+            None: Verifies if the ``tag`` argument contains the string ``"table"``
         """
 
         if tag == "table":
@@ -44,6 +46,9 @@ class ModHTMLParser(HTMLParser):
 
         Args:
             data (str): Text lines of data divided by colons.
+
+        Returns:
+            None: Assigns ``ModHTMLParser.mapping`` and ``ModHTMLParser.series`` attributes
         """
         if self.in_table:
             self.buffer = data.strip(" \n\t").split(":")
@@ -59,16 +64,18 @@ class PlacemarkHandler(xml.sax.handler.ContentHandler):
         #super().__init__()
         self.inName = False  # handle XML parser events
         self.inPlacemark = False
-        self.mapping = {} 
+        self.mapping = {}
         self.buffer = ""
         self.name_tag = ""
-        
-    def startElement(self, name, attributes):
+
+    def start_element(self, name):
         """Looks for the first Placemark element in a kml file.
 
         Args:
             name (str): Name-tag of the element
-            attributes (str):
+
+        Returns:
+            None
         """
 
         if name == "Placemark":
@@ -85,19 +92,25 @@ class PlacemarkHandler(xml.sax.handler.ContentHandler):
 
         Args:
             data (str)
+
+        Returns:
+            None
         """
         if self.inPlacemark:
             # save text if in title in tag
             self.buffer += data
-            
-    def endElement(self, name):
+
+    def end_element(self, name):
         """Sets the end (last) element.
 
         Args:
             name (str)
+
+        Returns:
+            None
         """
         self.buffer = self.buffer.strip("\n\t")
-        
+
         if name == "Placemark":
             # clear the current placemark and name
             self.inPlacemark = False
@@ -121,7 +134,10 @@ class PlacemarkHandler(xml.sax.handler.ContentHandler):
         """Converts string objects to spatial Python objects.
 
         Args:
-            row (df): List of strings for conversion
+            row (pandas.df): List of strings for conversion
+
+        Returns:
+            None
         """
 
         try:
@@ -150,13 +166,20 @@ class PlacemarkHandler(xml.sax.handler.ContentHandler):
         try:
             # check if there are latitude and longitude columns
             point = Point(float(row["longitude"]), float(row["latitude"]))
-            converted_poly = pd.Series({"geometry":point})
+            converted_poly = pd.Series({"geometry": point})
             return converted_poly
         except KeyError:
             pass
 
     def htmlizer(row):
-        """Creates an html file."""
+        """Creates an html file.
+
+        Args:
+            row (pandas.df): List of strings for conversion
+
+        Returns:
+            htmlparser.series: An instance of the ``ModHTMLParser()`` class
+        """
         htmlparser = ModHTMLParser()
         htmlparser.feed(row["description"])
         return htmlparser.series

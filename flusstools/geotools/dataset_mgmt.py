@@ -20,14 +20,16 @@ def coords2offset(geo_transform, x_coord, y_coord):
         pixel_width = geo_transform[1]
         pixel_height = geo_transform[5]
     except IndexError:
-        logging.error("Invalid geo_transform object (%s)." % str(geo_transform))
+        logging.error("Invalid geo_transform object (%s)." %
+                      str(geo_transform))
         return None
 
     try:
         offset_x = int((x_coord - origin_x) / pixel_width)
         offset_y = int((y_coord - origin_y) / pixel_height)
     except ValueError:
-        logging.error("geo_transform tuple contains non-numeric data: %s" % str(geo_transform))
+        logging.error(
+            "geo_transform tuple contains non-numeric data: %s" % str(geo_transform))
         return None
     return offset_x, offset_y
 
@@ -37,10 +39,10 @@ def get_layer(dataset, band_number=1):
 
     Args:
         dataset (``osgeo.gdal.Dataset`` or ``osgeo.ogr.DataSource``): Either a raster or a shapefile.
-        band_number (int): Only use with rasters to define a band number to open (default=``1``).
-    
-    Returns: 
-        dict: ``{GEO-TYPE: if raster: raster_band, if vector: GetLayer(), else: None}``
+        band_number (int): Only use with rasters to define a band number to open (default is ``1`` ).
+
+    Returns:
+        dict: ``{"type": raster`` or ``vector`` or ``"None", layer":`` if raster: ``raster_band``, if vector: ``GetLayer()``, else: ``None}``
     """
     if verify_dataset(dataset) == "raster":
         return {"type": "raster", "layer": dataset.GetRasterBand(band_number)}
@@ -56,7 +58,7 @@ def offset2coords(geo_transform, offset_x, offset_y):
         geo_transform (osgeo.gdal.Dataset.GetGeoTransform): The geo transformation to use.
         offset_x (int): x number of pixels.
         offset_y (int): y number of pixels.
-        
+
     Returns:
         tuple: Two ``float`` numbers of x-y-coordinates ``(x_coord, y_coord)``.
     """
@@ -66,14 +68,16 @@ def offset2coords(geo_transform, offset_x, offset_y):
         pixel_width = geo_transform[1]
         pixel_height = geo_transform[5]
     except IndexError:
-        logging.error("Invalid geo_transform object (%s)." % str(geo_transform))
+        logging.error("Invalid geo_transform object (%s)." %
+                      str(geo_transform))
         return None
 
     try:
         coord_x = origin_x + pixel_width * (offset_x + 0.5)
         coord_y = origin_y + pixel_height * (offset_y + 0.5)
     except ValueError:
-        logging.error("geo_transform tuple contains non-numeric data: %s" % str(geo_transform))
+        logging.error(
+            "geo_transform tuple contains non-numeric data: %s" % str(geo_transform))
         return None
     return coord_x, coord_y
 
@@ -83,14 +87,14 @@ def verify_dataset(dataset):
 
     Args:
         dataset (``osgeo.gdal.Dataset`` or ``osgeo.ogr.DataSource``): Dataset to verify.
-    
+
     Returns:
-        string: Either "mixed", "raster", or "vector".
+        str: Either "unknown", "raster", or "vector".
     """
     # Check the contents of an osgeo.gdal.Dataset
     try:
         if dataset.RasterCount > 0 and dataset.GetLayerCount() > 0:
-            return "mixed"
+            return "unknown"
     except AttributeError:
         pass
 

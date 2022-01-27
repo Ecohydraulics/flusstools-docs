@@ -38,7 +38,7 @@ To convert a *las* file to an ESRI shapefile or GeoTIFF, load *flusstools.lidart
 The above code block defines a ``las_file_name`` variable and ``methods`` to be used with ``flusstools.lidartools.laspy_main.process_file`` (see :ref:`hylas`). The function accepts many more optional arguments:
 
 .. automodule:: flusstools.lidartools.laspy_main.process_file
-   :special-members:
+   :members:
 
 .. note::
    The ``LasPoint`` class (see :ref:`hylas`) can also be directly called in any script with ``laspy_processor.LasPoint``. Have a look at the ``laspy_processor.process_file`` function (:ref:`hylas`) to see how an instance of the ``LasPoint`` class is used.
@@ -61,13 +61,15 @@ The following code block converts a file called *las-example.las* first into a s
    px_size = 2
    tif_prefix = os.path.abspath("") + "/data/sub"
 
-   hylas.process_file(las_file_name,
-                      epsg=epsg,
-                      methods=methods,
-                      extract_attributes=attribs,
-                      pixel_size=px_size,
-                      shapefile_name=shp_file_name,
-                      tif_prefix=tif_prefix)
+   hylas.process_file(
+        las_file_name,
+        epsg=epsg,
+        methods=methods,
+        extract_attributes=attribs,
+        pixel_size=px_size,
+        shapefile_name=shp_file_name,
+        tif_prefix=tif_prefix
+   )
 
 
 .. note::
@@ -79,8 +81,8 @@ Code Documentation
 
 .. _hylas:
 
-LasFile main
-^^^^^^^^^^^^
+Las File Main Script
+^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: flusstools.lidartools.laspy_main
    :members:
@@ -136,15 +138,15 @@ More information on pixel value interpolation:
 
 .. seealso:: All variables are illustratively explained on the `GDAL website <https://gdal.org/tutorials/gdal_grid_tut.html?highlight=grid>`_.
 
-Las processor
+Las Processor
 ^^^^^^^^^^^^^^
 
 .. automodule:: flusstools.lidartools.laspy_processor
    :members:
 
 .. _laspy_config:
-Analysis config
-^^^^^^^^^^^^^^^
+Analysis Configuration
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: flusstools.lidartools.laspy_config
    :members:
@@ -153,7 +155,7 @@ Troubleshooting
 ~~~~~~~~~~~~~~~
 
 .. _memory_error:
-Memory errors
+Memory Errors
 ^^^^^^^^^^^^^
 
 .. admonition:: MemoryError
@@ -239,4 +241,4 @@ File functions
 
 
 .. _laspy: https://laspy.readthedocs.io/
-.. _wine: https://hydro-informatics.github.io/vm.html#wine
+.. _wine: https://hydro-informatics.com/get-started/vm.html#wine

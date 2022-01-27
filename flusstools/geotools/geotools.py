@@ -1,5 +1,4 @@
-"""``geo_utils`` is a package for creating, modifying, and transforming geo-spatial datasets.
- A detailed documentation of ``geo_utils`` is available at `geo-utils.readthedocs.io <https://geo-utils.readthedocs.io>`_."""
+"""``geotools`` is a package for creating, modifying, and transforming geospatial datasets."""
 
 
 from .kml import *
@@ -17,8 +16,9 @@ def float2int(raster_file_name, band_number=1):
     Returns:
         str: ``"path/to/ew_raster_file.tif"``
     """
-    
-    raster, array, geo_transform = raster2array(raster_file_name, band_number=band_number)
+
+    raster, array, geo_transform = raster2array(
+        raster_file_name, band_number=band_number)
     try:
         array = array.astype(int)
     except ValueError:
@@ -41,7 +41,7 @@ def float2int(raster_file_name, band_number=1):
 
 def raster2line(raster_file_name, out_shp_fn, pixel_value, max_distance_method="simplified"):
     """Converts a raster to a line shapefile, where ``pixel_value`` determines line start and end points.
-    
+
     Args:
         raster_file_name (str): of input raster file name, including directory; must end on ``".tif"``.
         out_shp_fn (str): of target shapefile name, including directory; must end on ``".shp"``.
@@ -49,7 +49,7 @@ def raster2line(raster_file_name, out_shp_fn, pixel_value, max_distance_method="
         max_distance_method (str): change to (pixel) ``"width"`` or ``"height"`` to force lines to exactly follow pixels (no triangulation).
 
      Returns:
-         Writes a new shapefile to disk.
+        None: Writes a new shapefile to disk.
     """
 
     # calculate max. distance between points
@@ -70,7 +70,8 @@ def raster2line(raster_file_name, out_shp_fn, pixel_value, max_distance_method="
     # extract pixels with the user-defined pixel value from the raster array
     trajectory = np.where(array == pixel_value)
     if np.count_nonzero(trajectory) == 0:
-        logging.error("! The defined pixel_value (%s) does not occur in the raster band." % str(pixel_value))
+        logging.error(
+            "! The defined pixel_value (%s) does not occur in the raster band." % str(pixel_value))
         return None
 
     # convert pixel offset to coordinates and append to nested list of points
@@ -97,7 +98,8 @@ def raster2line(raster_file_name, out_shp_fn, pixel_value, max_distance_method="
             multi_line.AddGeometry(line)
 
     # write multiline (wkbMultiLineString2shp) to shapefile
-    new_shp = create_shp(out_shp_fn, layer_name="raster_pts", layer_type="line")
+    new_shp = create_shp(
+        out_shp_fn, layer_name="raster_pts", layer_type="line")
     lyr = new_shp.GetLayer()
     feature_def = lyr.GetLayerDefn()
     new_line_feat = ogr.Feature(feature_def)
@@ -121,7 +123,7 @@ def raster2polygon(file_name, out_shp_fn, band_number=1, field_name="values"):
         add_area (bool): If ``True``, an "area" field will be added, where the area in the shapefiles unit system is calculated (default: ``False``)
 
      Returns:
-         osgeo.ogr.DataSource: Python object of the provided ``out_shp_fn``.
+        osgeo.ogr.DataSource: Python object of the provided ``out_shp_fn``.
     """
     logging.info(" * Polygonizing %s ..." % str(file_name))
     # ensure that the input raster contains integer values only and open the input raster
@@ -129,7 +131,8 @@ def raster2polygon(file_name, out_shp_fn, band_number=1, field_name="values"):
     raster, raster_band = open_raster(file_name, band_number=band_number)
 
     # create new shapefile with the create_shp function
-    new_shp = create_shp(out_shp_fn, layer_name="raster_data", layer_type="polygon")
+    new_shp = create_shp(
+        out_shp_fn, layer_name="raster_data", layer_type="polygon")
     dst_layer = new_shp.GetLayer()
 
     # create new field to define values
@@ -171,9 +174,9 @@ def rasterize(in_shp_file_name, out_raster_file_name, pixel_size=10, no_data_val
 
     Hints:
         More information on pixel value interpolation:
-        * ``interpolate_gap_pixels=True`` interpolates values at pixels that are not touched by any las point.
-        * The pixel value interpolation uses ``gdal_grid`` (i.e., its Python bindings through ``gdal.Grid()``).
-        * Control the interpolation parameters with the keyword arguments ``radius1``, ``radius2``, ``power``, ``max_points``, ``min_points``,  and ``smoothing``..
+        ``interpolate_gap_pixels=True`` interpolates values at pixels that are not touched by any las point.
+        The pixel value interpolation uses ``gdal_grid`` (i.e., its Python bindings through ``gdal.Grid()``).
+        Control the interpolation parameters with the keyword arguments ``radius1``, ``radius2``, ``power``, ``max_points``, ``min_points``,  and ``smoothing``..
 
     Returns:
         int: Creates the GeoTIFF raster defined with ``out_raster_file_name`` (success: ``0``, otherwise ``None``).
@@ -193,7 +196,8 @@ def rasterize(in_shp_file_name, out_raster_file_name, pixel_size=10, no_data_val
 
     # check if any action is required
     if os.path.isfile(out_raster_file_name) and not overwrite:
-        logging.info(" * %s already exists. Nothing to do." % out_raster_file_name)
+        logging.info(" * %s already exists. Nothing to do." %
+                     out_raster_file_name)
         return None
 
     # open data source
@@ -220,17 +224,22 @@ def rasterize(in_shp_file_name, out_raster_file_name, pixel_size=10, no_data_val
         return None
 
     if float(pixel_size) < 1.0:
-        logging.info("   -- Yeek! This will be a high resolution raster. Be prepared that your system resources will be occupied for a while.")
+        logging.info(
+            "   -- Yeek! This will be a high resolution raster. Be prepared that your system resources will be occupied for a while.")
 
     # use gdal.Grid if gap interpolation (fill void pixels) is True
     if interpolate_gap_pixels:
-        logging.info(" * Creating gridded raster with interpolated values for empty pixels from neighbouring pixels ...")
-        logging.info("   -- Note: to deactivate pixel value interpolation option use interpolate_gap_pixels=False")
+        logging.info(
+            " * Creating gridded raster with interpolated values for empty pixels from neighbouring pixels ...")
+        logging.info(
+            "   -- Note: to deactivate pixel value interpolation option use interpolate_gap_pixels=False")
 
         try:
             algorithm = "invdist:power={0}:radius1={1}:radius2={2}:smoothing={3}:min_points={4}:max_points={5}".format(
-                str(default_keys["power"]), str(default_keys["radius1"]), str(default_keys["radius2"]),
-                str(default_keys["smoothing"]), str(default_keys["min_points"]), str(default_keys["max_points"])
+                str(default_keys["power"]), str(
+                    default_keys["radius1"]), str(default_keys["radius2"]),
+                str(default_keys["smoothing"]), str(
+                    default_keys["min_points"]), str(default_keys["max_points"])
             )
 
             gdal.Grid(out_raster_file_name, in_shp_file_name,
@@ -251,7 +260,8 @@ def rasterize(in_shp_file_name, out_raster_file_name, pixel_size=10, no_data_val
 
     # create destination data source (GeoTIff raster)
     try:
-        target_ds = gdal.GetDriverByName('GTiff').Create(out_raster_file_name, x_res, y_res, 1, eType=rdtype)
+        target_ds = gdal.GetDriverByName('GTiff').Create(
+            out_raster_file_name, x_res, y_res, 1, eType=rdtype)
     except RuntimeError as err:
         logging.error("! Could not create %s." % str(out_raster_file_name))
         return None
@@ -273,9 +283,9 @@ def rasterize(in_shp_file_name, out_raster_file_name, pixel_size=10, no_data_val
             gdal.RasterizeLayer(target_ds, [1], source_lyr, None, None, burn_values=[0],
                                 options=["ALL_TOUCHED=TRUE"])
     except RuntimeError as err:
-        logging.error("! Could not rasterize (burn values from %s)." % str(in_shp_file_name))
+        logging.error("! Could not rasterize (burn values from %s)." %
+                      str(in_shp_file_name))
         return None
 
     # release raster band
     band.FlushCache()
-

@@ -1,12 +1,12 @@
 """
-Description
+Plotting routines and classes for fuzzy comparison maps
 """
 
 from .prepro import *
 
 
 def read_raster(raster_path):
-    """Opens a raster
+    """Opens a raster using rasterio
 
     Args:
         raster_path (str): directory and name of a raster
@@ -18,31 +18,32 @@ def read_raster(raster_path):
         raster_np = src.read(1, masked=True)
         nodatavalue = src.nodata  # storing nodatavalue of raster
         meta = src.meta.copy()
-        print('Number of active cells (non-masked) of raster ', raster_path, ': ', np.ma.count(raster_np))
+        print('Number of active cells (non-masked) of raster ',
+              raster_path, ': ', np.ma.count(raster_np))
     return raster_np, nodatavalue, meta, meta['crs'], meta['dtype']
 
 
 class RasterDataPlotter:
     """
     Class of raster for plotting
-    
-    :param path: string, path of the raster to be plotted
+
+    :param path (str): path of the raster to be plotted
     """
-    
+
     def __init__(self, path):
         self.path = path
 
     def make_hist(self, legendx, legendy, fontsize, output_file, figsize, set_ylim=None, set_xlim=None):
         """ Creates a histogram of numerical raster
-        
-        :param legendx: string, legend of the x axis of he histogram
-        :param legendy: string, legend of the y axis of he histogram
-        :param fontsize: integer, size of the font
-        :param output_file: string, path for the output file
-        :param figsize: tuple of integers, size of the width x height of the figure
-        :param set_ylim: float, set the maximum limit of the y axis
-        :param set_ylim: float, set the maximum limit of the x axis
-        
+
+        :param legendx (str): legend of the x axis of he histogram
+        :param legendy (str): legend of the y axis of he histogram
+        :param fontsize (int): size of the font
+        :param output_file (str): path for the output file
+        :param figsize (tuple): of integers, size of the width x height of the figure
+        :param set_ylim (float): set the maximum limit of the y axis
+        :param set_ylim (float): set the maximum limit of the x axis
+
         :returns: saves the figure of the histogram
         """
         plt.rcParams.update({'font.size': fontsize})
@@ -63,25 +64,26 @@ class RasterDataPlotter:
         plt.subplots_adjust(left=0.17, bottom=0.15)
 
         # Plot line with data mean (Sfuzzy)
-        plt.axvline(raster_np.mean(), color='k', linestyle='dashed', linewidth=1)
+        plt.axvline(raster_np.mean(), color='k',
+                    linestyle='dashed', linewidth=1)
         min_ylim, max_ylim = plt.ylim()
-        plt.text(raster_np.mean() * 0.70, max_ylim * 0.9, 'Sfuzzy: {:.4f}'.format(raster_np.mean()))
+        plt.text(raster_np.mean() * 0.70, max_ylim * 0.9,
+                 'Sfuzzy: {:.4f}'.format(raster_np.mean()))
 
         # Save fig
         plt.savefig(output_file, dpi=300)
         plt.clf()
 
     def plot_continuous_w_window(self, output_file, xy, width, height, bounds, cmap=None, list_colors=None):
-        """
-        Create a figure of a raster with a zoomed window
+        """ Create a figure of a raster with a zoomed window
         :param output_file: path, file path of the figure
-        :param xy: tuple (x,y), origin of the zoomed window, the upper left corner
-        :param width: integer, width (number of cells) of the zoomed window
-        :param height: integer, height (number of cells) of the zoomed window
-        :param bounds: list of float, limits for each color of the colormap
-        :param cmap: string, optional, colormap to plot the raster
-        :param list_colors: list of colors (str), optional, as alternative to using a colormap
-        :returns: saves the figure of the raster
+        :param xy (tuple): ``(x,y)`` origin of the zoomed window, the upper left corner
+        :param width (int): width (number of cells) of the zoomed window
+        :param height (int): height (number of cells) of the zoomed window
+        :param bounds (list): of float, limits for each color of the colormap
+        :param cmap (str): optional, colormap to plot the raster
+        :param list_colors (list): of colors (str), optional, as alternative to using a colormap
+        :returns None: saves the figure of the raster
         """
         # xy: upper left corner from the lower left corner of the picture
         raster_np = read_raster(self.path)
@@ -114,13 +116,13 @@ class RasterDataPlotter:
 
     def plot_continuous_raster(self, output_file, cmap, vmax=np.nan, vmin=np.nan, box=True):
         """Creates a figure of a continuous valued raster
-        
+
         :param output_file: path, file path of the figure
-        :param cmap: string, colormap to plot the raster
-        :param vmax: float, optional, value maximum of the scale, this value is used in the normalization of the colormap
-        :param vmin: float, optional, value minimum of the scale, this value is used in the normalization of the colormap
+        :param cmap (str): colormap to plot the raster
+        :param vmax (float): optional, value maximum of the scale, this value is used in the normalization of the colormap
+        :param vmin (float): optional, value minimum of the scale, this value is used in the normalization of the colormap
         :param box: boolean, if False it sets off the frame of the picture
-        
+
         :returns: saves the figure of the raster
         """
         raster_np = read_raster(self.path)
@@ -129,7 +131,8 @@ class RasterDataPlotter:
         if np.isfinite(vmax) and np.isfinite(vmin):
             im1 = ax1.imshow(raster_np, cmap=cmap, vmax=vmax, vmin=vmin)
         else:
-            im1 = ax1.imshow(raster_np, cmap=cmap, vmax=raster_np.max(), vmin=raster_np.min())
+            im1 = ax1.imshow(raster_np, cmap=cmap,
+                             vmax=raster_np.max(), vmin=raster_np.min())
         fig1.tight_layout()
         plt.setp(ax1)
         cbar = ep.colorbar(im1, pad=0.3, size='5%')
@@ -142,8 +145,8 @@ class RasterDataPlotter:
         """Creates a figure of a categorical raster
 
         :param output_file: path, file path of the figure
-        :param labels: list of strings, labels (i.e., titles)for the categories
-        :param cmap: string, colormap to plot the raster
+        :param labels (list): of strings, labels (i.e., titles)for the categories
+        :param cmap (str): colormap to plot the raster
         :param box: boolean, if False it sets off the frame of the picture
 
         :returns: saves the figure of the raster
@@ -163,12 +166,12 @@ class RasterDataPlotter:
     def plot_categorical_w_window(self, output_file, labels, cmap, xy, width, height, box=True):
         """Creates a figure of a categorical raster with a zoomed window
 
-        :param output_file: path, file path of the figure
-        :param labels: list of strings, labels (i.e., titles)for the categories
-        :param cmap: string, colormap to plot the raster
-        :param xy: tuple (x,y), origin of the zoomed window, the upper left corner
-        :param width: integer, width (number of cells) of the zoomed window
-        :param height: integer, height (number of cells) of the zoomed window
+        :param output_file (str): file path of the figure
+        :param labels (list): of strings, labels (i.e., titles)for the categories
+        :param cmap (str): colormap to plot the raster
+        :param xy (tuple): (x,y), origin of the zoomed window, the upper left corner
+        :param width (int): width (number of cells) of the zoomed window
+        :param height (int): height (number of cells) of the zoomed window
 
         :returns: saves the figure of the raster
         """

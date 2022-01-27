@@ -1,5 +1,5 @@
 """Global variables"""
-from .var_config import *
+from var_config import *
 
 
 def cache(fun):
@@ -39,12 +39,16 @@ def check_if_file_in_use(filepath):
             if file_object:
                 for filename in os.listdir(os.path.dirname(filepath)):
                     if filename.startswith(os.path.basename(filepath)) and filename.endswith('.lock'):
-                        logging.error('%s is open in another program. Close the file and try again.' % filepath)
-                        raise Exception('%s is open in another program. Close the file and try again.' % filepath)
+                        logging.error(
+                            '%s is open in another program. Close the file and try again.' % filepath)
+                        raise Exception(
+                            '%s is open in another program. Close the file and try again.' % filepath)
 
         except IOError:
-            logging.error('%s is open in another program. Close the file and try again.' % filepath)
-            raise Exception('%s is open in another program. Close the file and try again.' % filepath)
+            logging.error(
+                '%s is open in another program. Close the file and try again.' % filepath)
+            raise Exception(
+                '%s is open in another program. Close the file and try again.' % filepath)
 
         finally:
             if file_object:

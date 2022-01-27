@@ -1,13 +1,13 @@
-from ..helpers import *
+from helpers import *
 
 
 def open_raster(file_name, band_number=1):
     """Opens a raster file and accesses its bands.
-    
+
     Args:
         file_name (str): The raster file directory and name.
         band_number (int): The Raster band number to open (default: ``1``).
-        
+
     Returns:
         osgeo.gdal.Dataset: A raster dataset a Python object.
         osgeo.gdal.Band: The defined raster band as Python object.
@@ -34,7 +34,7 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
                   nan_val=nan_value, rdtype=gdal.GDT_Float32, geo_info=False, rotation_angle=None, shear_pixels=True,
                   options=["PROFILE=GeoTIFF"]):
     """Converts an ``ndarray`` (``numpy.array``) to a GeoTIFF raster.
-    
+
     Args:
         file_name (str): Target file name, including directory; must end on ``".tif"``.
         raster_array (``ndarray`` or ``list``): Array or list of arrays of values to rasterize. If a list of arrays is provided, the length of the list will correspond to the number of bands added to the raster (supersedes ``bands``).
@@ -76,7 +76,8 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
 
     try:
         logging.info(" * creating new raster with %1i bands ..." % bands)
-        new_raster = driver.Create(file_name, cols, rows, bands, eType=rdtype, options=options)
+        new_raster = driver.Create(
+            file_name, cols, rows, bands, eType=rdtype, options=options)
     except RuntimeError as e:
         logging.error("Could not create %s." % str(file_name))
         return -1
@@ -87,13 +88,16 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
             origin_x = origin[0]
             origin_y = origin[1]
         except IndexError:
-            logging.error("Wrong origin format (required: (INT, INT) - provided: %s)." % str(origin))
+            logging.error(
+                "Wrong origin format (required: (INT, INT) - provided: %s)." % str(origin))
             return -1
         if rotation_angle:
             try:
-                logging.info(" * rotating image by %0.2f deg" % float(rotation_angle))
+                logging.info(" * rotating image by %0.2f deg" %
+                             float(rotation_angle))
             except ValueError:
-                logging.error("The provided rotation angle is not a number. Re-try with a numeric rotation angle (in degrees).")
+                logging.error(
+                    "The provided rotation angle is not a number. Re-try with a numeric rotation angle (in degrees).")
                 return -1
             rotation_angle = np.deg2rad(rotation_angle)
             x_rotation = -1 * pixel_width * np.sin(rotation_angle)
@@ -106,9 +110,11 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
             y_rotation = 0.
 
         try:
-            new_raster.SetGeoTransform((origin_x, pixel_width, x_rotation, origin_y, y_rotation, -pixel_height))
+            new_raster.SetGeoTransform(
+                (origin_x, pixel_width, x_rotation, origin_y, y_rotation, -pixel_height))
         except RuntimeError as e:
-            logging.error("Invalid origin (must be INT) or pixel_height/pixel_width (must be INT) provided.")
+            logging.error(
+                "Invalid origin (must be INT) or pixel_height/pixel_width (must be INT) provided.")
             return -1
     else:
         try:
@@ -147,15 +153,17 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
 
 
 def raster2array(file_name, band_number=1):
-    """Extracts an ``ndarray`` from a raster.
-    
+    """Extracts a numpy ``ndarray`` from a raster.
+
     Args:
         file_name (str): Target file name, including directory; must end on ``".tif"``.
         band_number (int): The raster band number to open (default: ``1``).
-        
+
     Returns:
-        ndarray: Indicated raster band, where no-data values are replaced with ``np.nan``.
-        GeoTransform: The GeoTransformation used in the original raster.
+        list: three-elements of [``osgeo.DataSet`` of the raster,
+        ``numpy.ndarray`` of the raster ``band_numer`` (input) where no-data
+        values are replaced with ``np.nan``, ``osgeo.GeoTransform`` of
+         the original raster]
     """
     # open the raster and band (see above)
     raster, band = open_raster(file_name, band_number=band_number)
@@ -163,13 +171,16 @@ def raster2array(file_name, band_number=1):
         # read array data from band
         band_array = band.ReadAsArray()
     except AttributeError:
-        logging.error("Could not read array of raster band type=%s." % str(type(band)))
+        logging.error("Could not read array of raster band type=%s." %
+                      str(type(band)))
         return raster, band, nan_value
     try:
         # overwrite NoDataValues with np.nan
-        band_array = np.where(band_array == band.GetNoDataValue(), np.nan, band_array)
+        band_array = np.where(
+            band_array == band.GetNoDataValue(), np.nan, band_array)
     except AttributeError:
-        logging.error("Could not get NoDataValue of raster band type=%s." % str(type(band)))
+        logging.error(
+            "Could not get NoDataValue of raster band type=%s." % str(type(band)))
         return raster, band, nan_value
     # return the array and GeoTransformation used in the original raster
     return raster, band_array, raster.GetGeoTransform()
@@ -182,7 +193,7 @@ def remove_tif(file_name):
         file_name (str): Directory (path) and name of a GeoTIFF
 
     Returns:
-        Removes the provided ``file_name`` and all dependencies.
+        None: Removes the provided ``file_name`` and all dependencies.
     """
     for file in glob.glob("%s*" % file_name.split(".tif")[0]):
         try:
@@ -195,13 +206,13 @@ def remove_tif(file_name):
 
 def clip_raster(polygon, in_raster, out_raster):
     """Clips a raster to a polygon.
-    
+
     Args:
         polygon (str): A polygon shapefile name, including directory; must end on ``".shp"``.
         in_raster (str): Name of the raster to be clipped, including its directory.
         out_raster (str): Name of the target raster, including its directory.
-        
-    Returns: 
+
+    Returns:
         None: Creates a new, clipped raster defined with ``out_raster``.
     """
     gdal.Warp(out_raster, in_raster, cutlineDSName=polygon)

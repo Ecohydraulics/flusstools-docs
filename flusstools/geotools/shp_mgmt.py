@@ -1,4 +1,4 @@
-from ..helpers import *
+from helpers import *
 
 
 def create_shp(shp_file_dir, overwrite=True, *args, **kwargs):
@@ -11,7 +11,11 @@ def create_shp(shp_file_dir, overwrite=True, *args, **kwargs):
         layer_type (str): Either ``"point"``, ``"line"``, or ``"polygon"`` of the ``layer_name``. If ``None``: no layer will be created.
 
     Returns:
-        osgeo.ogr.DataSource: An ``ogr`` shapefile
+        osgeo.ogr.DataSource: An ``ogr`` shapefile (Python object)
+
+    Hint:
+        Use the ``layer_name`` and ``layer_type`` kwargs along with each other.
+        Keeping these parameters default is deprecated.
     """
     shp_driver = ogr.GetDriverByName("ESRI Shapefile")
     shp_file_dir = verify_shp_name(shp_file_dir)
@@ -94,8 +98,8 @@ def get_geom_description(layer):
 
 
 def get_geom_simplified(layer):
-    r"""Gets a simplified geometry description (either point, line, or polygon) as a function of
-     the WKB Geometry Type of a shapefile layer.
+    """Gets a simplified geometry description (either point, line, or polygon)
+     as a function of the WKB Geometry Type of a shapefile layer.
 
     Args:
         layer (osgeo.ogr.Layer): A shapefile layer.
@@ -114,8 +118,9 @@ def get_geom_simplified(layer):
 
 
 def verify_shp_name(shp_file_name, shorten_to=13):
-    """Ensure that the shapefile name does not exceed 13 characters. Otherwise, the function shortens the ``shp_file_name`` length
-    to N characters.
+    """Ensure that the shapefile name does not exceed 13 characters.
+    Otherwise, the function shortens the ``shp_file_name`` length to
+    ``shorten_to=N`` characters.
 
     Args:
         shp_file_name (str): A shapefile name (with directory e.g., ``"C:/temp/poly.shp"``).

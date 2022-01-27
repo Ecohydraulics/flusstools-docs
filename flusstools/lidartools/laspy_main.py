@@ -1,3 +1,8 @@
+"""Main script for las file processing. Use as:
+
+``process_file(source_file_name, epsg, **opts)`` (more about arguments in the function doc below)
+"""
+
 from .laspy_processor import *
 import webbrowser
 
@@ -15,7 +20,8 @@ def lookup_epsg(file_name):
          can be obtained with the `geo_utils <https://geo-utils.readthedocs.io>`_ package.
 
     """
-    search_string = file_name.replace("_", "+").replace(".", "+").replace("-", "+")
+    search_string = file_name.replace(
+        "_", "+").replace(".", "+").replace("-", "+")
     google_qry = "https://www.google.com/?#q=projection+crs+epsg+"
     webbrowser.open(google_qry + search_string)
 
@@ -50,21 +56,22 @@ def process_file(source_file_name, epsg, **opts):
         bool: ``True`` if successful, ``False`` otherwise
     """
 
-    default_keys = {"extract_attributes": "aci",
-                    "interpolate_gap_pixels": True,
-                    "methods": ["las2shp"],
-                    "shapefile_name": os.path.abspath("") + "/{0}.shp".format(source_file_name.split(".")[0]),
-                    "tif_prefix": os.path.abspath("") + "/{0}_".format(source_file_name.split(".")[0]),
-                    "overwrite": True,
-                    "create_dem": False,
-                    "pixel_size": 1.0,
-                    "radius1": -1,
-                    "radius2": -1,
-                    "power": 1.0,
-                    "smoothing": 0.0,
-                    "min_points": 0,
-                    "max_points": 0,
-                    }
+    default_keys = {
+        "extract_attributes": "aci",
+        "interpolate_gap_pixels": True,
+        "methods": ["las2shp"],
+        "shapefile_name": os.path.abspath("") + "/{0}.shp".format(source_file_name.split(".")[0]),
+        "tif_prefix": os.path.abspath("") + "/{0}_".format(source_file_name.split(".")[0]),
+        "overwrite": True,
+        "create_dem": False,
+        "pixel_size": 1.0,
+        "radius1": -1,
+        "radius2": -1,
+        "power": 1.0,
+        "smoothing": 0.0,
+        "min_points": 0,
+        "max_points": 0,
+    }
 
     for k in default_keys.keys():
         if opts.get(k):
@@ -76,11 +83,13 @@ def process_file(source_file_name, epsg, **opts):
                           overwrite=default_keys["overwrite"])
 
     if "las2shp" in default_keys["methods"] or not os.path.isfile(default_keys["shapefile_name"]):
-        logging.info(" * Need to create a point shapefile first (%s does not exist) ..." % default_keys["shapefile_name"])
+        logging.info(" * Need to create a point shapefile first (%s does not exist) ..." %
+                     default_keys["shapefile_name"])
         las_object.export2shp(shapefile_name=default_keys["shapefile_name"])
 
     if "las2dem" in "".join(default_keys["methods"]):
-        logging.info(" * Generating DEM from %s." % default_keys["shapefile_name"])
+        logging.info(" * Generating DEM from %s." %
+                     default_keys["shapefile_name"])
         las_object.create_dem(target_file_name=default_keys["tif_prefix"] + "_dem.tif",
                               src_shp_file_name=default_keys["shapefile_name"],
                               pixel_size=default_keys["pixel_size"],
@@ -96,7 +105,8 @@ def process_file(source_file_name, epsg, **opts):
     if "2tif" in "".join(default_keys["methods"]):
         logging.info(" * Creating GeoTIFFs ...")
         for attr in default_keys["extract_attributes"]:
-            tif_name = "{0}{1}.tif".format(default_keys["tif_prefix"], wattr[attr])
+            tif_name = "{0}{1}.tif".format(
+                default_keys["tif_prefix"], wattr[attr])
             logging.info("   -- Creating %s ..." % tif_name)
             geo_utils.rasterize(in_shp_file_name=default_keys["shapefile_name"],
                                 out_raster_file_name=tif_name,

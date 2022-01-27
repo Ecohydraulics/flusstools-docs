@@ -50,8 +50,8 @@ Example
 
 .. _requirements:
 
-Requirements
-------------
+Requirements (Dependencies)
+---------------------------
 
 FlussTools requires geospatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a `virtual environment <https://hydro-informatics.com/python-basics/pyinstall.html#venv>`_ with `requirements.txt`_ or a `conda environment <https://hydro-informatics.com/python-basics/pyinstall.html#conda-env>`_ with `environment.yml`_ to check out the following dependencies on non-standard Python libraries:
 
@@ -68,13 +68,15 @@ FlussTools requires geospatial processing libraries, which cannot be directly re
 +-------------+--------------+--------------+
 | geopandas   | pandas       | shapely      |
 +-------------+--------------+--------------+
-| h5py        | pyshp        | tabulate     |
+| h5py        | pip          | tabulate     |
++-------------+--------------+--------------+
+| networkx    | pyshp        | plotly       |
 +-------------+--------------+--------------+
 
 
 .. _Anaconda docs: https://docs.anaconda.com/anaconda/install/
 .. _environment.yml: https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/environment.yml
-.. _git: https://hydro-informatics.github.io/get-started/git.html
+.. _git: https://hydro-informatics.com/get-started/git.html
 .. _git bash: https://git-scm.com/downloads
 .. _gdal: https://gdal.org/
 .. _QGIS: https://qgis.org/en/site/

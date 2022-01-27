@@ -40,6 +40,7 @@ autodoc_mock_imports = [
     "laspy",
     "mapclassify",
     "matplotlib",
+    "networkx",
     "numpy",
     "openpyxl",
     "osegeo",
@@ -56,7 +57,7 @@ autodoc_mock_imports = [
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "0.2.8"
+version = "1.0.6"
 release = "latest"
 author = u"FlussTeam"
 copyright = author

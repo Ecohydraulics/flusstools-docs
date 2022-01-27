@@ -1,5 +1,5 @@
 """
-What is this?
+Descriptions will be updated by Bea
 """
 import gdal
 from pathlib import Path
