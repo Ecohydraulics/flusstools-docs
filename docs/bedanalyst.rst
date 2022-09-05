@@ -1,11 +1,11 @@
-.. geo_utils documentation
+.. bedanalyst documentation
 
-GeoTools
-========
+BedAnalyst
+==========
 
-**Geospatial Functions for Hydraulics and Morphodynamics**
+**Aglorithms for analyzing riverbed clogging and substrate samples**
 
-The *GeoTools* (``flusstools.geotools``) modules provide *Python3* functions for many sorts of river-related analyses with geospatial data (e.g., for working with numerical model input and output). The package is intended as support material for the `hydro-informatics eBook <https://hydro-informatics.github.io/>`_.
+The *BedAnalyst* (``flusstools.bedanalyst``) modules provide *Python3* functions for many sorts of substrate samples to analyze so-called `riverbed clogging <https://hydro-informatics.com/documentation/glossary.html#term-Clogging>`_.
 
 
 Usage
