@@ -33,6 +33,11 @@ Currently, *flusstools* comes with the following modules:
 .. toctree::
     :hidden:
 
+    Riverbed Analyst (BedAnalyst) <bedanalyst>
+
+.. toctree::
+    :hidden:
+
     Geospatial Analyst (GeoTools) <geotools>
 
 .. toctree::
