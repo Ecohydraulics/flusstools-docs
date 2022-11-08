@@ -36,7 +36,7 @@ setup(
         "click",
         "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
-        'importlib-resources',
+        'importlib-resources~=3.0.0; python_version < "3.7"',
     ],
     # dependency_links=[
     #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
@@ -53,7 +53,7 @@ setup(
             "openpyxl",
             "pandas",
             "nbclient",
-            "myst-nb",
+            "myst-nb~=0.10.1",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
@@ -62,7 +62,7 @@ setup(
             "ablog~=0.10.11",
         ],
         "testing": [
-            "myst_nb",
+            "myst_nb~=0.10.1",
             "sphinx_thebe",
             "coverage",
             "pytest~=6.0.1",
