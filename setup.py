@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 lines = Path(".").joinpath("__init__.py")
-version = "1.0.7"
+version = "1.1.5"
 for line in lines.read_text().split("\n"):
     if line.startswith("__version__ ="):
         version = line.split(" = ")[-1].strip('"')
@@ -34,7 +34,7 @@ setup(
         "docutils>=0.15",
         "sphinx",
         "click",
-        "pydata-sphinx-theme~=0.4.1",
+        "pydata-sphinx-theme",
         "beautifulsoup4",
         'importlib-resources~=3.0.0; python_version < "3.7"',
     ],

@@ -113,7 +113,6 @@ panels_add_bootstrap_css = False
 
 html_theme = "sphinx_book_theme"
 html_theme_options = {
-
     "theme_dev_mode": True,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
