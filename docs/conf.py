@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.abspath(".."))
 sys.path.append(os.path.abspath("..") + "/flusstools/")
 sys.path.append(os.path.abspath("..") + "/examples/fuzzycorr-showcase/")
 sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")
+sys.path.append(os.path.abspath("..") + "/examples/bed_analyst-showcase/")
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
@@ -53,6 +54,7 @@ autodoc_mock_imports = [
     "shapely",
     "tabulate",
     "tkinter",
+    "scikit-fuzzy"
 ]
 
 project = u"FlussTools"

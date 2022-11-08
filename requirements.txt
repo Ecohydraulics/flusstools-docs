@@ -17,3 +17,4 @@ tk
 scipy
 shapely
 tabulate
+scikit-fuzzy
