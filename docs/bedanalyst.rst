@@ -3,13 +3,14 @@
 BedAnalyst
 ==========
 
-**Aglorithms for analyzing riverbed clogging and substrate samples**
+**Algorithms for analyzing riverbed clogging through visualization functions, geospatial interpolation, and a novel fuzzy degree of clogging**
 
 The *BedAnalyst* (``flusstools.bedanalyst``) modules provide *Python3* functions for many sorts of substrate samples to analyze so-called `riverbed clogging <https://hydro-informatics.com/documentation/glossary.html#term-Clogging>`_.
 
 
 Usage
 -----
+
 
 Import
 ~~~~~~~
@@ -32,7 +33,7 @@ Example (code block)
 Example (showcase)
 ~~~~~~~~~~~~~~~~~~
 
-A showcase is provided with the ``ROOT/examples/bedanalyst-showcase/use_bea_analysis.py`` script that illustrates ...
+A showcase is provided with the ``ROOT/examples/bedanalyst-showcase/degree_clogging/main.py`` script that illustrates 
 
 
 
@@ -41,10 +42,10 @@ Code structure
 
 The following diagram highlights function locations in Python scripts and how those are linked to each other.
 
-.. figure:: https://github.com/Ecohydraulics/flusstools/raw/main/docs/img/geotools-uml.png
+.. figure:: https://github.com/Ecohydraulics/flusstools/raw/main/docs/img/degree_clogging_uml.jpg
    :alt: structure
 
-   *Diagram of the code structure (needs to be updated).*
+The modules ``cd_profiles``, ``nABP_degree_clogging``, and ``interp_z2shp`` are independent from the ``degree_clogging`` module.
 
 
 Script and function docs
@@ -60,10 +61,15 @@ Package Head: ``bedanalyst``
     :show-inheritance:
 
 
-Another algorithm ``another_script``
+Another algorithm ``degree_clogging``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: flusstools.bedanalyst.cd_profiles
+.. automodule:: flusstools.bedanalyst.degree_clogging
     :members:
-
+    
+    
+Another algorithm ``interp_z2shp``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. automodule:: flusstools.bedanalyst.interp_z2shp
+    :members:
 
