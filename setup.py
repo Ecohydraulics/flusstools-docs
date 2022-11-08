@@ -34,7 +34,7 @@ setup(
         "docutils>=0.15",
         "sphinx",
         "click",
-        "pydata-sphinx-theme",
+        "pydata-sphinx-theme~=0.4.1",
         "beautifulsoup4",
         'importlib-resources',
     ],
