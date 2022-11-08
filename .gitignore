@@ -6,7 +6,6 @@ _pdf
 .DS_Store
 vendor/
 .bundle/
-sphinx_book_theme/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
