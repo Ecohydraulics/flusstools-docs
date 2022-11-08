@@ -53,7 +53,7 @@ setup(
             "openpyxl",
             "pandas",
             "nbclient",
-            "myst-nb~=0.10.1",
+            "myst-nb",
             "sphinx-togglebutton>=0.2.1",
             "sphinx-copybutton",
             "plotly",
@@ -62,7 +62,7 @@ setup(
             "ablog~=0.10.11",
         ],
         "testing": [
-            "myst_nb~=0.10.1",
+            "myst_nb",
             "sphinx_thebe",
             "coverage",
             "pytest~=6.0.1",
