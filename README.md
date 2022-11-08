@@ -87,18 +87,10 @@ pip install sphinx-book-theme
 pip install sphinx_bootstrap_theme
 ```
 
-To install the *ATOM* IDE (**recommended**) tap:
+To install an IDE (**recommended**) such as [sublime text](https://www.sublimetext.com/3).
 
-Read more about [ATOM](https://atom.io/) or how to [install *ATOM* on any platform](https://flight-manual.atom.io/getting-started/sections/installing-atom).
 
-```
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-sudo apt update
-sudo apt install atom
-```
-
-Alternatively to *ATOM*, install Spyder IDE with:
+Alternatively, install Spyder IDE:
 
 ```
 sudo apt install spyder
