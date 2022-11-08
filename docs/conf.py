@@ -81,7 +81,6 @@ extensions = [
     "IPython.sphinxext.ipython_console_highlighting",
     "IPython.sphinxext.ipython_directive",
     "myst_nb",
-    "nbsphinx",
 ]
 
 templates_path = ["_templates"]
