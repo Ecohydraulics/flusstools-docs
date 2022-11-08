@@ -1,6 +1,9 @@
 from geotools import *
-from shapely.geometry import Point
-from scipy import interpolate
+try:
+    from shapely.geometry import Point
+    from scipy import interpolate
+except Exception as e:
+    print(e)
 
 
 def interp_z2shp(df, lonlat, crs, sample_column, interp_at_z_stamps, new_attr_names, meas_at_cols, path_shp):

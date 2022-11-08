@@ -87,8 +87,9 @@ def degree_clogging(df_samples, output_csv_path, plot=[False, False]):
 
 
 if __name__ == "__main__":
-    # read a cvs file into a dataframe (global variable)
+    # read a cvs file into a dataframe (global variable) - SSC: why is this a standalone script in a package?
     df_samples = pd.read_csv("inputs-realdata.csv")
     df_samples = df_samples.iloc[:, 0:7]
 
     degree_clogging(df_samples, "output/output.csv")
+

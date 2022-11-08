@@ -62,12 +62,12 @@ Package Head: ``bedanalyst``
 
 
 Another algorithm ``degree_clogging``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. automodule:: flusstools.bedanalyst.degree_clogging
     :members:
-    
-    
+
+
 Another algorithm ``interp_z2shp``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. automodule:: flusstools.bedanalyst.interp_z2shp

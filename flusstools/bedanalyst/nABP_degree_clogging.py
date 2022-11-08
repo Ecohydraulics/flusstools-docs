@@ -3,7 +3,7 @@ from scipy import integrate, interpolate
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Read as df
+# Read as df - SSC: why is this hard coded?
 df_input = pd.read_excel('dc-for-manuscript.xlsx',
                          usecols=['measurement point', 'Riverbed depth [m]', 'Degree of Clogging [-]'],
                          )
