@@ -84,3 +84,11 @@ def degree_clogging(df_samples, output_csv_path, plot=[False, False]):
 
     # save the computed values into a csv
     df_samples.to_csv(output_csv_path)
+
+
+if __name__ == "__main__":
+    # read a cvs file into a dataframe (global variable)
+    df_samples = pd.read_csv("inputs-realdata.csv")
+    df_samples = df_samples.iloc[:, 0:7]
+
+    degree_clogging(df_samples, "output/output.csv")

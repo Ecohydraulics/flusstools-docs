@@ -48,6 +48,7 @@ setup(
             "folium",
             "numpy",
             "matplotlib",
+            "Jinja2<3.1",
             "ipywidgets",
             "openpyxl",
             "pandas",

@@ -13,7 +13,6 @@ pandas
 pyshp
 rasterio
 rasterstats
-tk
 scipy
 shapely
 tabulate

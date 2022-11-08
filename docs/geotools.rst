@@ -1,4 +1,4 @@
-.. geo_utils documentation master file.
+.. geo_utils documentation
 
 GeoTools
 ========

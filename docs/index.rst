@@ -4,7 +4,7 @@
 FlussTools
 ==========
 
-The analysis, research and science-based design of fluvial ecosystems involve complex challenges for interdisciplinary experienced teams. We have created *flusstools* to meet the complex challenges and to at least partially automate time-consuming, repetitive processes. "We" stands for individuals with a great passion for rivers (German: "Flüsse") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With *flusstools*, we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or amend a module) at any time - read more in the :ref:`contribute` section.
+The analysis, research and science-based design of hydrological ecosystems involve complex challenges for interdisciplinary experienced teams. We have created *flusstools* to meet the complex challenges and to at least partially automate time-consuming, repetitive processes of processing field data, numerical model outputs, or geospatial data. "We" stands for individuals with a great passion for rivers (German: "Flüsse") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. In the context of our scientific endeavor, we have a strong commitment to transparent open-source applications. With *flusstools*, we want to share our research-based open-source algorithms with a broad interest group in a well documented form. We welcome new team members (for example to add or amend a module) at any time - read more in the :ref:`contribute` section.
 
 .. important::
 
@@ -12,7 +12,7 @@ The analysis, research and science-based design of fluvial ecosystems involve co
 
 Currently, *flusstools* comes with the following modules:
 
-* *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries (developers: `Kilian Mouris`_, `Beatriz Negreiros`_, and `Sebastian Schwindt`_).
+* *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries (developers: `Kilian Mouris`_, `Beatriz Negreiros`_, and `Sebastian Schwindt`_). The functions are explained with the geospatial Python `tutorials on hydro-informatics.com <https://hydro-informatics.com/jupyter/geo-shp.html>`_ and the `HydroMorphodynamics YouTube channel <https://www.youtube.com/watch?v=HK1bRdM8nR4&list=PLM7gZoNB9ytnDcptZFqCMnzAWYwiWXNGx&index=17>`_.
 * *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assess the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
 * *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
@@ -29,6 +29,11 @@ Currently, *flusstools* comes with the following modules:
     :hidden:
 
     Installation <getstarted>
+
+.. toctree::
+    :hidden:
+
+    Riverbed Analyst (BedAnalyst) <bedanalyst>
 
 .. toctree::
     :hidden:
