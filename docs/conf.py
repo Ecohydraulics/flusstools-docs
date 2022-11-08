@@ -168,9 +168,9 @@ man_pages = [
     (master_doc, slug, project, [author], 1)
 ]
 # allow errors
-execution_allow_errors = True
+# execution_allow_errors = True
 # execute cells only if any of the cells is missing output
-jupyter_execute_notebooks = "auto"
+nb_execute_notebooks = "auto"
 
 texinfo_documents = [
   (master_doc, slug, project, author, slug, project, "Miscellaneous"),
