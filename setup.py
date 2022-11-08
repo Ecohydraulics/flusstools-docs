@@ -34,9 +34,9 @@ setup(
         "docutils>=0.15",
         "sphinx",
         "click",
-        "pydata-sphinx-theme~=0.4.1",
+        "pydata-sphinx-theme",
         "beautifulsoup4",
-        'importlib-resources~=3.0.0; python_version < "3.7"',
+        'importlib-resources',
     ],
     # dependency_links=[
     #     "git+https://github.com/ecohydraulics/flusstools-pckg#egg=flusstools-pckg"
