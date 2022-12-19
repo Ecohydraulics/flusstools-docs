@@ -3,24 +3,9 @@ Head structure for fuzzy map comparisons
 
 Usage: ``fuzzy_comparison = FuzzyComparison()``
 
-Descriptions will be updated by Bea
 """
 
 from .plotter import *
-
-
-def jaccard(a, b):
-    """Creates a ...
-
-    Args:
-        a (float):
-        b (float):
-
-    Returns:
-        ``float``: ``jac``
-    """
-    jac = 1 - (a * b) / (2 * abs(a) + 2 * abs(b) - a * b)
-    return jac
 
 
 def f_similarity(centre_cell, neighbours):
