@@ -1,5 +1,5 @@
-""" This module contains all the imported packages (dependencies) and
-user inputs for running the main script.
+""" This module contains all the necessary mathematical definitions of the membership functions, which may be
+altered by the user, if necessary.
 
 The first input is the dictionary containing two points for the fuzzy and defuzzification functions.
 Two points define a function and the have the following format:
