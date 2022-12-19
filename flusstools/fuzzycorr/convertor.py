@@ -1,5 +1,6 @@
 """
-Descriptions will be updated by Bea
+Simple help-script for converting .tif rasters to .asc format, which is input for the MCK (Map Comparison Toolkit, 
+see [link for download](https://map-comparison-kit.software.informer.com/) and associated [publications](https://www.sciencedirect.com/science/article/pii/S1364815204003019))
 """
 from osgeo import gdal
 from pathlib import Path
