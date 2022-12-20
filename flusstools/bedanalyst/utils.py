@@ -2,7 +2,7 @@
 """
 
 
-from config import *
+from bedanalyst.config import *
 
 
 def plot_funs(dc_param_range, dc_fuzzy_funs, dc_disfuzzy_funs):
