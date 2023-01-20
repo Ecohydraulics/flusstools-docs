@@ -19,7 +19,7 @@ Currently, *flusstools* comes with the following modules:
 
 .. admonition:: How to cite FlussTools
 
-    If our codes helped you to accomplish your work, we won't ask you for a coffee, but we to cite and spread the utility of our code - Thank you!
+    If our codes helped you to accomplish your work, we won't ask you for a coffee, but to cite and spread the utility of our code - Thank you!
 
     .. code::
 
