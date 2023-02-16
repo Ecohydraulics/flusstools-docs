@@ -33,7 +33,7 @@ Example (code block)
 Example (showcase)
 ~~~~~~~~~~~~~~~~~~
 
-A showcase is provided with the ``ROOT/examples/bedanalyst-showcase/degree_clogging/main.py`` script that illustrates 
+A showcase is provided in the flusstools example `degree of clogging <https://github.com/Ecohydraulics/flusstools/raw/main/examples/bedanalyst-showcase/degree_clogging/>`_.
 
 
 Code structure
