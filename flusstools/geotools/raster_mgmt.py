@@ -37,7 +37,7 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
 
     Args:
         file_name (str): Target file name, including directory; must end on ``".tif"``.
-        raster_array (``ndarray`` or ``list``): Array or list of arrays of values to rasterize. If a list of arrays is provided, the length of the list will correspond to the number of bands added to the raster (supersedes ``bands``).
+        raster_array (``ndarray`` or ``list``): 2D array or list of 2D arrays of values to rasterize. If a list of arrays is provided, the length of the list will correspond to the number of bands added to the raster (supersedes ``bands``).
         bands (int): Number of bands to write to the raster (default: ``1``).
         origin (tuple): Coordinates (x, y) of the origin.
         epsg (int): EPSG:XXXX projection to use (default: ``4326``).
