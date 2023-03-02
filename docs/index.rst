@@ -27,6 +27,7 @@ Currently, *flusstools* comes with the following modules:
                   author       = {Sebastian Schwindt and
                                   Beatriz Negreiros and
                                   Ricardo Barros and
+                                  Niklas Henning and
                                   Kilian Mouris},
                   title        = {FlussTools},
                   year         = 2023,
