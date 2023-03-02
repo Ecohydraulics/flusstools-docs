@@ -3,9 +3,11 @@ Head structure for fuzzy map comparisons
 
 Usage: ``fuzzy_comparison = FuzzyComparison()``
 
+Descriptions will be updated by Bea
 """
 
 from .plotter import *
+
 
 
 def f_similarity(centre_cell, neighbours):

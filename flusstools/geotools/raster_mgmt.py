@@ -37,7 +37,7 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
 
     Args:
         file_name (str): Target file name, including directory; must end on ``".tif"``.
-        raster_array (``ndarray`` or ``list``): 2D array or list of 2D arrays of values to rasterize. If a list of arrays is provided, the length of the list will correspond to the number of bands added to the raster (supersedes ``bands``).
+        raster_array (``ndarray`` or ``list``): 2d-array (no bands) or list (bands) of 2-darrays of values to rasterize. If a list of 2d-arrays is provided, the length of the list will correspond to the number of bands added to the raster (supersedes ``bands``).
         bands (int): Number of bands to write to the raster (default: ``1``).
         origin (tuple): Coordinates (x, y) of the origin.
         epsg (int): EPSG:XXXX projection to use (default: ``4326``).
@@ -152,6 +152,97 @@ def create_raster(file_name, raster_array, bands=1, origin=None, epsg=4326, pixe
     return 0
 
 
+def xy_raster_shift(file_name,x_shift, y_shift, bands=1, rdtype=gdal.GDT_Float32, nan_val=nan_value,
+                    compress=True, options=['PROFILE=GeoTIFF'], compress_config=["COMPRESS=LZW", "TILED=YES"]):
+    """Creates new geotiff raster with shifts in x and y direction. If enabled compresses it also compresses file.
+
+    Args:
+    file_name (string): File path of GeoTiff
+    x_shift (float OR int): Shift origin in x direction. *Check that correct units are used.  Example: wgs 84 is in degrees
+    y_shift (float OR int): Shift origin in y direction. *Check that correct units are used.  Example: wgs 84 is in degrees
+    bands (int): Number of bands default is 1, however check raster to see how many are required. Example: RGBA=4
+    rdtype: `gdal.GDALDataType <https://gdal.org/doxygen/gdal_8h.html#a22e22ce0a55036a96f652765793fb7a4>`_ raster data type (default: gdal.GDT_Float32 (32 bit floating point).
+    nan_val (``int`` or ``float``): No-data value to be used in the raster. Replaces non-numeric and ``np.nan`` in the ``ndarray``. (default: ``geoconfig.nan_value``).
+    compress (Bool): If True creates compressed version of the GeoTiff
+    options (list): Raster creation options - default is ['PROFILE=GeoTIFF']. Add 'PHOTOMETRIC=RGB' to create an RGB image raster.
+    compress_config: (list) Compress creation options - default is ["COMPRESS=LZW", "TILED=YES"] LZW=Lempel-Ziv-Welch-Algorithm  See gdal.Translate for more options
+
+    Returns:
+        int: ``0`` if successful, otherwise ``-1``.
+
+    Hint:
+    For drone rasters try
+    bands=4 (rgba) rdtype=gdal.GDT_Byte nan_val=0 options=['PROFILE=GeoTIFF','PHOTOMETRIC=RGB'])
+
+    Bugs: Issues displaying logging
+    """
+    # Gdal opens Tiff
+    try:
+        tif = gdal.Open(file_name)
+    except RuntimeError:
+        logging.error("Cannot open raster in Gdal.")
+        return -1
+
+    # Extracting geo_transform
+    geo_transform = tif.GetGeoTransform()
+
+    # Extracting arrays from raster to create an array list
+    try:
+        list_array=[]
+        for n in range(bands):
+
+            list_array.append(tif.GetRasterBand(n+1).ReadAsArray())
+    except RuntimeError:
+        logging.error("Cannot create array list from bands.")
+        return -1
+
+    # sets the geodata into individual types
+    try:
+        origin_x = geo_transform[0]
+        origin_y = geo_transform[3]
+        pixel_width = geo_transform[1]
+        pixel_height = geo_transform[5]
+        pixel_height = pixel_height * -1 # setting negative so raster is not mirrored over y-intercept, due to create_raster's "*-1 pixelheight"
+        proj = osr.SpatialReference(tif.GetProjection())
+        epsg = int(proj.GetAttrValue('AUTHORITY', 1))
+    except ValueError:
+        logging.error(
+            "Problems with geodata")
+
+    try:
+        logging.info(
+            "Creating raster with x shift of {0} units  and y shift of {1} units" .format(
+                 float(x_shift),float(y_shift)))
+
+    except ValueError:
+        logging.error(
+            "The provided x and y shifts are not numbers.")
+        return -1
+    # Gdal Shift
+    origin = (origin_x + x_shift, origin_y + y_shift)
+    file_name_new = file_name.replace(".tif", "shifted x_{0} y_{1}.tif".format(x_shift, y_shift))
+
+    try:
+        create_raster(file_name_new, list_array, bands, origin, epsg, pixel_width, pixel_height, nan_val=nan_val,
+                           rdtype=rdtype, options=options)
+        logging.info("Successfully created shifted raster in "+file_name_new)
+    except RuntimeError:
+        logging.error("Could not create raster using geotools.")
+        return -1
+
+
+    if compress:
+        try:
+            logging.info("Creating compressed raster to reduce size")
+            outfn=file_name_new.replace(".tif", "_compressed.tif")
+            ds = gdal.Translate(outfn, file_name_new, creationOptions=compress_config)
+            ds = None
+            logging.info("Successfully created compressed tiff in "+outfn)
+        except RuntimeError:
+            logging.error("Unable to preform compression")
+
+    return 0
+
 def raster2array(file_name, band_number=1):
     """Extracts a numpy ``ndarray`` from a raster.
 
@@ -163,7 +254,7 @@ def raster2array(file_name, band_number=1):
         list: three-elements of [``osgeo.DataSet`` of the raster,
         ``numpy.ndarray`` of the raster ``band_numer`` (input) where no-data
         values are replaced with ``np.nan``, ``osgeo.GeoTransform`` of
-        the original raster]
+         the original raster]
     """
     # open the raster and band (see above)
     raster, band = open_raster(file_name, band_number=band_number)

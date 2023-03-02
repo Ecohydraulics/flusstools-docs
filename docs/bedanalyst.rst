@@ -71,3 +71,9 @@ Another algorithm ``interp_z2shp``
 .. automodule:: flusstools.bedanalyst.interp_z2shp
     :members:
 
+Another algorithm ``utils``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. automodule:: flusstools.bedanalyst.utils
+    :members:
+
+

@@ -31,7 +31,7 @@ Currently, *flusstools* comes with the following modules:
                   title        = {FlussTools},
                   year         = 2023,
                   publisher    = {GitHub \& Center for Open Science (OSF)},
-                  version      = {v1.1.6},
+                  version      = {v1.1.7},
                   doi          = {10.17605/OSF.IO/G7K52},
                   url          = {https://doi.org/10.17605/OSF.IO/G7K52}
                 }

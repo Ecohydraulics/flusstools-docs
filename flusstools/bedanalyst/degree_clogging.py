@@ -2,8 +2,8 @@
 of degree of clogging.
 """
 
-from bedanalyst.config import *
-from bedanalyst.utils import *
+from config import *
+from utils import *
 
 
 def degree_clogging(df_samples, output_csv_path, plot=[False, False]):
@@ -84,5 +84,4 @@ def degree_clogging(df_samples, output_csv_path, plot=[False, False]):
 
     # save the computed values into a csv
     df_samples.to_csv(output_csv_path)
-
 
