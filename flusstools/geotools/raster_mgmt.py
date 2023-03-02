@@ -240,8 +240,8 @@ def xy_raster_shift(file_name,x_shift, y_shift, bands=1, rdtype=gdal.GDT_Float32
             logging.info("Successfully created compressed tiff in "+outfn)
         except RuntimeError:
             logging.error("Unable to preform compression")
-
     return 0
+
 
 def raster2array(file_name, band_number=1):
     """Extracts a numpy ``ndarray`` from a raster.
@@ -254,7 +254,7 @@ def raster2array(file_name, band_number=1):
         list: three-elements of [``osgeo.DataSet`` of the raster,
         ``numpy.ndarray`` of the raster ``band_numer`` (input) where no-data
         values are replaced with ``np.nan``, ``osgeo.GeoTransform`` of
-         the original raster]
+        the original raster]
     """
     # open the raster and band (see above)
     raster, band = open_raster(file_name, band_number=band_number)
