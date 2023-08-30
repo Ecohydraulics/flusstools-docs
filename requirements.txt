@@ -4,6 +4,7 @@ gdal
 geojson
 geopandas
 h5py
+jupyterlab
 laspy
 mapclassify
 matplotlib

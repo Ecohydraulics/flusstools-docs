@@ -9,7 +9,7 @@ No warranty is expressed or implied regarding the usefulness or completeness of 
 BSD 3-Clause License
 --------------------
 
-Copyright (c) 2021, the *FlussTeam* and all other the Authors of *flusstools*.
+Copyright (c) 2023, the *FlussTeam* and all other Authors of *flusstools*.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
