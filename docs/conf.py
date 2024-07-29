@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from sphinx.locale import _
-import sphinx_rtd_theme
 import sys
 import os
 import re
@@ -59,7 +58,7 @@ autodoc_mock_imports = [
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "1.1.7"
+version = "1.1.8"
 release = "latest"
 author = u"FlussTeam"
 copyright = author
@@ -94,7 +93,7 @@ suppress_warnings = ["image.nonlocal_uri"]
 pygments_style = "sphinx"
 
 intersphinx_mapping = {
-    "python": ("https://docs.python.org/3.8", None),
+    "python": ("https://docs.python.org/3.9", None),
     "rtd": ("https://docs.readthedocs.io/en/latest/", None),
     "sphinx": ("http://www.sphinx-doc.org/en/stable/", None),
 }
