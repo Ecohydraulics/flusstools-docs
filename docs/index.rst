@@ -8,7 +8,7 @@ The analysis, research, and science-based design of hydrological ecosystems invo
 
 .. important::
 
-    Follow the installation instructions on `hydro-informatics.com <https://hydro-informatics.com/python-basics/pyinstall.html>`_ to make sure that GDAL works on your computer as desired.
+    Follow the installation instructions on `hydro-informatics.com <https://hydro-informatics.com/python-basics/pyinstall.html>`_ to make sure that GDAL works on your computer as desired (there are version issues because of numpy2, which requires GDAL>=3.9.1, which cannot be easily installed on Ubuntu derivates currently.
 
 Currently, *flusstools* comes with the following modules:
 
@@ -23,16 +23,16 @@ Currently, *flusstools* comes with the following modules:
 
     .. code::
 
-        @software{flussteam_tools_2023,
+        @software{flussteam_tools_2024,
                   author       = {Sebastian Schwindt and
                                   Beatriz Negreiros and
                                   Ricardo Barros and
                                   Niklas Henning and
                                   Kilian Mouris},
                   title        = {FlussTools},
-                  year         = 2023,
+                  year         = 2024,
                   publisher    = {GitHub \& Center for Open Science (OSF)},
-                  version      = {v1.1.7},
+                  version      = {v1.1.8},
                   doi          = {10.17605/OSF.IO/G7K52},
                   url          = {https://doi.org/10.17605/OSF.IO/G7K52}
                 }
