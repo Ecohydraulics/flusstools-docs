@@ -7,7 +7,7 @@ Working with *flusstools* is platform independent, but the favorable installatio
 
 We recommend *Windows* user to use *Anaconda* and *conda* environments. *Linux* users will have a better experience with *pip*-installing *flusstools*. The differences stem from the way how GDAL is installed on the two platforms. *macOS* users may want to follow the *Linux* instructions, even though we could not yet test the installation of *flusstools* on *macOS*. For *Linux* users: before `pip install flusstools`, make sure your *pip* is updated (`python -m pip install --upgrade pip`) to avoid incompatibilities with Python wheels in Linux.
 
-**flusstools** is tailored for applications in water resources research and engineering and this is why the detailed instructions about the installation of flusstools are provided with the `hydro-informatics eBook <https://hydro-informatics.com/python-basics/pyinstall.html>`_ (at `https://hydro-informatics.com <https://hydro-informatics.com>`_).
+**flusstools** is tailored for applications in water resources research and engineering and this is why the detailed instructions about the installation of flusstools are provided with the `hydro-informatics eBook <https://hydro-informatics.com/pyinstall>`_ (at `https://hydro-informatics.com <https://hydro-informatics.com>`_).
 
 
 Basic Usage
@@ -53,7 +53,7 @@ Example
 Requirements (Dependencies)
 ---------------------------
 
-FlussTools requires geospatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a `virtual environment <https://hydro-informatics.com/python-basics/pyinstall.html#venv>`_ with `requirements.txt`_ or a `conda environment <https://hydro-informatics.com/python-basics/pyinstall.html#conda-env>`_ with `environment.yml`_ to check out the following dependencies on non-standard Python libraries:
+FlussTools requires geospatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a `virtual environment <https://hydro-informatics.com/pyinstall/#venv>`_ with `requirements.txt`_ or a `conda environment <https://hydro-informatics.com/pyinstall/#conda-env>`_ with `environment.yml`_ to check out the following dependencies on non-standard Python libraries:
 
 +-------------+--------------+--------------+
 | Ext. libs.  |              |              |

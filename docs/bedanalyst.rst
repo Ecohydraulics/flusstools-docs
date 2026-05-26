@@ -5,7 +5,7 @@ BedAnalyst
 
 **Algorithms for analyzing riverbed clogging through visualization functions, geospatial interpolation, and a novel fuzzy degree of clogging**
 
-The *BedAnalyst* (``flusstools.bedanalyst``) modules provide *Python3* functions for substrate sample analysis and  a fuzzy logic assessment of so-called `riverbed clogging <https://hydro-informatics.com/documentation/glossary.html#term-Clogging>`_.
+The *BedAnalyst* (``flusstools.bedanalyst``) modules provide *Python3* functions for substrate sample analysis and  a fuzzy logic assessment of so-called `riverbed clogging <https://hydro-informatics.com/glossary/#term-Clogging>`_.
 
 
 Usage

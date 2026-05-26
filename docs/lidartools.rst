@@ -241,4 +241,4 @@ File functions
 
 
 .. _laspy: https://laspy.readthedocs.io/
-.. _wine: https://hydro-informatics.com/get-started/vm.html#wine
+.. _wine: https://hydro-informatics.com/vm/#wine

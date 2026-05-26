@@ -25,7 +25,7 @@ Usage
 Basics
 ~~~~~~~
 
-The following code block exemplifies the usage of *fuzzycorr* to explore the fuzzy correlation between two (e.g., observed and modeled) maps (in `GeoTIFF <https://hydro-informatics.com/documentation/glossary.html#term-GeoTIFF>`_ format):
+The following code block exemplifies the usage of *fuzzycorr* to explore the fuzzy correlation between two (e.g., observed and modeled) maps (in `GeoTIFF <https://hydro-informatics.com/glossary/#term-GeoTIFF>`_ format):
 
 .. code:: python
 
