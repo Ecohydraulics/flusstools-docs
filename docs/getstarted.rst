@@ -58,7 +58,7 @@ FlussTools requires geospatial processing libraries, which cannot be directly re
 +-------------+--------------+--------------+
 | Ext. libs.  |              |              |
 +=============+==============+==============+
-| alphashape  | laspy        | rasterio     |
+| alphashape  | pyproj       | rasterio     |
 +-------------+--------------+--------------+
 | earthpy     | mapclassify  | rasterstats  |
 +-------------+--------------+--------------+

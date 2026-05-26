@@ -37,7 +37,6 @@ autodoc_mock_imports = [
     "geojson",
     "geopandas",
     "h5py",
-    "laspy",
     "mapclassify",
     "matplotlib",
     "networkx",

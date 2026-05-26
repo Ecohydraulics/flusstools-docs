@@ -15,7 +15,6 @@ Currently, *flusstools* comes with the following modules:
 * *bedanalyst* - for plotting and numeric analysis of riverbed characteristic to identify, for instance, clogging (developers: `Beatriz Negreiros`_, and `Ricardo Barros`_).
 * *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries (developers: `Kilian Mouris`_, `Beatriz Negreiros`_, and `Sebastian Schwindt`_). The functions are explained with the geospatial Python `tutorials on hydro-informatics.com <https://hydro-informatics.com/geo-shp>`_ and the `HydroMorphodynamics YouTube channel <https://www.youtube.com/@hydroinformatics>`_.
 * *fuzzycorr* - a map comparison toolkit that builds on fuzzy sets to assess the accuracy of (numerical) river models (principal developer: `Beatriz Negreiros`_).
-* *lidartools* - *Python* wrappers for `lastools`_ (forked and modified from `Kenny Larrieu`_).
 
 .. admonition:: How to cite FlussTools
 
@@ -69,11 +68,6 @@ The documentation is also as available as `style-adapted PDF <https://flusstools
 .. toctree::
     :hidden:
 
-    Lidar Tools (LasPy/LasTools) <lidartools>
-
-.. toctree::
-    :hidden:
-
     Contributing <contribute>
 
 .. toctree::
@@ -87,8 +81,6 @@ More information and examples are available in the docs of every *flusstools* mo
 .. _Beatriz Negreiros: https://beatriznegreiros.github.io/
 .. _gdal: https://gdal.org/
 .. _Kilian Mouris: https://www.iws.uni-stuttgart.de/en/institute/team/Mouris/
-.. _Kenny Larrieu: https://klarrieu.github.io/
-.. _lastools: https://rapidlasso.com/lastools/
 .. _QGIS: https://qgis.org/en/site/
 .. _Ricardo Barros: https://ricardovobarros.github.io/
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/
