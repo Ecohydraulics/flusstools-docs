@@ -24,16 +24,21 @@ def is_development_build():
 
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath(".."))
-sys.path.append(os.path.abspath("..") + "/flusstools/")
+# NOTE: the flusstools source no longer lives in this repo. The package is
+# installed from PyPI on Read the Docs (see requirements.txt / .readthedocs.yaml)
+# and documented via autodoc below. The example scripts stay on sys.path so they
+# can be referenced from the .rst files.
 sys.path.append(os.path.abspath("..") + "/examples/fuzzycorr-showcase/")
 sys.path.append(os.path.abspath("..") + "/examples/geotools-showcase/")
-sys.path.append(os.path.abspath("..") + "/examples/bed_analyst-showcase/")
+sys.path.append(os.path.abspath("..") + "/examples/bedanalyst-showcase/")
 
-# the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
+# The following modules are mocked during the autodoc import of flusstools so
+# that Read the Docs does not need to build the heavy / C-dependent geospatial
+# stack. Entries MUST be the *import* names (e.g. "osgeo", "skfuzzy",
+# "shapefile"), not the PyPI distribution names (gdal, scikit-fuzzy, pyshp).
 autodoc_mock_imports = [
     "alphashape",
     "earthpy",
-    "gdal",
     "geojson",
     "geopandas",
     "h5py",
@@ -42,22 +47,22 @@ autodoc_mock_imports = [
     "networkx",
     "numpy",
     "openpyxl",
-    "osegeo",
+    "osgeo",        # GDAL bindings - never pip-installable on RTD
     "pandas",
-    "pyshp", "pyproj",
+    "pyproj",
     "rasterio",
     "rasterstats",
     "scipy",
-    "shapefile",
+    "shapefile",    # the pyshp import name
     "shapely",
+    "skfuzzy",      # the scikit-fuzzy import name
     "tabulate",
     "tkinter",
-    "scikit-fuzzy"
 ]
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "1.1.8"
+version = "2.0.0"
 release = "latest"
 author = u"FlussTeam"
 copyright = author
@@ -165,10 +170,12 @@ latex_documents = [
 man_pages = [
     (master_doc, slug, project, [author], 1)
 ]
-# allow errors
-# execution_allow_errors = True
-# execute cells only if any of the cells is missing output
-nb_execute_notebooks = "auto"
+# Render the notebooks' saved outputs as-is and do NOT re-execute them on
+# Read the Docs: the showcase notebooks rely on GDAL/flusstools' geospatial
+# stack, which is mocked (not installed) during the docs build. (Note: the
+# key is `nb_execution_mode` in myst-nb v1.x; the old `nb_execute_notebooks`
+# is ignored.)
+nb_execution_mode = "off"
 
 texinfo_documents = [
   (master_doc, slug, project, author, slug, project, "Miscellaneous"),

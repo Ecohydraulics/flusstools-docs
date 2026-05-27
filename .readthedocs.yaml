@@ -8,6 +8,13 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.11"
+  jobs:
+    # Install flusstools itself WITHOUT its dependencies: the package now declares
+    # gdal (and the rest of the geospatial stack) as runtime deps, none of which we
+    # want RTD to build. autodoc only needs the importable source - every heavy
+    # import is mocked in docs/conf.py (autodoc_mock_imports).
+    post_install:
+      - pip install --no-deps "flusstools>=2.0.0"
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
@@ -24,13 +31,12 @@ formats:
   - epub
   - pdf
 
-# Optionally set the version of Python and requirements required to build your docs
+# Install the Sphinx tooling. flusstools itself is installed --no-deps in the
+# build.jobs.post_install step above (so RTD never builds GDAL); autodoc imports
+# it with the heavy dependencies mocked in docs/conf.py (autodoc_mock_imports).
 python:
   install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - sphinx
+    - requirements: requirements.txt
 
 # Server Side Search settings
 search:
@@ -41,7 +47,3 @@ search:
      - 404.html
      # ignore all files in the docs/ directory
      - docs/*
-
-# Enable submodules
-submodules:
-  include: all

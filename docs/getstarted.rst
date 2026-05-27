@@ -3,11 +3,41 @@
 Installation
 ============
 
-Working with *flusstools* is platform independent, but the favorable installation procedure varies among platforms (e.g., *Linux* or *Windows*).
+The recommended way to install *flusstools* is inside a **conda/mamba environment** - and this is now the best practice on **every platform** (*Linux*, *Windows*, and *macOS*) alike. The reason is GDAL: *flusstools* builds on the GDAL geospatial library, which is **not** available as a pre-built *pip* wheel. The conda-forge channel ships ready-to-use GDAL binaries, so a conda/mamba environment resolves GDAL (and the rest of the geospatial stack) without any compiler or system-library setup, identically across operating systems.
 
-We recommend *Windows* user to use *Anaconda* and *conda* environments. *Linux* users will have a better experience with *pip*-installing *flusstools*. The differences stem from the way how GDAL is installed on the two platforms. *macOS* users may want to follow the *Linux* instructions, even though we could not yet test the installation of *flusstools* on *macOS*. For *Linux* users: before `pip install flusstools`, make sure your *pip* is updated (`python -m pip install --upgrade pip`) to avoid incompatibilities with Python wheels in Linux.
+We recommend `mamba <https://mamba.readthedocs.io>`_ - a fast drop-in replacement for ``conda`` - but every command below works the same if you replace ``mamba`` with ``conda``.
 
-**flusstools** is tailored for applications in water resources research and engineering and this is why the detailed instructions about the installation of flusstools are provided with the `hydro-informatics eBook <https://hydro-informatics.com/pyinstall>`_ (at `https://hydro-informatics.com <https://hydro-informatics.com>`_).
+Quick install
+-------------
+
+Create an environment with the GDAL binaries from conda-forge, then install *flusstools* into it with *pip*:
+
+.. code:: console
+
+    mamba create -n flussenv -c conda-forge python=3.11 gdal
+    mamba activate flussenv
+    pip install flusstools
+
+GDAL is provided by conda-forge, and *pip* resolves the remaining dependencies (``numpy``, ``geopandas``, ``rasterio``, ...) from wheels - nothing has to be compiled.
+
+Reproducible environment
+-------------------------
+
+To recreate the exact, version-pinned environment used to develop and test *flusstools*, build it from the `environment.yml`_ that ships with the package:
+
+.. code:: console
+
+    curl -O https://raw.githubusercontent.com/Ecohydraulics/flusstools-pckg/main/environment.yml
+    mamba env create -f environment.yml
+    mamba activate flussenv
+    pip install flusstools
+
+Installing with pip only
+------------------------
+
+A plain ``pip install flusstools`` (into a regular *virtualenv*) works **only if a matching system GDAL is already present** - i.e. ``gdal-config`` is on your ``PATH`` and its version matches the ``gdal`` Python bindings. Because GDAL publishes no PyPI wheels, *pip* otherwise tries to compile GDAL from source and the install fails. This is exactly why the conda/mamba route above is the platform-independent best practice. If you do go the pip route, update *pip* first (``python -m pip install --upgrade pip``).
+
+**flusstools** is tailored for applications in water resources research and engineering, and more detailed, step-by-step installation instructions (including how to set up conda/mamba from scratch) are provided with the `hydro-informatics eBook <https://hydro-informatics.com/pyinstall>`_ (at `https://hydro-informatics.com <https://hydro-informatics.com>`_).
 
 
 Basic Usage
@@ -29,7 +59,7 @@ Or one of its modules:
 
     from flusstools import geotools
 
-New to Python? Take a look at the Python tutorial for water resources engineering and research at `hydro-informatics.com <https://hydro-informatics.com/python-basics/python.html>`_
+New to Python? Take a look at the Python tutorial for water resources engineering and research at `hydro-informatics.com <https://hydro-informatics.com/python>`_
 
 
 Example
@@ -53,7 +83,7 @@ Example
 Requirements (Dependencies)
 ---------------------------
 
-FlussTools requires geospatial processing libraries, which cannot be directly resolved by running *setup.py*. For this reason, we recommend to either install a `virtual environment <https://hydro-informatics.com/pyinstall/#venv>`_ with `requirements.txt`_ or a `conda environment <https://hydro-informatics.com/pyinstall/#conda-env>`_ with `environment.yml`_ to check out the following dependencies on non-standard Python libraries:
+FlussTools depends on a stack of geospatial libraries - most notably GDAL, which has no *pip* wheel. As explained under `Installation`_ above, a `conda/mamba environment <https://hydro-informatics.com/pyinstall/#conda-env>`_ (built from `environment.yml`_) resolves these binaries cleanly and is the recommended setup; a pure-*pip* `virtual environment <https://hydro-informatics.com/pyinstall/#venv>`_ with `requirements.txt`_ works only where a system GDAL is available. The full set of third-party dependencies is:
 
 +-------------+--------------+--------------+
 | Ext. libs.  |              |              |
@@ -68,9 +98,9 @@ FlussTools requires geospatial processing libraries, which cannot be directly re
 +-------------+--------------+--------------+
 | geopandas   | pandas       | shapely      |
 +-------------+--------------+--------------+
-| h5py        | pip          | tabulate     |
+| h5py        | openpyxl     | tabulate     |
 +-------------+--------------+--------------+
-| networkx    | pyshp        | plotly       |
+| networkx    | pyshp        | scikit-fuzzy |
 +-------------+--------------+--------------+
 
 
