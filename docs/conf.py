@@ -62,7 +62,7 @@ autodoc_mock_imports = [
 
 project = u"FlussTools"
 slug = re.sub(r"\W+", "-", project.lower())
-version = "2.0.0"
+version = "2.0.1"
 release = "latest"
 author = u"FlussTeam"
 copyright = author

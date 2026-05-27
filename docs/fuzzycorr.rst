@@ -49,7 +49,7 @@ The following showcase scripts live in *ROOT/examples/fuzzycorr-showcase/*:
 Structure
 ---------
 
-This package contains the following modules, which were designed in *Python 3.8*:
+This package contains the following modules:
 
 - *prepro.py* includes functions for reading, normalizing and rasterizing vector data. These are preprocessing steps for fuzzy map comparison (module fuzzycomp).
 - *fuzzycomp.py* provides routines for fuzzy map comparison in continuous valued rasters. Refer to `Hagen (2006) <https://www.researchgate.net/publication/242690490_Comparing_Continuous_Valued_Raster_Data_A_Cross_Disciplinary_Literature_Scan>`__ for more details.

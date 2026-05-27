@@ -22,16 +22,16 @@ Currently, *flusstools* comes with the following modules:
 
     .. code::
 
-        @software{flussteam_tools_2024,
+        @software{flussteam2026flusstools,
                   author       = {Sebastian Schwindt and
                                   Beatriz Negreiros and
                                   Ricardo Barros and
                                   Niklas Henning and
                                   Kilian Mouris},
                   title        = {FlussTools},
-                  year         = 2024,
+                  year         = 2026,
                   publisher    = {GitHub \& Center for Open Science (OSF)},
-                  version      = {v1.1.8},
+                  version      = {v2.0.1},
                   doi          = {10.17605/OSF.IO/G7K52},
                   url          = {https://doi.org/10.17605/OSF.IO/G7K52}
                 }
