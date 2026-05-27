@@ -6,11 +6,7 @@ FlussTools
 
 The analysis, research, and science-based design of hydrological ecosystems involve complex challenges for interdisciplinary experienced teams. We have created *flusstools* to meet the complex challenges and to at least partially automate time-consuming, repetitive processes of processing field data, numerical model outputs, or geospatial data. "We" stands for individuals with a great passion for rivers (German: "Flüsse") and programming. Most of us work (or have worked) at the University of Stuttgart (Germany) at the `Institute for Modelling Hydraulic and Environmental Systems`_. Because we have a strong commitment to transparent open-source applications, we created *flusstools* and we welcome new team members (for example, to add or amend a module) at any time - read more in the :ref:`contribute` section.
 
-.. important::
-
-    Follow the installation instructions on `hydro-informatics.com <https://hydro-informatics.com/pyinstall>`_ to make sure that GDAL works on your computer as desired (there are version issues because of numpy2, which requires GDAL>=3.9.1, which cannot be easily installed on Ubuntu derivates currently.
-
-Currently, *flusstools* comes with the following modules:
+*FlussTools* has the following sub-packages:
 
 * *bedanalyst* - for plotting and numeric analysis of riverbed characteristic to identify, for instance, clogging (developers: `Beatriz Negreiros`_, and `Ricardo Barros`_).
 * *geotools* - versatile functions for processing spatial data for fluvial ecosystem analyses based on `gdal`_ and other open source libraries (developers: `Kilian Mouris`_, `Beatriz Negreiros`_, and `Sebastian Schwindt`_). The functions are explained with the geospatial Python `tutorials on hydro-informatics.com <https://hydro-informatics.com/geo-shp>`_ and the `HydroMorphodynamics YouTube channel <https://www.youtube.com/@hydroinformatics>`_.
