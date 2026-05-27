@@ -1,100 +1,99 @@
+.. _contribute:
+
 Contributing
 ============
 
-.. _contribute:
-
 Become a contributor
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
-Most team members joined in the framework of their Bachelor or Master's Thesis with innovative contributions. So if you are a student and you want to contribute to *flusstools*, why not in the scope of an innovative thesis? Check out our currently open `Bachelor and Master Thesis topics <https://www.iws.uni-stuttgart.de/en/lww/education/>`_.
+Many team members joined while working on their Bachelor's or Master's thesis. If you are a student, why not contribute to *flusstools* within an innovative thesis? Have a look at the open `Bachelor and Master Thesis topics <https://www.iws.uni-stuttgart.de/en/lww/education/>`_.
 
-Obviously you do not have to be a student to join us - please use `Sebastian Schwindt`_ s informal contact form - quick response (most of the time) for sure.
+You do not have to be a student to join - just reach out to `Sebastian Schwindt`_.
 
 
-How to document
-~~~~~~~~~~~~~~~~
+How the project is organized
+----------------------------
 
-This package uses *Sphinx* `readthedocs <https://readthedocs.org/>`_ and the documentation regenerates automatically after pushing changes to the repositories ``main`` branch.
+*flusstools* lives in **two** GitHub repositories:
 
-To set styles, configure or add extensions to the documentation use ``ROOT/.readthedocs.yml`` and ``ROOT/docs/conf.py``.
+* `flusstools-pckg <https://github.com/Ecohydraulics/flusstools-pckg>`_ - the Python **code**, released to `PyPI <https://pypi.org/project/flusstools/>`_.
+* `flusstools-docs <https://github.com/Ecohydraulics/flusstools-docs>`_ - **this documentation** (the ``.rst`` text files).
 
-Functions and classes are automatically parsed for `docstrings <https://www.python.org/dev/peps/pep-0257/>`_ and implemented in the documentation. ``hylas`` docs use `google style <https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html>`_ docstring formats - please familiarize with the style format and strictly apply in all commits.
+The documentation installs *flusstools* straight from PyPI and builds the function/class reference **automatically from the docstrings in the code**. So you never copy code into the docs repo - you publish a release of the code, and edit the text here.
 
-To modify this documentation file, edit ``ROOT/docs/index.rst`` (uses `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ format).
 
-In the class or function docstrings use the following section headers:
+Set up a development environment
+--------------------------------
 
-* ``Args`` (alias of ``Parameters``)
-* ``Arguments`` (alias of ``Parameters``)
-* ``Attention``
-* ``Attributes``
-* ``Caution``
-* ``Danger``
-* ``Error``
-* ``Example``
-* ``Examples``
-* ``Hint``
-* ``Important``
-* ``Keyword Args`` (alias of ``Keyword Arguments``)
-* ``Keyword Arguments``
-* ``Methods``
-* ``Note``
-* ``Notes``
-* ``Other Parameters``
-* ``Parameters``
-* ``Return`` (alias of ``Returns``)
-* ``Returns``
-* ``Raise`` (alias of ``Raises``)
-* ``Raises``
-* ``References``
-* ``See Also``
-* ``Tip``
-* ``Todo``
-* ``Warning``
-* ``Warnings`` (alias of ``Warning``)
-* ``Warn`` (alias of ``Warns``)
-* ``Warns``
-* ``Yield`` (alias of ``Yields``)
-* ``Yields``
-
-For local builds of the documentation, the following packages are required:
+GDAL only installs reliably with conda/mamba (see :ref:`install`). Clone the code repo, create the environment, and install *flusstools* in editable mode:
 
 .. code:: console
 
-   sudo apt-get install build-essential
-   sudo apt-get install python-dev python-pip python-setuptools
-   sudo apt-get install libxml2-dev libxslt1-dev zlib1g-dev
-   apt-cache search libffi
-   sudo apt-get install -y libffi-dev
-   sudo apt-get install python3-dev default-libmysqlclient-dev
-   sudo apt-get install python3-dev
-   sudo apt-get install redis-server
+    git clone https://github.com/Ecohydraulics/flusstools-pckg.git
+    cd flusstools-pckg
+    mamba env create -f environment.yml
+    mamba activate flussenv
+    pip install -e . --no-deps
 
-To generate a local html version of the ``hylas`` documentation, ``cd`` into the  ``docs`` directory  and type:
+``--no-deps`` is used because all dependencies already come from ``environment.yml``. "Editable" (``-e``) means your code changes take effect immediately, without reinstalling.
+
+
+Write code
+----------
+
+A few rules keep the package clean and the docs working:
+
+* **Imports:** every module imports exactly what it uses, at the top of the file - there is no central import file. To use a function from another *flusstools* module, import it directly from where it is defined, e.g. ``from ..geotools.geotools import rasterize``.
+* **Docstrings are the docs.** Write a `Google-style <https://www.sphinx-doc.org/en/master/usage/extensions/example_google.html>`_ docstring for every public function and class; it is exactly what shows up in this documentation. The sections you normally need:
+
+  * ``Args:`` - describe each parameter
+  * ``Returns:`` - describe what comes back
+  * ``Raises:`` - errors it may raise *(optional)*
+  * ``Example:`` - a short usage snippet *(optional, but appreciated)*
+
+* **Make a function public:** if users should be able to call your new function or class, add its name to the ``__all__`` list in that subpackage's ``__init__.py``.
+* **Added a new library?** Declare it in three places: ``pyproject.toml`` (``dependencies``), ``environment.yml``, and - using its *import* name (e.g. ``skfuzzy``, not ``scikit-fuzzy``) - the ``autodoc_mock_imports`` list in ``flusstools-docs/docs/conf.py``.
+* Keep it readable, and only push code that actually runs.
+
+
+Release a new version
+---------------------
+
+Once your code works and is merged, publish it to PyPI so that users - and these docs - receive it. The full recipe is in `CONTRIBUTING.md <https://github.com/Ecohydraulics/flusstools-pckg/blob/main/docs/CONTRIBUTING.md>`_; the short version:
+
+1. Bump ``version`` in ``flusstools-pckg/pyproject.toml`` (e.g. ``2.0.1`` to ``2.0.2``).
+2. Build and upload (needs a PyPI API token):
+
+   .. code:: console
+
+       mamba run -n flussenv python -m build
+       TWINE_USERNAME=__token__ python -m twine upload dist/*
+
+3. Tag the release on GitHub:
+
+   .. code:: console
+
+       git tag -a v2.0.2 -m "FlussTools 2.0.2"
+       git push --tags
+
+
+Update this documentation
+-------------------------
+
+Edit (or add) the matching ``.rst`` file in ``flusstools-docs/docs/`` and push to ``main`` - Read the Docs rebuilds automatically:
 
 .. code:: console
 
-   make html
+    git clone https://github.com/Ecohydraulics/flusstools-docs.git
+    cd flusstools-docs
+    # edit docs/<module>.rst
+    git commit -am "docs: describe <something>"
+    git push
 
-Learn more about *Sphinx* documentation and the automatic generation of *Python* code docs through docstrings in the tutorial provided at `github.com/sschwindt/docs-with-sphinx <https://github.com/sschwindt/docs-with-sphinx>`_.
-
-
-Implement new stuff
-~~~~~~~~~~~~~~~~~~~
-
-All contributors, please respect the *Zen of Python* (``import this``).
-
-How to add new package or library imports:
-
-* Add it to the global import management file (*ROOT/import_mgmt.py*) within an *try-except-ImportError* statement (`read more <https://hydro-informatics.github.io/hypy_pyerror.html#try-except>`_).
-* If you need to import a library or package that is not yet listed in the *ROOT/environments.yml* and *ROOT/requirements.txt* files, please make sure to add the new library or package in both files.
-* Add the new library or package to the ``autodoc_mock_imports`` *list* in *ROOT/docs/conf.py*.
-* Update the `version number <https://www.python.org/dev/peps/pep-0440/>`_ according to the `CONTRIBUTING <https://github.com/Ecohydraulics/flusstools-pckg/blob/main/docs/CONTRIBUTING.md>`_ standards.
-
-Please use *PEP 8* for any code (read more on `hydro-informatics.github.io/hypy_pystyle <https://hydro-informatics.github.io/hypy_pystyle.html>`_) and try to keep the number of lines per script below 150 (it's hard or even apparently impossible sometimes - just try please).
+To document a **new module**, add a ``.. automodule:: flusstools.<subpackage>.<module>`` block to the matching ``.rst`` file (copy the pattern from ``geotools.rst``) and list the page in the ``toctree`` of ``index.rst``.
 
 .. important::
 
-    Only push debugged code to the main branch - Thank you!
+    Only push code that you have run successfully - thank you!
 
 .. _Sebastian Schwindt: https://sebastian-schwindt.org/
